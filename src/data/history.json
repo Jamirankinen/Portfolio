@@ -1,0 +1,19 @@
+[
+    {
+      "role": "Salesman",
+      "organisation": "Gigantti",
+      "startDate": "Sept, 2021",
+      "endDate": "December, 2022",
+      "experiences": ["Customer service", "Top salesman on mobile subscriptions"],
+      "imageSrc": "history/gigantti.png"
+    },
+    {
+      "role": "Event Coordinator",
+      "organisation": "Outo ry",
+      "startDate": "Jan, 2022",
+      "endDate": "Aug, 2023",
+      "experiences": ["Organized events with other business partners", "Acquired sponsorships for the company"],
+      "imageSrc": "history/outory.jpg"
+    }
+    
+  ]

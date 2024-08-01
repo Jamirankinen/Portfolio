@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Project Portfolio",
+      "imageSrc": "projects/project.png",
+      "description": "This is a project made to have a resume online",
+      "skills": ["React", "HTML", "CSS"],
+      "demo": "https://www.example.com",
+      "source": "https://www.github.com"
+    },
+    {
+      "title": "Project Mobile app",
+      "imageSrc": "projects/project.png",
+      "description": "This is my first mobile application",
+      "skills": ["React", "Node", "Sass"],
+      "source": "https://www.https://github.com/Jamiiiiii/Mini-Yahtzee"
+    }
+    
+  ]
