@@ -15,9 +15,12 @@
       "title": "Node",
       "imageSrc": "skills/node.png"
     },
-    
     {
-      "title": "Figma",
-      "imageSrc": "skills/figma.png"
+      "title": "JavaScript",
+      "imageSrc": "skills/javascript.png"
+    },
+    {
+      "title": "TypeScript",
+      "imageSrc": "skills/typescript.webp"
     }
   ]
