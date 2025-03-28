@@ -22,5 +22,17 @@
     {
       "title": "TypeScript",
       "imageSrc": "skills/typescript.webp"
+    },
+    {
+      "title": "GitHub",
+      "imageSrc": "skills/GitHub.png"
+    },
+    {
+      "title": "Jira",
+      "imageSrc": "skills/Jira.png"
+    },
+    {
+      "title": "Firebase",
+      "imageSrc": "skills/firebase.png"
     }
   ]

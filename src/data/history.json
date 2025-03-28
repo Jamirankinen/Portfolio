@@ -2,8 +2,8 @@
     {
       "role": "Salesman",
       "organisation": "Gigantti",
-      "startDate": "Sept, 2021",
-      "endDate": "December, 2022",
+      "startDate": "Sep, 2021",
+      "endDate": "Dec, 2022",
       "experiences": ["Customer service", "Top salesman on mobile subscriptions"],
       "imageSrc": "history/gigantti.png"
     },
@@ -14,6 +14,14 @@
       "endDate": "Aug, 2023",
       "experiences": ["Organized events with other business partners", "Acquired sponsorships for the company"],
       "imageSrc": "history/outory.jpg"
+    },
+    {
+      "role": "React.js Developer",
+      "organisation": "Diilimurkku",
+      "startDate": "Nov, 2024",
+      "endDate": "Mar, 2025",
+      "experiences": ["Developing company's websites", "Jira for project management, Slack for communication and GitHub for CD/CI.", "HTML, CSS, TypeScript, Node.js"],
+      "imageSrc": "history/diilimurkku.jpg"
     }
     
   ]
