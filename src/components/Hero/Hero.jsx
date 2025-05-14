@@ -1,10 +1,18 @@
 import React from 'react'
 import { getImageUrl } from '../../utils'
 import styles from "./Hero.module.css"
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   return  (
-  <section className={styles.container}>
+<motion.section
+  className={styles.container}
+  id="hero"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
     <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Jami</h1>
         <p className={styles.description}>I have a Bachelor's degree in Business and Information Systems. I'm looking for a junior or entry-level position in IT. My preferred roles are Front-End or Full-Stack Developer. Feel free to check out my projects and certificates below, and contact me if you're interested!
@@ -16,6 +24,6 @@ export const Hero = () => {
         />
         <div className={styles.topBlur} />
         <div className={styles.bottomBlur} />
-  </section>
+</motion.section>
   )
 }
