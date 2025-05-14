@@ -1,43 +1,58 @@
-import React, { useState } from 'react'
-
-import styles from "./Navbar.module.css"
-import { getImageUrl } from "../../utils"
+import React, { useState, useEffect, useRef } from "react";
+import styles from "./Navbar.module.css";
+import { getImageUrl } from "../../utils";
+import { useScrollSpy } from "../../utils/useScrollSpy";
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef(null);
+    const sectionIds = ["about", "experience", "projects", "certificates", "contact"];
+    const activeId = useScrollSpy(sectionIds, 100);
 
-    return <nav className={styles.navbar}>
-        <a className={styles.title} href="/">Portfolio
-        </a>
-        <div className={styles.menu}>
-            <img className={styles.menuBtn} src={
-                menuOpen 
-                ? getImageUrl("nav/closeIcon.png")
-                : getImageUrl("nav/menuIcon.png")
-                }
-                 alt="menu-button"
-                 onClick={() => setMenuOpen(!menuOpen)}
-                 />
-            <ul
-                className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`} onClick={() => setMenuOpen(false)}
-            >
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                                <li>
-                    <a href="#certificates">Certificates</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>;
+    // Close menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
-}
+    return (
+        <nav className={styles.navbar} aria-label="Main Navigation">
+            <a className={styles.title} href="/">Portfolio</a>
+            <div className={styles.menu} ref={menuRef}>
+                <button
+                    className={styles.menuBtn}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <img
+                        src={
+                            menuOpen
+                                ? getImageUrl("nav/closeIcon.png")
+                                : getImageUrl("nav/menuIcon.png")
+                        }
+                        alt="menu icon"
+                    />
+                </button>
+                <ul
+                    className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
+                    onClick={() => setMenuOpen(false)}
+                >
+                     {sectionIds.map(id => (
+                        <li key={id}>
+                            <a href={`#${id}`} className={activeId === id ? styles.active : ""}>
+                                {id.charAt(0).toUpperCase() + id.slice(1)}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </nav>
+    );
+};

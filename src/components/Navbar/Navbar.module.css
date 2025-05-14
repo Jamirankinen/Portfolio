@@ -1,12 +1,14 @@
 @import "../../vars.css";
 
 .navbar {
-    position: relative;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg); /* Use background color from vars.css */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 61px;
-    z-index: 2;
+    z-index: 1000;
     margin: 0 10%;
 }
 
@@ -19,20 +21,41 @@
 
 .menu {
     display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menuBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.menuBtn img {
+    width: 30px;
+    height: 30px;
 }
 
 .menuItems {
     display: flex;
     gap: 47px;
     list-style: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .menuItems a {
     font-size: 25px;
     color: var(--color-text);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+.menuItems a:hover {
+    color: var(--color-primary); /* Highlight on hover with primary color */
+}
+
+/* Responsive */
 @media screen and (max-width: 830px) {
     .navbar {
         flex-direction: column;
@@ -51,7 +74,6 @@
 
     .menuBtn {
         display: block;
-        cursor: pointer;
     }
 
     .menuItems {
@@ -60,14 +82,19 @@
         align-items: center;
         gap: 13px;
         border-radius: 10px;
-        background: rgb(25, 55, 109);
-        background: linear-gradient(0deg, rgba(25, 55, 109, 0.2) 0%, rgba(25, 55, 109, 1) 100%);
+        backdrop-filter: blur(8px);
+        background-color: rgba(25, 55, 109, 0.8); /* Secondary color with opacity */
         padding: 24px 33px;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
     }
 
     .menuOpen {
         display: flex;
-        z-index: 1;
     }
+    
+    .menuItems a.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
 }
