@@ -7,9 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 61px;
+    padding: 20px 10%;
     z-index: 1000;
-    margin: 0 10%;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .title {
