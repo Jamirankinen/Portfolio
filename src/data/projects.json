@@ -2,7 +2,7 @@
     {
       "title": "Project Portfolio",
       "imageSrc": "projects/portfolio.png",
-      "description": "This is a project made to have a simple responsive resume online",
+      "description": "This is my latest online resume which is still in development",
       "skills": ["React", "HTML", "CSS", "Vite.js"],
       "demo": "https://portfolio-jami-rankinen.netlify.app",
       "source": ""
@@ -17,7 +17,7 @@
     {
       "title": "Project Chat app",
       "imageSrc": "projects/chat-app.png",
-      "description": "This is a chat application with chatting, chatgpt and dall-e features.",
+      "description": "This is a web application with chatting, chatgpt and dall-e features.",
       "skills": ["TypeScript", "Node", "Clerk", "Convex"],
       "demo": "https://chat-app-project-tau.vercel.app",
       "source": "https://github.com/Jamiiiiii/chat-app-project"
