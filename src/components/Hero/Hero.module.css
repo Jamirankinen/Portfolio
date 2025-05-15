@@ -144,5 +144,10 @@
   .content {
     align-items: center;
   }
+    /* Hide the blur elements on mobile for now*/
+  .topBlur,
+  .bottomBlur {
+    display: none;
+  }
 
 }
