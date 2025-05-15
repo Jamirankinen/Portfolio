@@ -110,9 +110,5 @@
   .content {
     align-items: center;
   }
-   .topBlur, .bottomBlur {
-        width: 60vw;
-        height: 60vw;
-        filter: blur(70px);
-    }
+
 }
