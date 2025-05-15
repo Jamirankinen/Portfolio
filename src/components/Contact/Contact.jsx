@@ -1,10 +1,18 @@
 import React from 'react'
 import { getImageUrl } from '../../utils'
 import styles from "./Contact.module.css"
+import { motion } from "framer-motion";
 
 export const Contact = () => {
   return (
-    <footer id='contact' className={styles.container}>
+    <motion.footer
+          className={styles.container}
+          id="contact"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
         <div className={styles.text}>
             <h2>Contact</h2>
             <p>Feel free to reach out!</p>
@@ -23,6 +31,6 @@ export const Contact = () => {
                 <a href="https://github.com/Jamiiiiii">github.com/Jamiiiiii</a>
             </li>
         </ul>
-    </footer>
+    </motion.footer>
   )
 }
