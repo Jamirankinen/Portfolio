@@ -77,7 +77,7 @@ export const Hero = () => {
         </motion.p>
         {/* Contact button */}
         <motion.a
-          href="mailto:jami34@windowslive.com"
+          href="mailto:jamuxi34@gmail.com"
           className={styles.contactBtn}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
