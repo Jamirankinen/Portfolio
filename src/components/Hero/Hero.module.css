@@ -102,7 +102,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 768px) {
   .container {
     flex-direction: column-reverse;
   }
@@ -110,4 +110,9 @@
   .content {
     align-items: center;
   }
+   .topBlur, .bottomBlur {
+        width: 60vw;
+        height: 60vw;
+        filter: blur(70px);
+    }
 }
