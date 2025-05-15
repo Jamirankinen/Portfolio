@@ -61,7 +61,7 @@ export const About = () => {
               className={styles.description}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={{
                 hidden: {},
                 visible: {
@@ -120,7 +120,7 @@ export const About = () => {
               className={styles.description}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={{
                 hidden: {},
                 visible: {
@@ -179,7 +179,7 @@ export const About = () => {
               className={styles.description}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={{
                 hidden: {},
                 visible: {
