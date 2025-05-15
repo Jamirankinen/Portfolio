@@ -79,9 +79,9 @@ export const Hero = () => {
         <motion.a
           href="mailto:jamuxi34@gmail.com"
           className={styles.contactBtn}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 4.1, duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
         >
           <span className={styles.marqueeText}>Contact me!</span>
         </motion.a>
@@ -91,9 +91,9 @@ export const Hero = () => {
         src={getImageUrl("hero/heroImage.png")}
         alt="Hero image of me"
         className={styles.heroImg}
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 4.5, duration: 0.6, ease: "easeOut" }}
+        transition={{ delay: 4.1, duration: 1, ease: "easeOut" }}
       />
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />

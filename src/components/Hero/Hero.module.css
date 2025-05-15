@@ -88,7 +88,14 @@
   width: 30%;
   z-index: 1;
   border-radius: 50%;
+/*
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+*/} 
 
+.heroImg:hover {
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
