@@ -1,101 +1,101 @@
 @import "../../vars.css";
 
 .navbar {
-    position: sticky;
-    top: 0;
-    background-color: var(--color-bg); /* Use background color from vars.css */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 10%;
-    z-index: 1000;
-    margin: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg); /* Use background color from vars.css */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  z-index: 1000;
+  margin: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-    font-size: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-text);
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
 }
 
 .menu {
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .menuBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
 }
 
 .menuBtn img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .menuItems {
-    display: flex;
-    gap: 47px;
-    list-style: none;
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 47px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .menuItems a {
-    font-size: 25px;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  font-size: 25px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .menuItems a:hover {
-    color: var(--color-primary); /* Highlight on hover with primary color */
+  color: var(--color-primary);
 }
 
 /* Responsive */
 @media screen and (max-width: 830px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .menu {
-        position: absolute;
-        right: 0;
-        margin-right: 10%;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 11px;
-        z-index: 3;
-    }
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
 
-    .menuBtn {
-        display: block;
-    }
+  .menuBtn {
+    display: block;
+  }
 
-    .menuItems {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 13px;
-        border-radius: 10px;
-        backdrop-filter: blur(8px);
-        background-color: rgba(25, 55, 109, 0.8); /* Secondary color with opacity */
-        padding: 24px 33px;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-        transition: all 0.3s ease-in-out;
-    }
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(25, 55, 109, 0.8); /* Secondary color with opacity */
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+  }
 
-    .menuOpen {
-        display: flex;
-    }
-    
-    .menuItems a.active {
+  .menuOpen {
+    display: flex;
+  }
+
+  .menuItems a.active {
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
-}
+  }
 }

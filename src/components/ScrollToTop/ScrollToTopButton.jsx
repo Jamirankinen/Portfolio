@@ -25,7 +25,7 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button onClick={scrollToTop} className={styles.scrollButton}>
         <img
-          src={getImageUrl("ScrollToTop/arrow_up.png")} 
+          src={getImageUrl("ScrollToTop/arrow_up.png")}
           alt="Scroll to top"
         />
       </button>

@@ -64,7 +64,7 @@
   animation: scrollLoop 7s linear infinite;
 }
 
-/* This creates the illusion of continuous scrolling by duplicating text */
+/* This creates the illusion of continuous scrolling by showing the second text below */
 .marqueeText::after {
   content: "Click me!";
   position: absolute;
@@ -82,18 +82,11 @@
   }
 }
 
-
-
 .heroImg {
   width: 30%;
   z-index: 1;
   border-radius: 50%;
-/*
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-*/} 
+}
 
 .heroImg:hover {
   animation-name: floating;
@@ -151,5 +144,4 @@
   .content {
     align-items: center;
   }
-
 }
