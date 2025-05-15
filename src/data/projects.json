@@ -3,7 +3,7 @@
       "title": "Project Portfolio",
       "imageSrc": "projects/portfolio.png",
       "description": "This is a project made to have a simple responsive resume online",
-      "skills": ["React", "HTML", "CSS"],
+      "skills": ["React", "HTML", "CSS", "Vite.js"],
       "demo": "https://portfolio-jami-rankinen.netlify.app",
       "source": ""
     },
