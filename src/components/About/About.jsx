@@ -25,7 +25,7 @@ export const About = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className={styles.title}>About</h2>
+      <h2 className={styles.title}>About me</h2>
       <div className={styles.content}></div>
       <ul className={styles.aboutItems}>
         <li className={styles.aboutItem}>
