@@ -40,15 +40,49 @@
 }
 
 .contactBtn {
-  text-decoration: none;
+  position: relative;
+  display: inline-block;
   background-color: var(--color-primary);
   color: var(--color-text);
   border-radius: 100px;
   font-size: 30px;
   font-weight: 600;
-  padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 17px 32px;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 75px;
 }
+
+.marqueeText {
+  display: inline-block;
+  position: relative;
+  animation: none;
+}
+
+.contactBtn:hover .marqueeText {
+  animation: scrollLoop 7s linear infinite;
+}
+
+/* This creates the illusion of continuous scrolling by duplicating text */
+.marqueeText::after {
+  content: "Click me!";
+  position: absolute;
+  left: 100%;
+  padding-left: 2rem;
+  white-space: nowrap;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 
 .heroImg {
   width: 30%;

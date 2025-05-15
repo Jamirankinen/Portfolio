@@ -74,19 +74,19 @@ export const Hero = () => {
               {word}
             </motion.span>
           ))}
-          </motion.p>
+        </motion.p>
         {/* Contact button */}
         <motion.a
           href="mailto:jami34@windowslive.com"
           className={styles.contactBtn}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 4.1, duration: 1, ease: "easeOut" }} // adjust delay to match your paragraph length
+          transition={{ delay: 4.1, duration: 1, ease: "easeOut" }}
         >
-          Contact me by e-mail
+          <span className={styles.marqueeText}>Contact me!</span>
         </motion.a>
       </div>
-        {/* Hero image */}
+      {/* Hero image */}
       <motion.img
         src={getImageUrl("hero/heroImage.png")}
         alt="Hero image of me"
