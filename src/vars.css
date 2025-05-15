@@ -1,11 +1,18 @@
 :root {
-    /* Colors */
-    --color-text: #fff;
-    --color-primary: #576cbc;
-    --color-secondary: #19376d;
-    --color-dark: #0b2447;
-    --color-bg: #04152d;
+  /* Colors */
+  --color-text: #fff;
+  --color-primary: #576cbc;
+  --color-secondary: #19376d;
+  --color-dark: #0b2447;
+  --color-bg: #04152d;
 
-    /* Fonts */
-    --font-roboto: "Roboto";
+  /* Fonts */
+  --font-roboto: "Roboto";
+  /* Navbar Scrolling */
+  --scroll-offset: 100px;
+}
+@media screen and (max-width: 830px) {
+  :root {
+    --scroll-offset: 70px;
+  }
 }
