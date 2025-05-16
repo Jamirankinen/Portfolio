@@ -15,7 +15,7 @@ export const Experience = () => {
     if (lineRef.current && lastDotRef.current) {
       const lineTop = lineRef.current.getBoundingClientRect().top;
       const dotTop = lastDotRef.current.getBoundingClientRect().top;
-      setLineHeight(dotTop - lineTop + 5); 
+      setLineHeight(dotTop - lineTop + 10); 
     }
   }, []);
 
