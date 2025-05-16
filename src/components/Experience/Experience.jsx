@@ -6,7 +6,7 @@ import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
 
 export const Experience = () => {
-   const totalLineHeight = 210 * (history.length - 1); // Estimate height for the full line
+   const totalLineHeight = 207 * (history.length - 1); // Estimate height for the full line
 
   const lineVariants = {
     hidden: { height: 0 },
@@ -21,9 +21,15 @@ export const Experience = () => {
   };
 
   const dotVariants = {
-    hidden: { scale: 0 },
-    visible: (index) => ({
-      scale: 1,
+  hidden: { scale: 0, opacity: 0 },
+  visible: (index) => ({
+    scale: 1.2, // slight bounce
+    opacity: 1,
+    boxShadow: [
+      "0 0 0px var(--color-primary)", // start
+      "0 0 12px var(--color-primary)", // glow in
+      "0 0 8px var(--color-primary)",  // settle
+    ],
       transition: {
         delay: 0.3 + index * 1.5,
         duration: 0.5,
