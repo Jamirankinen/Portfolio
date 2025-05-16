@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
@@ -7,12 +7,22 @@ import styles from "./Experience.module.css";
 import { AnimatedText } from "../Animations/AnimatedText";
 
 export const Experience = () => {
-  const totalLineHeight = 218 * (history.length - 1);
+  const lineRef = useRef(null);
+  const lastDotRef = useRef(null);
+  const [lineHeight, setLineHeight] = useState(0);
+
+  useEffect(() => {
+    if (lineRef.current && lastDotRef.current) {
+      const lineTop = lineRef.current.getBoundingClientRect().top;
+      const dotTop = lastDotRef.current.getBoundingClientRect().top;
+      setLineHeight(dotTop - lineTop ); // 20 for padding
+    }
+  }, []);
 
   const lineVariants = {
     hidden: { height: 0 },
     visible: {
-      height: totalLineHeight,
+      height: lineHeight,
       transition: {
         delay: 0.5,
         duration: 3,
@@ -61,18 +71,24 @@ export const Experience = () => {
 
         <div className={styles.timeline}>
           {/* Animated single vertical line */}
-          <motion.div className={styles.timelineLine} variants={lineVariants} />
+          <motion.div
+            className={styles.timelineLine}
+            variants={lineVariants}
+            ref={lineRef}
+          />
 
           {history.map((item, index) => (
             <div key={index} className={styles.timelineItem}>
               <div className={styles.timelineContent}>
                 <motion.div
+                  ref={index === history.length - 1 ? lastDotRef : null}
                   className={`${styles.timelineDot} ${
                     styles[`timelineDot${index + 1}`]
                   }`}
                   custom={index}
                   variants={dotVariants}
                 />
+
                 <div className={styles.timelineDetails}>
                   <h3>
                     <AnimatedText
