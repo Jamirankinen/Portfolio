@@ -4,9 +4,10 @@ import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
+import { AnimatedText } from "../Animations/AnimatedText";
 
 export const Experience = () => {
-   const totalLineHeight = 207 * (history.length - 1); // Estimate height for the full line
+  const totalLineHeight = 218 * (history.length - 1);
 
   const lineVariants = {
     hidden: { height: 0 },
@@ -21,15 +22,15 @@ export const Experience = () => {
   };
 
   const dotVariants = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: (index) => ({
-    scale: 1.2, // slight bounce
-    opacity: 1,
-    boxShadow: [
-      "0 0 0px var(--color-primary)", // start
-      "0 0 12px var(--color-primary)", // glow in
-      "0 0 8px var(--color-primary)",  // settle
-    ],
+    hidden: { scale: 0, opacity: 0 },
+    visible: (index) => ({
+      scale: 1.2, // slight bounce
+      opacity: 1,
+      boxShadow: [
+        "0 0 0px var(--color-primary)", // start
+        "0 0 12px var(--color-primary)", // glow in
+        "0 0 8px var(--color-primary)", // settle
+      ],
       transition: {
         delay: 0.3 + index * 1.5,
         duration: 0.5,
@@ -38,7 +39,7 @@ export const Experience = () => {
     }),
   };
   return (
-        <motion.section
+    <motion.section
       className={styles.container}
       id="experience"
       initial="hidden"
@@ -60,25 +61,55 @@ export const Experience = () => {
 
         <div className={styles.timeline}>
           {/* Animated single vertical line */}
-          <motion.div
-            className={styles.timelineLine}
-            variants={lineVariants}
-          />
+          <motion.div className={styles.timelineLine} variants={lineVariants} />
 
           {history.map((item, index) => (
             <div key={index} className={styles.timelineItem}>
               <div className={styles.timelineContent}>
                 <motion.div
-                  className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}
+                  className={`${styles.timelineDot} ${
+                    styles[`timelineDot${index + 1}`]
+                  }`}
                   custom={index}
                   variants={dotVariants}
                 />
                 <div className={styles.timelineDetails}>
-                  <h3>{`${item.role}, ${item.organisation}`}</h3>
-                  <p>{`${item.startDate} - ${item.endDate}`}</p>
+                  <h3>
+                    <AnimatedText
+                      text={`${item.role}, ${item.organisation}`}
+                      startDelay={0.3 + index * 1.5}
+                      stagger={0.04}
+                      duration={0.5}
+                    />
+                  </h3>
+                  <p>
+                    <AnimatedText
+                      text={`${item.startDate} - ${item.endDate}`}
+                      startDelay={0.3 + index * 1.5 + 0.2}
+                      stagger={0.03}
+                      duration={0.4}
+                    />
+                  </p>
                   <ul>
                     {item.experiences.map((exp, id) => (
-                      <li key={id}>{exp}</li>
+                      <div key={id} className={styles.bulletItem}>
+                        <motion.div
+                          className={styles.bulletDot}
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{
+                            delay: 0.3 + index * 1.5 + 0.4 + id * 0.3,
+                            duration: 0.3,
+                            ease: "easeOut",
+                          }}
+                        />
+                        <AnimatedText
+                          text={exp}
+                          startDelay={0.3 + index * 1.5 + 0.4 + id * 0.3}
+                          stagger={0.02}
+                          duration={0.3}
+                        />
+                      </div>
                     ))}
                   </ul>
                 </div>

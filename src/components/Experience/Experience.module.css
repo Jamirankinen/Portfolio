@@ -132,7 +132,29 @@
   font-size: 18px;
   padding-left: 0;
 }
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
 
+.bulletDot {
+  min-width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInDot 0.3s ease-out forwards;
+}
+@keyframes fadeInDot {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 @media screen and (max-width: 830px) {
@@ -150,7 +172,6 @@
 
   .timeline {
     width: 100%;
-    border-left: 3px solid var(--color-primary);
   }
 
   .timelineContent {
