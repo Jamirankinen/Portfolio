@@ -20,7 +20,7 @@ export const Contact = () => {
       <ul className={styles.links}>
         <li className={styles.link}>
           <img src={getImageUrl("contact/emailIcon.png")} alt="Email Icon" />
-          <a href="mailto:jamuxi34@gmail.com">jamuxi34@gmail.com</a>
+          <a href="mailto:jamuxi34@gmail.com">Mail here!</a>
         </li>
         <li className={styles.link}>
           <img
@@ -28,12 +28,12 @@ export const Contact = () => {
             alt="Linkedin Icon"
           />
           <a href="https://www.linkedin.com/in/jami-rankinen-6322612b9">
-            linkedin.com/jami-rankinen
+            LinkedIn too!
           </a>
         </li>
         <li className={styles.link}>
           <img src={getImageUrl("contact/githubIcon.png")} alt="GitHub Icon" />
-          <a href="https://github.com/Jamiiiiii">github.com/Jamiiiiii</a>
+          <a href="https://github.com/Jamiiiiii">Last but not least GitHub!</a>
         </li>
       </ul>
     </motion.footer>
