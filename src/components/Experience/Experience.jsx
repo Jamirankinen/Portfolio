@@ -15,7 +15,7 @@ export const Experience = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className={styles.title}>Experience</h2>
+      <h2 className={styles.title}>Tech stack & Experience</h2>
       <div className={styles.content}>
         <div className={styles.skills}>
           {skills.map((skill, id) => {
@@ -29,27 +29,25 @@ export const Experience = () => {
             );
           })}
         </div>
-        <ul className={styles.history}>
-          {history.map((historyItem, id) => {
-            return (
-              <li key={id} className={styles.historyItem}>
-                <img
-                  src={getImageUrl(historyItem.imageSrc)}
-                  alt={`${historyItem.organisation} Logo`}
-                />
-                <div className={styles.historyItemDetails}>
-                  <h3>{`${historyItem.role}, ${historyItem.organisation}`}</h3>
-                  <p>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
+        <div className={styles.timeline}>
+          {history.map((item, index) => (
+            <div key={index} className={styles.timelineItem}>
+              <div className={styles.timelineContent}>
+
+                <div className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}></div>
+                <div className={styles.timelineDetails}>
+                  <h3>{`${item.role}, ${item.organisation}`}</h3>
+                  <p>{`${item.startDate} - ${item.endDate}`}</p>
                   <ul>
-                    {historyItem.experiences.map((experience, id) => {
-                      return <li key={id}>{experience}</li>;
-                    })}
+                    {item.experiences.map((exp, id) => (
+                      <li key={id}>{exp}</li>
+                    ))}
                   </ul>
                 </div>
-              </li>
-            );
-          })}
-        </ul>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </motion.section>
   );

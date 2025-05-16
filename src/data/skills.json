@@ -8,24 +8,20 @@
       "imageSrc": "skills/css.png"
     },
     {
-      "title": "React",
-      "imageSrc": "skills/react.png"
+      "title": "JavaScript",
+      "imageSrc": "skills/javascript.png"
     },
     {
       "title": "Node",
       "imageSrc": "skills/node.png"
     },
     {
-      "title": "JavaScript",
-      "imageSrc": "skills/javascript.png"
+      "title": "React",
+      "imageSrc": "skills/react.png"
     },
     {
       "title": "TypeScript",
       "imageSrc": "skills/typescript.webp"
-    },
-    {
-      "title": "GitHub",
-      "imageSrc": "skills/GitHub.png"
     },
     {
       "title": "Jira",

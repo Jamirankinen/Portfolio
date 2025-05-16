@@ -4,7 +4,7 @@
       "organisation": "Gigantti",
       "startDate": "Sep, 2021",
       "endDate": "Dec, 2022",
-      "experiences": ["Customer service", "Top salesman on mobile subscriptions"],
+      "experiences": ["One of the top salesman", "Customer service specialist"],
       "imageSrc": "history/gigantti.png"
     },
     {
@@ -12,15 +12,15 @@
       "organisation": "Outo ry",
       "startDate": "Jan, 2022",
       "endDate": "Aug, 2023",
-      "experiences": ["Organized events with other business partners", "Acquired sponsorships for the company"],
+      "experiences": ["Organized events with other business partners", "Cooperation with other coompanies"],
       "imageSrc": "history/outory.jpg"
     },
     {
-      "role": "React.js Developer",
+      "role": "React.js Developer intern",
       "organisation": "Diilimurkku",
       "startDate": "Nov, 2024",
       "endDate": "Mar, 2025",
-      "experiences": ["Developing company's websites", "Jira for project management, Slack for communication and GitHub for CD/CI.", "HTML, CSS, TypeScript, Node.js"],
+      "experiences": ["Developing company's websites", "Jira for project management", "Slack for communication and GitHub for CD/CI."],
       "imageSrc": "history/diilimurkku.jpg"
     }
     

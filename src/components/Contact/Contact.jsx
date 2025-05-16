@@ -14,8 +14,8 @@ export const Contact = () => {
       viewport={{ once: true }}
     >
       <div className={styles.text}>
-        <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
+        <h2>Contact me -> </h2>
+        <p>Also check my socials!</p>
       </div>
       <ul className={styles.links}>
         <li className={styles.link}>
