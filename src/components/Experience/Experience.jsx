@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion,useInView  } from "framer-motion";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
@@ -15,7 +15,7 @@ export const Experience = () => {
     if (lineRef.current && lastDotRef.current) {
       const lineTop = lineRef.current.getBoundingClientRect().top;
       const dotTop = lastDotRef.current.getBoundingClientRect().top;
-      setLineHeight(dotTop - lineTop ); // 20 for padding
+      setLineHeight(dotTop - lineTop + 5); 
     }
   }, []);
 
@@ -78,6 +78,7 @@ export const Experience = () => {
           />
 
           {history.map((item, index) => (
+            
             <div key={index} className={styles.timelineItem}>
               <div className={styles.timelineContent}>
                 <motion.div
