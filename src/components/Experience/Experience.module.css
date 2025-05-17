@@ -47,7 +47,7 @@
   gap: 11px;
 }
 .skillImageContainer {
-  background-color: var(--color-secondary);
+  background-color: var(--color-dark);
   border-radius: 100%;
   display: flex;
   align-items: center;
