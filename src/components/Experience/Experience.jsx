@@ -164,7 +164,7 @@ export const Experience = () => {
                           className={styles.bulletText}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: true, amount: 0.6 }}
+                          viewport={{ once: true, amount: 0.2 }}
                           variants={{
                             hidden: {},
                             visible: {
