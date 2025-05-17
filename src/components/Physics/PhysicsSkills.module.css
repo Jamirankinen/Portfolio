@@ -1,0 +1,64 @@
+.physicsContainer {
+  position: relative;
+  width: 90vw;
+  max-width: 450px;
+  height: 60vw;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-bg-secondary);
+  margin: 0 auto;
+}
+
+.skillItem {
+  position: absolute;
+  width: 12vw;          /* scale skill size relative to viewport */
+  max-width: 50px;      /* max size on desktop */
+  text-align: center;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  user-select: none;
+  z-index: 2;
+}
+
+.skillImageContainer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+   display: flex;              /* enable flexbox */
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  padding: 10%;      
+}
+
+.skillImageContainer img {
+  max-width: 80%;             /* make image smaller than container */
+  max-height: 80%;            /* keep image inside container */
+  object-fit: contain;        /* maintain aspect ratio and contain inside box */
+  display: block;
+  margin: 0 auto;
+}
+
+.skillItem p {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  word-break: break-word;  /* prevent overflow on narrow containers */
+}
+
+@media (max-width: 400px) {
+  .physicsContainer {
+    height: 50vw;
+  }
+
+  .skillItem {
+    width: 14vw;  /* slightly bigger skill icons on very small screens */
+  }
+
+  .skillItem p {
+    font-size: 0.75rem;
+  }
+}
