@@ -61,9 +61,7 @@
 
 .contactBtn:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.3),
-    0 0 25px rgba(100, 150, 255, 0.4),
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(100, 150, 255, 0.4),
     inset 0 0 12px rgba(100, 150, 255, 0.25);
 }
 
@@ -99,6 +97,9 @@
   width: 30%;
   z-index: 1;
   border-radius: 50%;
+  /* NEW shadow + glow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(100, 150, 255, 0.15),
+    inset 0 0 8px rgba(100, 150, 255, 0.08);
 }
 
 .heroImg:hover {
@@ -106,6 +107,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+
+  /* Enhance shadow on hover */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25), 0 0 30px rgba(100, 150, 255, 0.3),
+    inset 0 0 12px rgba(100, 150, 255, 0.1);
 }
 
 @keyframes floating {
