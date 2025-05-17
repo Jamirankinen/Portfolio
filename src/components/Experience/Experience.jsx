@@ -4,6 +4,7 @@ import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
+import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
 export const Experience = () => {
   const lineRef = useRef(null);
@@ -56,16 +57,35 @@ export const Experience = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <h2 className={styles.title}>Tech stack & Experience</h2>
+      <AnimatedHeading text="Tech stack & Experience" className={styles.title} />
       <div className={styles.content}>
         <div className={styles.skills}>
-          {skills.map((skill, id) => (
-            <div className={styles.skill} key={id}>
+          {skills.map((skill, index) => (
+            <motion.div
+              className={styles.skill}
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: (i) => ({
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.6 + i * 0.1, // 🔧 Adjust delay per item
+                    duration: 0.4, // 🔧 Adjust animation speed
+                    ease: "easeOut", // 🔧 Adjust easing
+                  },
+                }),
+              }}
+            >
               <div className={styles.skillImageContainer}>
                 <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
               </div>
               <p>{skill.title}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -81,7 +101,9 @@ export const Experience = () => {
               <div className={styles.timelineContent}>
                 <motion.div
                   ref={index === history.length - 1 ? lastDotRef : null}
-                  className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}
+                  className={`${styles.timelineDot} ${
+                    styles[`timelineDot${index + 1}`]
+                  }`}
                   custom={index}
                   variants={dotVariants}
                 />
@@ -102,18 +124,20 @@ export const Experience = () => {
                       },
                     }}
                   >
-                    {`${item.role}, ${item.organisation}`.split("").map((char, i) => (
-                      <motion.span
-                        key={`role-org-${i}`}
-                        style={{ display: "inline-block" }}
-                        variants={{
-                          hidden: { opacity: 0, x: -10 },
-                          visible: { opacity: 1, x: 0 },
-                        }}
-                      >
-                        {char === " " ? "\u00A0" : char}
-                      </motion.span>
-                    ))}
+                    {`${item.role}, ${item.organisation}`
+                      .split("")
+                      .map((char, i) => (
+                        <motion.span
+                          key={`role-org-${i}`}
+                          style={{ display: "inline-block" }}
+                          variants={{
+                            hidden: { opacity: 0, x: -10 },
+                            visible: { opacity: 1, x: 0 },
+                          }}
+                        >
+                          {char === " " ? "\u00A0" : char}
+                        </motion.span>
+                      ))}
                   </motion.h3>
 
                   {/* Dates */}
@@ -131,18 +155,20 @@ export const Experience = () => {
                       },
                     }}
                   >
-                    {`${item.startDate} - ${item.endDate}`.split("").map((char, i) => (
-                      <motion.span
-                        key={`date-char-${i}`}
-                        style={{ display: "inline-block" }}
-                        variants={{
-                          hidden: { opacity: 0, x: -10 },
-                          visible: { opacity: 1, x: 0 },
-                        }}
-                      >
-                        {char === " " ? "\u00A0" : char}
-                      </motion.span>
-                    ))}
+                    {`${item.startDate} - ${item.endDate}`
+                      .split("")
+                      .map((char, i) => (
+                        <motion.span
+                          key={`date-char-${i}`}
+                          style={{ display: "inline-block" }}
+                          variants={{
+                            hidden: { opacity: 0, x: -10 },
+                            visible: { opacity: 1, x: 0 },
+                          }}
+                        >
+                          {char === " " ? "\u00A0" : char}
+                        </motion.span>
+                      ))}
                   </motion.p>
 
                   {/* Bullet points */}
