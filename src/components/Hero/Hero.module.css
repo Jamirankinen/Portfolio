@@ -42,7 +42,7 @@
 .contactBtn {
   position: relative;
   display: inline-block;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   color: var(--color-text);
   border-radius: 100px;
   font-size: 30px;
