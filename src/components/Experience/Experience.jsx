@@ -87,7 +87,7 @@ export const Experience = () => {
                 />
 
                 <div className={styles.timelineDetails}>
-                  {/* Role + Organisation */}
+                  {/* Combined Role and Organisation with animated comma */}
                   <motion.h3
                     initial="hidden"
                     whileInView="visible"
@@ -102,27 +102,16 @@ export const Experience = () => {
                       },
                     }}
                   >
-                    {item.role.split("").map((char, i) => (
+                    {`${item.role}, ${item.organisation}`.split("").map((char, i) => (
                       <motion.span
-                        key={`role-${i}`}
+                        key={`role-org-${i}`}
+                        style={{ display: "inline-block" }}
                         variants={{
                           hidden: { opacity: 0, x: -10 },
                           visible: { opacity: 1, x: 0 },
                         }}
                       >
-                        {char}
-                      </motion.span>
-                    ))}
-                    <span>, </span>
-                    {item.organisation.split("").map((char, i) => (
-                      <motion.span
-                        key={`org-${i}`}
-                        variants={{
-                          hidden: { opacity: 0, x: -10 },
-                          visible: { opacity: 1, x: 0 },
-                        }}
-                      >
-                        {char}
+                        {char === " " ? "\u00A0" : char}
                       </motion.span>
                     ))}
                   </motion.h3>
@@ -164,7 +153,11 @@ export const Experience = () => {
                           className={styles.bulletDot}
                           initial={{ scale: 0, opacity: 0 }}
                           whileInView={{ scale: 1, opacity: 1 }}
-                          transition={{ delay: 1.7 + index * 1.5, duration: 0.3, ease: "easeOut" }}
+                          transition={{
+                            delay: 1.7 + index * 1.5,
+                            duration: 0.5,
+                            ease: "easeOut",
+                          }}
                           viewport={{ once: true, amount: 0.5 }}
                         />
                         <motion.p
