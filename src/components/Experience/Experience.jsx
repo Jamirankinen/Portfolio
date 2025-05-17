@@ -5,7 +5,6 @@ import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
-import PhysicsSkills from "../Physics/PhysicsSkills";
 
 export const Experience = () => {
   const lineRef = useRef(null);
@@ -58,9 +57,40 @@ export const Experience = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <AnimatedHeading text="Tech stack & Experience" className={styles.title} />
+      <AnimatedHeading
+        text="Tech stack & Experience"
+        className={styles.title}
+      />
       <div className={styles.content}>
-        <PhysicsSkills />
+        <div className={styles.skills}>
+          {skills.map((skill, index) => (
+            <motion.div
+              className={styles.skill}
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: (i) => ({
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.6 + i * 0.1, // 🔧 Adjust delay per item
+                    duration: 0.4, // 🔧 Adjust animation speed
+                    ease: "easeOut", // 🔧 Adjust easing
+                  },
+                }),
+              }}
+            >
+              <div className={styles.skillImageContainer}>
+                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+              </div>
+              <p>{skill.title}</p>
+            </motion.div>
+          ))}
+        </div>
 
         <div className={styles.timeline}>
           <motion.div
