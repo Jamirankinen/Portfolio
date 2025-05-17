@@ -1,10 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion,useInView  } from "framer-motion";
+import { motion } from "framer-motion";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
-import { AnimatedText } from "../Animations/AnimatedText";
 
 export const Experience = () => {
   const lineRef = useRef(null);
@@ -15,7 +14,7 @@ export const Experience = () => {
     if (lineRef.current && lastDotRef.current) {
       const lineTop = lineRef.current.getBoundingClientRect().top;
       const dotTop = lastDotRef.current.getBoundingClientRect().top;
-      setLineHeight(dotTop - lineTop + 10); 
+      setLineHeight(dotTop - lineTop + 10);
     }
   }, []);
 
@@ -34,12 +33,12 @@ export const Experience = () => {
   const dotVariants = {
     hidden: { scale: 0, opacity: 0 },
     visible: (index) => ({
-      scale: 1.2, // slight bounce
+      scale: 1.2,
       opacity: 1,
       boxShadow: [
-        "0 0 0px var(--color-primary)", // start
-        "0 0 12px var(--color-primary)", // glow in
-        "0 0 8px var(--color-primary)", // settle
+        "0 0 0px var(--color-primary)",
+        "0 0 12px var(--color-primary)",
+        "0 0 8px var(--color-primary)",
       ],
       transition: {
         delay: 0.3 + index * 1.5,
@@ -48,6 +47,7 @@ export const Experience = () => {
       },
     }),
   };
+
   return (
     <motion.section
       className={styles.container}
@@ -70,7 +70,6 @@ export const Experience = () => {
         </div>
 
         <div className={styles.timeline}>
-          {/* Animated single vertical line */}
           <motion.div
             className={styles.timelineLine}
             variants={lineVariants}
@@ -78,54 +77,124 @@ export const Experience = () => {
           />
 
           {history.map((item, index) => (
-            
             <div key={index} className={styles.timelineItem}>
               <div className={styles.timelineContent}>
                 <motion.div
                   ref={index === history.length - 1 ? lastDotRef : null}
-                  className={`${styles.timelineDot} ${
-                    styles[`timelineDot${index + 1}`]
-                  }`}
+                  className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}
                   custom={index}
                   variants={dotVariants}
                 />
 
                 <div className={styles.timelineDetails}>
-                  <h3>
-                    <AnimatedText
-                      text={`${item.role}, ${item.organisation}`}
-                      startDelay={0.3 + index * 1.5}
-                      stagger={0.04}
-                      duration={0.5}
-                    />
-                  </h3>
-                  <p>
-                    <AnimatedText
-                      text={`${item.startDate} - ${item.endDate}`}
-                      startDelay={0.3 + index * 1.5 + 0.2}
-                      stagger={0.03}
-                      duration={0.4}
-                    />
-                  </p>
+                  {/* Role + Organisation */}
+                  <motion.h3
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={{
+                      hidden: {},
+                      visible: {
+                        transition: {
+                          delayChildren: 0.8 + index * 1.4,
+                          staggerChildren: 0.06,
+                        },
+                      },
+                    }}
+                  >
+                    {item.role.split("").map((char, i) => (
+                      <motion.span
+                        key={`role-${i}`}
+                        variants={{
+                          hidden: { opacity: 0, x: -10 },
+                          visible: { opacity: 1, x: 0 },
+                        }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    <span>, </span>
+                    {item.organisation.split("").map((char, i) => (
+                      <motion.span
+                        key={`org-${i}`}
+                        variants={{
+                          hidden: { opacity: 0, x: -10 },
+                          visible: { opacity: 1, x: 0 },
+                        }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.h3>
+
+                  {/* Dates */}
+                  <motion.p
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.7 }}
+                    variants={{
+                      hidden: {},
+                      visible: {
+                        transition: {
+                          delayChildren: 1.2 + index * 1.5,
+                          staggerChildren: 0.05,
+                        },
+                      },
+                    }}
+                  >
+                    {`${item.startDate} - ${item.endDate}`.split("").map((char, i) => (
+                      <motion.span
+                        key={`date-char-${i}`}
+                        style={{ display: "inline-block" }}
+                        variants={{
+                          hidden: { opacity: 0, x: -10 },
+                          visible: { opacity: 1, x: 0 },
+                        }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+
+                  {/* Bullet points */}
                   <ul>
                     {item.experiences.map((exp, id) => (
                       <div key={id} className={styles.bulletItem}>
                         <motion.div
                           className={styles.bulletDot}
                           initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{
-                            delay: 0.3 + index * 1.5 + 0.4 + id * 0.3,
-                            duration: 0.3,
-                            ease: "easeOut",
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 1.7 + index * 1.5, duration: 0.3, ease: "easeOut" }}
+                          viewport={{ once: true, amount: 0.5 }}
+                        />
+                        <motion.p
+                          className={styles.bulletText}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, amount: 0.6 }}
+                          variants={{
+                            hidden: {},
+                            visible: {
+                              transition: {
+                                delayChildren: 1.8 + index * 1.5 + id * 0.15,
+                                staggerChildren: 0.05,
+                              },
+                            },
                           }}
-                        />
-                        <AnimatedText
-                          text={exp}
-                          startDelay={0.3 + index * 1.5 + 0.4 + id * 0.3}
-                          stagger={0.02}
-                          duration={0.3}
-                        />
+                        >
+                          {exp.split("").map((char, i) => (
+                            <motion.span
+                              key={`exp-char-${index}-${id}-${i}`}
+                              style={{ display: "inline-block" }}
+                              variants={{
+                                hidden: { opacity: 0, x: -10 },
+                                visible: { opacity: 1, x: 0 },
+                              }}
+                            >
+                              {char === " " ? "\u00A0" : char}
+                            </motion.span>
+                          ))}
+                        </motion.p>
                       </div>
                     ))}
                   </ul>
