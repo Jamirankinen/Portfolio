@@ -1,65 +1,182 @@
 @import "../../vars.css";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
+.card {
+  width: 320px;
+  height: 420px;
+  perspective: 1500px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 8px;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
   box-shadow: 0 16px 14px 0 #04152d;
-  padding: 18px 24px;
-  max-width: 345px;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* The whole card flips 180deg on Y axis */
+.card.flipped {
+  transform: rotateY(180deg);
+  box-shadow: none !important; /* Remove shadow during flip */
+}
+
+/* Front and back side both absolutely positioned, backface hidden */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-text);
+  /* Remove shadows from front/back themselves */
+  box-shadow: none;
+}
+
+/* Front faces viewer normally */
+.front {
+  transform: rotateY(0deg);
+  z-index: 2; /* on top when not flipped */
+  box-shadow: 0 16px 14px 0 #04152d;
+}
+
+/* Back is rotated so it’s hidden behind front */
+.back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  padding-top: 0; /* Remove or reduce padding */
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering - already there */
+  text-align: center; /* center text inside paragraphs */
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+
 .image {
-  margin-bottom: 26px;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  user-select: none;
+  pointer-events: none;
 }
 
 .title {
   font-size: 25px;
   font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.date {
+  font-size: 16px;             
+  font-weight: 500;            
+  color: var(--color-text); 
+  font-family: 'Inter', sans-serif; 
+  margin-bottom: 16px;         
+  letter-spacing: 0.05em;      
+  text-transform: uppercase;   
 }
 
 .description {
-  margin-top: 6px;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  flex-grow: 0;
 }
 
 .skills {
-  width: 100%;
-  margin-top: 14px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 6px;
   list-style: none;
+  margin-bottom: 24px;
+  justify-content: center;
 }
 
 .skill {
-  font-size: 25px;
-  font-weight: 400;
-  border-radius: 100px;
   background: var(--color-dark);
-  padding: 2px 22px;
+  padding: 6px 18px;
+  font-size: 16px;
+  border-radius: 100px;
+  font-weight: 400;
 }
 
 .links {
-  width: 100%;
-  margin-top: 26px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 100%;
 }
 
 .link {
-  text-decoration: none;
-  color: var(--color-text);
-  font-size: 30px;
-  font-weight: 600;
-  border-radius: 100px;
   background: var(--color-primary);
-  padding: 1px 22px;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
 .link:hover {
   background-color: var(--color-dark);
+}
+
+/* Hide shadows during flipping animation */
+.card:hover,
+.card.flipped {
+  box-shadow: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: 280px;
+    height: 380px;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .skill {
+    font-size: 14px;
+    padding: 4px 14px;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 6px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 90vw;
+    height: 360px;
+  }
 }
