@@ -85,13 +85,11 @@
 .date {
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-accent); 
-  margin-top: -12px;           
+  color: var(--color-accent);         
   margin-bottom: 8px;
   opacity: 0.8;               
   font-family: 'Inter', sans-serif; 
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   text-align: center;          
 }
 
