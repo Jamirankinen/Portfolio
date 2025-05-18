@@ -1,23 +1,29 @@
 [
     {
-      "title": "Project Portfolio",
+      "title": "Portfolio",
+      "startDate": "Sep, 2021",
+      "endDate": "Dec, 2022",
       "imageSrc": "projects/portfolio.png",
-      "description": "This is my latest online resume which is still in development",
+      "description": "This is my latest online resume which is still in development, Hope you enjoy it!",
       "skills": ["React", "HTML", "CSS", "Vite.js"],
       "demo": "https://portfolio-jami-rankinen.netlify.app",
       "source": ""
     },
     {
-      "title": "Project Mobile app",
+      "title": "First Mobile app",
+      "startDate": "Sep, 2021",
+      "endDate": "Dec, 2022",
       "imageSrc": "projects/mobile_app.png",
-      "description": "This is my first mobile application that i made in school ",
-      "skills": ["React", "Node", "Sass"],
+      "description": "This was my first app made with react-native, focusing on functionality with very simple CSS.",
+      "skills": ["React Native", "Node", "Sass" ,"JavaScript"],
       "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
     },
     {
-      "title": "Project Chat app",
+      "title": "Chat app",
+      "startDate": "Sep, 2021",
+      "endDate": "Dec, 2022",
       "imageSrc": "projects/chat-app.png",
-      "description": "This is a web application with chatting, chatgpt and dall-e features.",
+      "description": "This was a web application with chatting, chatgpt and dall-e features. Made it with very simple styling close to whatsapp's styles.",
       "skills": ["TypeScript", "Node", "Clerk", "Convex"],
       "demo": "https://chat-app-project-tau.vercel.app",
       "source": "https://github.com/Jamiiiiii/chat-app-project"
