@@ -1,25 +1,58 @@
 import React from "react";
 import styles from "./Projects.module.css";
 import projects from "../../data/projects.json";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectSlide } from "./ProjectSlide";
 import { motion } from "framer-motion";
+import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
 export const Projects = () => {
+  // Customize individual delays for each part of each project
+  const animationDelays = [
+    {
+      image: 0.4,
+      content: 0.8,
+      title: 1.0,
+      description: 1.2,
+      skills: 1.4,
+      links: 1.6
+    },
+    {
+      image: 0.3,
+      content: 0.6,
+      title: 0.8,
+      description: 1.0,
+      skills: 1.2,
+      links: 1.4
+    },
+    {
+      image: 0.5,
+      content: 0.9,
+      title: 1.1,
+      description: 1.3,
+      skills: 1.5,
+      links: 1.7
+    }
+  ];
+
   return (
-    <motion.section
+    <section
       className={styles.container}
       id="projects"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
     >
-      <h2 className={styles.title}>Projects</h2>
-      <div className={styles.projects}>
-        {projects.map((project, id) => {
-          return <ProjectCard key={id} project={project} />;
-        })}
+      <AnimatedHeading
+              text="Projects"
+              className={styles.title}
+            />
+      <div className={styles.slides}>
+        {projects.map((project, index) => (
+          <ProjectSlide
+            key={index}
+            project={project}
+            isReversed={index % 2 !== 0}
+            delays={animationDelays[index] || {}} // default to empty if not defined
+          />
+        ))}
       </div>
-    </motion.section>
+    </section>
   );
 };

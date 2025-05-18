@@ -3,9 +3,8 @@
 .container {
   margin-top: 150px;
   color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
-  scroll-margin-top: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
   scroll-margin-top: var(--scroll-offset);
 }
 
@@ -14,15 +13,12 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
-.projects {
-  margin-top: 37px;
+.slides {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  width: 100%;
+  flex-direction: column;
+  gap: 100px;
 }
