@@ -30,7 +30,7 @@
   height: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
-   background: linear-gradient(135deg, #19376d, #04152d 70%);
+   background: linear-gradient(145deg, #0f1a3b, #1c2b50);
   padding: 18px 24px;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,7 @@
 }
 
 .skill {
-  background: var(--color-bg);
+  background: var(--color-secondary);
   padding: 6px 18px;
   font-size: 16px;
   border-radius: 100px;
@@ -125,7 +125,7 @@
 }
 
 .link {
-  background: var(--color-primary);
+  background: var(--color-bg);
   color: var(--color-text);
   font-weight: 600;
   font-size: 16px;
@@ -133,10 +133,14 @@
   border-radius: 100px;
   text-decoration: none;
   transition: background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(100, 150, 255, 0.2),
+    inset 0 0 8px rgba(100, 150, 255, 0.2), 0 0 4px rgba(176, 104, 104, 0.05);
 }
 
 .link:hover {
-  background-color: var(--color-dark);
+    transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(100, 150, 255, 0.4),
+    inset 0 0 12px rgba(100, 150, 255, 0.25);
 }
 
 /* Hide shadows during flipping animation */
