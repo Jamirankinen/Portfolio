@@ -113,7 +113,7 @@
 }
 
 .skill {
-  background: var(--color-dark);
+  background: var(--color-bg);
   padding: 6px 18px;
   font-size: 16px;
   border-radius: 100px;
