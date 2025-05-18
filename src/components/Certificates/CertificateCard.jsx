@@ -5,34 +5,40 @@ import styles from "./CertificateCard.module.css";
 
 export const CertificateCard = ({
   certificate: { title, date, imageSrc, description, skills, source },
-
-  // Custom animation controls
-  cardAnimation = {
-    delay: 0.5,
-    duration: 0.6,
-  },
-  imageAnimation = {
-    delay: 0.8,
-    duration: 0.5,
-  },
-  titleAnimation = {
-    delay: 1,
-    duration: 0.5,
-  },
-  dateAnimation = {
-    delay: 1.2,
-    duration: 0.5,
-  },
+  index = 0, // Add index here
 }) => {
   const [flipped, setFlipped] = useState(false);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" }); // `once` ensures it triggers once per mount
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Animation timings using index
+  const baseDelay = 0.4 + index * 0.4; // adjust spacing between cards
+
+  const cardAnimation = {
+    delay: baseDelay,
+    duration: 0.6,
+  };
+
+  const imageAnimation = {
+    delay: baseDelay + 0.5,
+    duration: 0.5,
+  };
+
+  const titleAnimation = {
+    delay: baseDelay + 0.8,
+    duration: 0.5,
+  };
+
+  const dateAnimation = {
+    delay: baseDelay + 1,
+    duration: 0.5,
+  };
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}} // Animate only when in view
+      animate={inView ? { opacity: 1 } : {}}
       transition={{
         delay: cardAnimation.delay,
         duration: cardAnimation.duration,
@@ -46,7 +52,7 @@ export const CertificateCard = ({
         style={{ perspective: 1500 }}
         aria-label={`Certificate card for ${title}`}
       >
-        {/* Front Side */}
+        {/* Front */}
         <div className={styles.front}>
           <motion.img
             src={getImageUrl(imageSrc)}
@@ -55,21 +61,13 @@ export const CertificateCard = ({
             draggable={false}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{
-              delay: imageAnimation.delay,
-              duration: imageAnimation.duration,
-              ease: "easeOut",
-            }}
+            transition={imageAnimation}
           />
           <motion.h3
             className={styles.title}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{
-              delay: titleAnimation.delay,
-              duration: titleAnimation.duration,
-              ease: "easeOut",
-            }}
+            transition={titleAnimation}
           >
             {title}
           </motion.h3>
@@ -77,17 +75,13 @@ export const CertificateCard = ({
             className={styles.date}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{
-              delay: dateAnimation.delay,
-              duration: dateAnimation.duration,
-              ease: "easeOut",
-            }}
+            transition={dateAnimation}
           >
             {date}
           </motion.p>
         </div>
 
-        {/* Back Side */}
+        {/* Back */}
         <div className={styles.back}>
           <p className={styles.description}>{description}</p>
           <ul className={styles.skills}>
@@ -112,3 +106,4 @@ export const CertificateCard = ({
     </motion.div>
   );
 };
+
