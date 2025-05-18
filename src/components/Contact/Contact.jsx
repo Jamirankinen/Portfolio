@@ -1,41 +1,81 @@
-import React from "react";
-import { getImageUrl } from "../../utils";
 import styles from "./Contact.module.css";
 import { motion } from "framer-motion";
+import githubIcon from "../../../assets/contact/githubIcon.png";
+import linkedinIcon from "../../../assets/contact/linkedinIcon.png";
+import emailIcon from "../../../assets/contact/emailIcon.png";
+import { useState } from "react";
 
 export const Contact = () => {
+  const year = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("your@email.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
-    <motion.footer
-      className={styles.container}
-      id="contact"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <div className={styles.text}>
-        <h2>Hello there!</h2>
-        <p>Would thou check my socials...?</p>
-      </div>
-      <ul className={styles.links}>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email Icon" />
-          <a href="mailto:jamuxi34@gmail.com">Mail here!</a>
-        </li>
-        <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="Linkedin Icon"
-          />
-          <a href="https://www.linkedin.com/in/jami-rankinen-6322612b9">
-            LinkedIn too!
-          </a>
-        </li>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="GitHub Icon" />
-          <a href="https://github.com/Jamiiiiii">Last but not least GitHub!</a>
-        </li>
-      </ul>
-    </motion.footer>
+    <section className={styles.contactSection}>
+      {/* Animated Line Separator */}
+      <motion.div
+        className={styles.line}
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        transition={{ duration: 1 }}
+      />
+
+      {/* Tagline */}
+      <motion.h2
+        className={styles.tagline}
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        Would thou check my socials...?
+      </motion.h2>
+
+      {/* Glass Card with Custom Icons */}
+      <motion.div
+        className={styles.glassCard}
+        initial={{ opacity: 0  }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+      >
+        <a
+          href="https://github.com/Jamiiiiii"
+          target="_blank"
+          rel="GitHub Jami Rankinen"
+          className={styles.iconWrapper}
+        >
+          <img src={githubIcon} alt="GitHub" className={styles.icon} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jami-rankinen-6322612b9/"
+          target="_blank"
+          rel="LinkedIn Jami Rankinen"
+          className={styles.iconWrapper}
+        >
+          <img src={linkedinIcon} alt="LinkedIn" className={styles.icon} />
+        </a>
+        <button onClick={handleEmailClick} className={styles.iconWrapper}>
+          <img src={emailIcon} alt="Email" className={styles.icon} />
+        </button>
+        {copied && (
+          <motion.div
+            className={styles.tooltip}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            Copied!
+          </motion.div>
+        )}
+      </motion.div>
+
+      {/* Footer */}
+      <p className={styles.footer}>© {year} Jami Rankinen</p>
+    </section>
   );
 };

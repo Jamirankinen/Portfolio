@@ -6,6 +6,7 @@
   margin-left: 10%;
   margin-right: 10%;
   scroll-margin-top: var(--scroll-offset);
+  margin-top: 250px;
 }
 
 .title {
@@ -44,5 +45,8 @@
     flex-wrap: wrap;
     overflow-x: visible;
     gap: 20px;
+  }
+  .container {
+    margin-top: 100px;
   }
 }

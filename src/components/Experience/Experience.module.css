@@ -6,6 +6,7 @@
   margin-left: 10%;
   margin-right: 10%;
   scroll-margin-top: var(--scroll-offset);
+  margin-top: 250px;
 
   /* New background styles */
   position: relative;
@@ -212,6 +213,7 @@
     margin-right: 5%;
     padding: 20px 15px;
     border-radius: 10px;
+    margin-top: 100px;
   }
 
   .content {
