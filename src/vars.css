@@ -14,6 +14,6 @@
 }
 @media screen and (max-width: 830px) {
   :root {
-    --scroll-offset: 70px;
+    --scroll-offset: 80px;
   }
 }

@@ -5,12 +5,11 @@
   margin-top: 150px;
   margin-left: 10%;
   margin-right: 10%;
-  scroll-margin-top: 100px;
+  scroll-margin-top: var(--scroll-offset);
 
   /* New background styles */
   position: relative;
   background: linear-gradient(135deg, #19376d, #04152d 70%);
-  overflow: hidden;
   border-radius: 15px;
   padding: 40px 30px;
   box-shadow: 0 0 40px rgba(87, 108, 188, 0.4);
