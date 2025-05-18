@@ -19,6 +19,7 @@ export const Contact = () => {
     <section className={styles.contactSection}>
       {/* Animated Line Separator */}
       <motion.div
+        id="contact"
         className={styles.line}
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
@@ -28,7 +29,7 @@ export const Contact = () => {
       {/* Tagline */}
       <motion.h2
         className={styles.tagline}
-        initial={{ opacity: 0}}
+        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
@@ -38,7 +39,7 @@ export const Contact = () => {
       {/* Glass Card with Custom Icons */}
       <motion.div
         className={styles.glassCard}
-        initial={{ opacity: 0  }}
+        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
       >
