@@ -11,12 +11,15 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
     skills,
     demo,
     source,
+    startDate,
+    endDate,
   } = project;
 
   const {
     image = 1.0,
     content = 1.3,
     title: titleDelay = 1.5,
+    date: dateDelay = 1.1,
     description: descDelay = 1.7,
     skills: skillsDelay = 1.9,
     links: linksDelay = 2.1,
@@ -66,6 +69,20 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
         >
           {title}
         </motion.h3>
+
+        {/* Date Range */}
+        {(startDate || endDate) && (
+          <motion.p
+            className={styles.date}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: dateDelay, duration: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+            layout
+          >
+            {startDate} – {endDate}
+          </motion.p>
+        )}
 
         <motion.p
           className={styles.description}
