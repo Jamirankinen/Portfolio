@@ -19,7 +19,7 @@ export const Contact = () => {
     <section className={styles.contactSection}>
       {/* Animated Line Separator */}
       <motion.div
-        id="contact"
+        id="contacts"
         className={styles.line}
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
