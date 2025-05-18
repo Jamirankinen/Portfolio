@@ -10,56 +10,59 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
     description,
     skills,
     demo,
-    source
+    source,
   } = project;
 
-  // Fallback delays if not all are specified
   const {
     image = 1.0,
     content = 1.3,
     title: titleDelay = 1.5,
     description: descDelay = 1.7,
     skills: skillsDelay = 1.9,
-    links: linksDelay = 2.1
+    links: linksDelay = 2.1,
   } = delays;
 
   return (
     <motion.div
       className={`${styles.projectSlide} ${isReversed ? styles.reversed : ""}`}
-      initial={{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.8 }}
     >
-      {/* Image */}
+      {/* Image Section */}
       <motion.div
         className={styles.imageContainer}
         initial={{ opacity: 0, x: isReversed ? 40 : -40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: image, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: image, duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
+        layout
       >
         <img
           src={getImageUrl(imageSrc)}
           alt={`Screenshot of ${title}`}
           className={styles.image}
+          loading="lazy"
         />
       </motion.div>
 
-      {/* Content */}
+      {/* Content Section */}
       <motion.div
         className={styles.content}
         initial={{ opacity: 0, x: isReversed ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: content, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: content, duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
+        layout
       >
         <motion.h3
           className={styles.title}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: titleDelay, duration: 0.6 }}
+          transition={{ delay: titleDelay, duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
+          layout
         >
           {title}
         </motion.h3>
@@ -68,8 +71,9 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
           className={styles.description}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: descDelay, duration: 0.6 }}
+          transition={{ delay: descDelay, duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
+          layout
         >
           {description}
         </motion.p>
@@ -78,11 +82,12 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
           className={styles.skills}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: skillsDelay, duration: 0.6 }}
+          transition={{ delay: skillsDelay, duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
+          layout
         >
-          {skills.map((skill, id) => (
-            <li key={id} className={styles.skill}>
+          {skills.map((skill, index) => (
+            <li key={index} className={styles.skill}>
               {skill}
             </li>
           ))}
@@ -92,8 +97,9 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
           className={styles.links}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: linksDelay, duration: 0.6 }}
+          transition={{ delay: linksDelay, duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
+          layout
         >
           {demo && (
             <a href={demo} className={styles.link} target="_blank" rel="noreferrer">
