@@ -7,7 +7,7 @@
   padding: 40px;
   border-radius: 18px;
   background: linear-gradient(145deg, #0f1a3b, #1c2b50);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -20,12 +20,22 @@
   display: flex;
   justify-content: center;
 }
+.imageContainer:hover .image {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 20px rgba(0, 140, 255, 0.5),
+    0 0 40px rgba(0, 140, 255, 0.3),
+    0 0 60px rgba(0, 140, 255, 0.2);
+}
 
 .image {
   width: 100%;
   max-width: 500px;
   border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    box-shadow:
+  0 0 12px rgba(0, 140, 255, 0.25),
+  0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content {
