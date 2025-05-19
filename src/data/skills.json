@@ -1,30 +1,51 @@
 [
-    {
-      "title": "HTML",
-      "imageSrc": "skills/html.webp"
-    },
-    {
-      "title": "CSS",
-      "imageSrc": "skills/css.webp"
-    },
-    {
-      "title": "JavaScript",
-      "imageSrc": "skills/javascript.webp"
-    },
-    {
-      "title": "Node",
-      "imageSrc": "skills/node.webp"
-    },
-    {
-      "title": "React",
-      "imageSrc": "skills/react.webp"
-    },
-    {
-      "title": "TypeScript",
-      "imageSrc": "skills/typescript.webp"
-    },
-    {
-      "title": "Firebase",
-      "imageSrc": "skills/firebase.webp"
+  {
+    "title": "HTML",
+    "imageSrc": {
+      "src": "skills/html-45.webp",
+      "srcSet": "skills/html-45.webp 1x, skills/html-90.webp 2x"
     }
-  ]
+  },
+  {
+    "title": "CSS",
+    "imageSrc": {
+      "src": "skills/css-45.webp",
+      "srcSet": "skills/css-45.webp 1x, skills/css-90.webp 2x"
+    }
+  },
+  {
+    "title": "JavaScript",
+    "imageSrc": {
+      "src": "skills/javascript-45.webp",
+      "srcSet": "skills/javascript-45.webp 1x, skills/javascript-90.webp 2x"
+    }
+  },
+  {
+    "title": "Node",
+   "imageSrc": {
+      "src": "skills/node-45.webp",
+      "srcSet": "skills/node-45.webp 1x, skills/node-90.webp 2x"
+    }
+  },
+  {
+    "title": "React",
+   "imageSrc": {
+      "src": "skills/react-45.webp",
+      "srcSet": "skills/react-45.webp 1x, skills/react-90.webp 2x"
+    }
+  },
+  {
+    "title": "TypeScript",
+    "imageSrc": {
+      "src": "skills/typescript-45.webp",
+      "srcSet": "skills/typescript-45.webp 1x, skills/typescript-90.webp 2x"
+    }
+  },
+  {
+    "title": "Firebase",
+    "imageSrc": {
+      "src": "skills/firebase-45.webp",
+      "srcSet": "skills/firebase-45.webp 1x, skills/firebase-90.webp 2x"
+    }
+  }
+]

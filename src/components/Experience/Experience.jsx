@@ -74,10 +74,7 @@ const Experience = () => {
           />
         ))}
       </div>
-      <AnimatedHeading
-        text="Experience"
-        className={styles.title}
-      />
+      <AnimatedHeading text="Experience" className={styles.title} />
       <div className={styles.content}>
         <div className={styles.skills}>
           {skills.map((skill, index) => (
@@ -102,7 +99,17 @@ const Experience = () => {
               }}
             >
               <div className={styles.skillImageContainer}>
-                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} loading="lazy" />
+                <img
+                  src={getImageUrl(skill.imageSrc.src)}
+                  srcSet={`
+    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-45.webp")} 1x,
+    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-90.webp")} 2x
+  `}
+                  alt={skill.title}
+                  width="45"
+                  height="45"
+                  loading="lazy"
+                />
               </div>
               <p>{skill.title}</p>
             </motion.div>
