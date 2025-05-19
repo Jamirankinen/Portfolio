@@ -102,7 +102,7 @@ const Experience = () => {
               }}
             >
               <div className={styles.skillImageContainer}>
-                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} loading="lazy" />
               </div>
               <p>{skill.title}</p>
             </motion.div>

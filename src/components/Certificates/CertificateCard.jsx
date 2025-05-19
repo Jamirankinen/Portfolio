@@ -63,6 +63,7 @@ export const CertificateCard = ({
             `}
             sizes="(max-width: 600px) 90vw, (max-width: 1024px) 40vw, 25vw"
             alt={`Image of ${title}`}
+            loading="lazy"
             className={styles.image}
             draggable={false}
             initial={{ opacity: 0 }}

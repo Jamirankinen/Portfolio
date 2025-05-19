@@ -49,7 +49,7 @@ const Contact = () => {
           rel="GitHub Jami Rankinen"
           className={styles.iconWrapper}
         >
-          <img src={githubIcon} alt="GitHub" className={styles.icon} />
+          <img src={githubIcon} alt="GitHub" className={styles.icon} loading="lazy" />
         </a>
         <a
           href="https://www.linkedin.com/in/jami-rankinen-6322612b9/"
