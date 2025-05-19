@@ -8,9 +8,9 @@ const splitLetters = (text) => text.split("");
 const splitWords = (text) => text.split(" ");
 
 const icons = [
-  "about/cursorIcon.png",
-  "about/serverIcon.png",
-  "about/uiIcon.png",
+  "about/cursorIcon.webp",
+  "about/serverIcon.webp",
+  "about/uiIcon.webp",
 ];
 
 const About = () => {
