@@ -1,23 +1,23 @@
 [
     {
       "title": "HTML",
-      "imageSrc": "skills/html.png"
+      "imageSrc": "skills/html.webp"
     },
     {
       "title": "CSS",
-      "imageSrc": "skills/css.png"
+      "imageSrc": "skills/css.webp"
     },
     {
       "title": "JavaScript",
-      "imageSrc": "skills/javascript.png"
+      "imageSrc": "skills/javascript.webp"
     },
     {
       "title": "Node",
-      "imageSrc": "skills/node.png"
+      "imageSrc": "skills/node.webp"
     },
     {
       "title": "React",
-      "imageSrc": "skills/react.png"
+      "imageSrc": "skills/react.webp"
     },
     {
       "title": "TypeScript",
@@ -25,6 +25,6 @@
     },
     {
       "title": "Firebase",
-      "imageSrc": "skills/firebase.png"
+      "imageSrc": "skills/firebase.webp"
     }
   ]
