@@ -91,7 +91,13 @@ export const Hero = () => {
       {/* Hero image */}
       <motion.img
         src={getImageUrl("hero/heroImage.webp")}
-        alt="Image of me"
+        srcSet={`
+          ${getImageUrl("hero/heroImage-small.webp")} 480w,
+          ${getImageUrl("hero/heroImage-medium.webp")} 768w,
+          ${getImageUrl("hero/heroImage.webp")} 1280w
+          `}
+        sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+        alt="Hero image of me"
         className={styles.heroImg}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}

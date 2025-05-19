@@ -5,14 +5,14 @@ import styles from "./CertificateCard.module.css";
 
 export const CertificateCard = ({
   certificate: { title, date, imageSrc, description, skills, source },
-  index = 0, // Add index here
+  index = 0,
 }) => {
   const [flipped, setFlipped] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   // Animation timings using index
-  const baseDelay = 0.4 + index * 0.4; // adjust spacing between cards
+  const baseDelay = 0.4 + index * 0.4;
 
   const cardAnimation = {
     delay: baseDelay,
@@ -55,7 +55,13 @@ export const CertificateCard = ({
         {/* Front */}
         <div className={styles.front}>
           <motion.img
-            src={getImageUrl(imageSrc)}
+            src={getImageUrl(`${imageSrc}.webp`)}
+            srcSet={`
+              ${getImageUrl(`${imageSrc}-small.webp`)} 480w,
+              ${getImageUrl(`${imageSrc}-medium.webp`)} 768w,
+              ${getImageUrl(`${imageSrc}.webp`)} 1280w
+            `}
+            sizes="(max-width: 600px) 90vw, (max-width: 1024px) 40vw, 25vw"
             alt={`Image of ${title}`}
             className={styles.image}
             draggable={false}
@@ -106,4 +112,3 @@ export const CertificateCard = ({
     </motion.div>
   );
 };
-
