@@ -17,20 +17,10 @@ function App() {
       <Navbar />
       <Suspense fallback={<div className={styles.loading}>Loading pixels...</div>}>
         <Hero />
-        </Suspense>
-        <Suspense fallback={<div className={styles.loading}>Building in process...</div>}>
         <About />
-        </Suspense>
-        <Suspense fallback={<div className={styles.loading}>Loading animations...</div>}>
         <Experience />
-        </Suspense>
-        <Suspense fallback={<div className={styles.loading}>Loading all the stuff...</div>}>
         <Projects />
-        </Suspense>
-        <Suspense fallback={<div className={styles.loading}>Loading stuff again...</div>}>
         <Certificates />
-        </Suspense>
-        <Suspense fallback={<div className={styles.loading}>Loading more stuff...</div>}>
         <Contact />
         </Suspense>
       
