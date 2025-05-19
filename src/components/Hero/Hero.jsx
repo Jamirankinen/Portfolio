@@ -50,30 +50,11 @@ const Hero = () => {
         {/* Animated description */}
         <motion.p
           className={styles.description}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                delayChildren: 0.8,
-                staggerChildren: 0.07,
-              },
-            },
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
         >
-          {splitWords(description).map((word, index) => (
-            <motion.span
-              key={index}
-              style={{ marginRight: "6px", display: "inline-block" }}
-              variants={{
-                hidden: { opacity: 0, x: -10 },
-                visible: { opacity: 1, x: 0 },
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
+          {description}
         </motion.p>
 
         {/* Contact button */}
@@ -82,7 +63,7 @@ const Hero = () => {
           className={styles.contactBtn}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
+          transition={{ delay: 3, duration: 1, ease: "easeOut" }}
         >
           <span className={styles.marqueeText}>Contact me!</span>
         </motion.a>
@@ -101,9 +82,9 @@ const Hero = () => {
         width={400} // <-- add intrinsic width here
         height={408} // <-- add intrinsic height here
         className={styles.heroImg}
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 4.1, duration: 1, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.8, ease: "easeOut" }}
       />
 
       <div className={styles.topBlur} />
