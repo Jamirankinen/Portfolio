@@ -2,14 +2,13 @@ import React from "react";
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
+import heroData from "../../data/hero.json";
 
 const splitLetters = (text) => text.split("");
 const splitWords = (text) => text.split(" ");
 
 export const Hero = () => {
-  const heading = "Hi, I'm Jami";
-  const description =
-    "I have a Bachelor's degree in Business and Information Systems. I'm looking for a junior or entry-level position in IT. My preferred roles are Front-End or Full-Stack Developer. Feel free to check out my projects and certificates below, and contact me if you're interested!";
+  const { heading, description } = heroData[0];
 
   return (
     <motion.section
@@ -21,7 +20,7 @@ export const Hero = () => {
       viewport={{ once: true }}
     >
       <div className={styles.content}>
-        {/* Animate heading */}
+        {/* Animated heading */}
         <motion.h1
           className={styles.title}
           initial="hidden"
@@ -47,7 +46,8 @@ export const Hero = () => {
             </motion.span>
           ))}
         </motion.h1>
-        {/* Paragraph animation: one word at a time */}
+
+        {/* Animated description */}
         <motion.p
           className={styles.description}
           initial="hidden"
@@ -75,6 +75,7 @@ export const Hero = () => {
             </motion.span>
           ))}
         </motion.p>
+
         {/* Contact button */}
         <motion.a
           href="mailto:jamuxi34@gmail.com"
@@ -86,15 +87,17 @@ export const Hero = () => {
           <span className={styles.marqueeText}>Contact me!</span>
         </motion.a>
       </div>
+
       {/* Hero image */}
       <motion.img
         src={getImageUrl("hero/heroImage.webp")}
-        alt="Hero image of me"
+        alt="Image of me"
         className={styles.heroImg}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 4.1, duration: 1, ease: "easeOut" }}
       />
+
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />
     </motion.section>
