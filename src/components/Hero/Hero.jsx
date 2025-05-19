@@ -80,8 +80,8 @@ const Hero = () => {
         <motion.a
           href="mailto:jamuxi34@gmail.com"
           className={styles.contactBtn}
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
         >
           <span className={styles.marqueeText}>Contact me!</span>
