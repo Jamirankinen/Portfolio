@@ -13,7 +13,7 @@ const icons = [
   "about/uiIcon.png",
 ];
 
-export const About = () => {
+const About = () => {
   return (
     <motion.section
       className={styles.container}
@@ -89,3 +89,4 @@ export const About = () => {
     </motion.section>
   );
 };
+export default About;

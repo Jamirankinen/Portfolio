@@ -5,7 +5,7 @@ import { ProjectSlide } from "./ProjectSlide";
 import { motion } from "framer-motion";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
-export const Projects = () => {
+const Projects = () => {
   // Customize individual delays for each part of each project
   const animationDelays = [
     {
@@ -56,3 +56,4 @@ export const Projects = () => {
     </section>
   );
 };
+export default Projects;

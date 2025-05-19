@@ -5,7 +5,7 @@ import linkedinIcon from "../../../assets/contact/linkedinIcon.png";
 import emailIcon from "../../../assets/contact/emailIcon.png";
 import { useState } from "react";
 
-export const Contact = () => {
+const Contact = () => {
   const year = new Date().getFullYear();
   const [copied, setCopied] = useState(false);
 
@@ -80,3 +80,4 @@ export const Contact = () => {
     </section>
   );
 };
+export default Contact;

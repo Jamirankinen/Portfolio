@@ -6,7 +6,7 @@ import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
-export const Experience = () => {
+const Experience = () => {
   const lineRef = useRef(null);
   const lastDotRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
@@ -246,3 +246,4 @@ export const Experience = () => {
     </motion.section>
   );
 };
+export default Experience;

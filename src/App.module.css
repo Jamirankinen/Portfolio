@@ -6,3 +6,9 @@
     height: 100%;
     overflow: visible;
 }
+.loading {
+  padding: 4rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #888;
+}

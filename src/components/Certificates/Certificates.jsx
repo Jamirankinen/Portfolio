@@ -5,7 +5,7 @@ import certificates from "../../data/certificates.json";
 import { CertificateCard } from "./CertificateCard";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
-export const Certificates = () => {
+const Certificates = () => {
   return (
     <motion.section
       className={styles.container}
@@ -27,3 +27,4 @@ export const Certificates = () => {
     </motion.section>
   );
 };
+export default Certificates;

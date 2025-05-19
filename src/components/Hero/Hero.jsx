@@ -7,7 +7,7 @@ import heroData from "../../data/hero.json";
 const splitLetters = (text) => text.split("");
 const splitWords = (text) => text.split(" ");
 
-export const Hero = () => {
+const Hero = () => {
   const { heading, description } = heroData[0];
 
   return (
@@ -109,3 +109,4 @@ export const Hero = () => {
     </motion.section>
   );
 };
+export default Hero;
