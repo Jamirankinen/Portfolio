@@ -67,7 +67,7 @@
 .aboutItem:hover {
   background-size: 100% 100%;
   box-shadow: 0 0 20px rgba(165, 215, 232, 0.25),
-              0 0 10px rgba(25, 55, 109, 0.3);
+    0 0 10px rgba(25, 55, 109, 0.3);
 }
 
 .aboutItem h3 {
@@ -118,7 +118,11 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+  }
+  .aboutItem:hover {
     background-size: 100% 100%;
+    box-shadow: 0 0 20px rgba(165, 215, 232, 0.25),
+      0 0 10px rgba(25, 55, 109, 0.3);
   }
 
   .aboutItem h3 {
@@ -129,4 +133,3 @@
     font-size: 18px;
   }
 }
-
