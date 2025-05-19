@@ -1,35 +1,28 @@
 import { useEffect, useState } from "react";
 
-export function useScrollSpy(sectionIds, offset = 0) {
-    const [activeId, setActiveId] = useState("");
+export const useScrollSpy = (sectionIds, offset = 0) => {
+  const [activeId, setActiveId] = useState("");
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveId(entry.target.id);
-                    }
-                });
-            },
-            {
-                rootMargin: `-${offset}px 0px -70% 0px`,
-                threshold: 0.3,
-            }
-        );
+  useEffect(() => {
+    const onScroll = () => {
+      let currentId = "";
 
-        sectionIds.forEach((id) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (element) {
+          const top = element.getBoundingClientRect().top;
+          if (top <= offset) currentId = id;
+        }
+      }
 
-        return () => {
-            sectionIds.forEach((id) => {
-                const element = document.getElementById(id);
-                if (element) observer.unobserve(element);
-            });
-        };
-    }, [sectionIds, offset]);
+      setActiveId(currentId);
+    };
 
-    return activeId;
-}
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [sectionIds, offset]);
+
+  return activeId;
+};
