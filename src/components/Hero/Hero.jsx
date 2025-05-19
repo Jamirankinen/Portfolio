@@ -98,6 +98,8 @@ const Hero = () => {
           `}
         sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
         alt="Hero image of me"
+        width={400} // <-- add intrinsic width here
+        height={408} // <-- add intrinsic height here
         className={styles.heroImg}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
