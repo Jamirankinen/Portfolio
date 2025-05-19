@@ -42,8 +42,14 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
         viewport={{ once: true }}
         layout
       >
-        <img
-          src={getImageUrl(imageSrc)}
+         <img
+          src={getImageUrl(`${imageSrc}.webp`)}
+          srcSet={`
+            ${getImageUrl(`${imageSrc}-small.webp`)} 480w,
+            ${getImageUrl(`${imageSrc}-medium.webp`)} 768w,
+            ${getImageUrl(`${imageSrc}.webp`)} 1280w
+          `}
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
           alt={`Screenshot of ${title}`}
           className={styles.image}
           loading="lazy"
