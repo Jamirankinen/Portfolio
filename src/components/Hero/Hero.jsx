@@ -88,7 +88,7 @@ export const Hero = () => {
       </div>
       {/* Hero image */}
       <motion.img
-        src={getImageUrl("hero/heroImage.png")}
+        src={getImageUrl("hero/heroImage.webp")}
         alt="Hero image of me"
         className={styles.heroImg}
         initial={{ opacity: 0, x: 100 }}
