@@ -143,15 +143,13 @@
   position: absolute;
   width: 70vw;
   height: 50vw;
-  min-width: 100vw;
   top: 246px;
   right: 0;
-  border-radius: 764px;
+  border-radius: 50%;
   background: rgba(25, 55, 109, 0.7);
   filter: blur(100px);
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 830px) {
