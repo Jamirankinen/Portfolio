@@ -97,7 +97,6 @@
   width: 30%;
   z-index: 1;
   border-radius: 50%;
-  /* NEW shadow + glow */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(100, 150, 255, 0.15),
     inset 0 0 8px rgba(100, 150, 255, 0.08);
 }
