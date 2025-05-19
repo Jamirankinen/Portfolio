@@ -63,7 +63,7 @@ const Hero = () => {
           className={styles.contactBtn}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+          transition={{ delay: 1.6, duration: 1, ease: "easeOut" }}
         >
           <span className={styles.marqueeText}>Contact me!</span>
         </motion.a>
