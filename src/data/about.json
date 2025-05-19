@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Frontend Developer",
+      "description": "As a Frontend Developer, I specialize in building dynamic and visually appealing user interfaces using React, TypeScript,JavaScript, HTML, and CSS. I strive to create high-performance,responsive websites with reusable components that enhance the user experience, ensuring seamless interactions across all devices."
+
+    },
+    {
+      "title": "Backend Developer",
+      "description": "With experience in backend development, I focus on building robust and scalable server-side applications using Node.js and various modern technologies. I prioritize performance, security, and maintainability to deliver solutions that support seamlessintegrations and optimized workflows."
+    },
+    {
+      "title": "UI Designer",
+      "description": "As a UI Designer, I craft intuitive, user-centered designs that bring digital experiences to life. My expertise lies in creating visually stunning, responsive layouts that adapt seamlessly to different screen sizes. I aim to design beautiful, functional interfaces that ensure a smooth user journey across all platforms."
+
+    }
+    
+  ]
