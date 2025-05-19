@@ -6,20 +6,27 @@
   perspective: 1500px;
   cursor: pointer;
   position: relative;
-  margin: 0 8px;
+  margin: 30px 8px;
+  border-radius: 10px;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
-  box-shadow: 0 16px 14px 0 #04152d;
+  box-shadow:
+    0 12px 24px rgba(4, 21, 45, 0.6),
+    0 -12px 24px rgba(87, 108, 188, 0.3);
 }
 
 .card:hover {
   transform: scale(1.05);
+
+       box-shadow:
+    0 8px 20px rgba(4, 21, 45, 0.4),
+    0 -8px 20px rgba(87, 108, 188, 0.25);
 }
 
 /* The whole card flips 180deg on Y axis */
 .card.flipped {
   transform: rotateY(180deg);
-  box-shadow: none !important; /* Remove shadow during flip */
+
 }
 
 /* Front and back side both absolutely positioned, backface hidden */
@@ -39,6 +46,7 @@
   color: var(--color-text);
   /* Remove shadows from front/back themselves */
   box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
+  
 
 }
 
