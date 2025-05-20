@@ -4,9 +4,6 @@ import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import heroData from "../../data/hero.json";
 
-const splitLetters = (text) => text.split("");
-const splitWords = (text) => text.split(" ");
-
 const Hero = () => {
   const { heading, description } = heroData[0];
 
