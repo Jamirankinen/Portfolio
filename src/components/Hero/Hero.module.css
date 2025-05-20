@@ -164,10 +164,29 @@
   .content {
     align-items: center;
   }
+   .contactBtn {
+    box-shadow: none;
+  }
+
+  .heroImg {
+    box-shadow: none;
+  }
+
+  .heroImg:hover {
+    animation: none !important;
+  }
+
+  .contactBtn .marqueeText::after {
+    display: none;
+  }
+
+  .contactBtn:hover .marqueeText {
+    animation: none;
+  }
+
+  .topBlur,
   .bottomBlur {
-    width: 90vw;
-    height: 60vw;
-    top: 300px;
-    filter: blur(80px);
+    filter: none;
+    background: transparent;
   }
 }
