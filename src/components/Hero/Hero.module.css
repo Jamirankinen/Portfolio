@@ -166,6 +166,7 @@
   }
    .contactBtn {
     box-shadow: none;
+    background-color: var(--color-secondary);
   }
 
   .heroImg {
