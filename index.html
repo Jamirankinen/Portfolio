@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicons/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="/favicons/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#2d89ef" />
-    <meta name="theme-color" content="#ffffff" />
-    <!-- Preconnect for better font loading performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Basic Meta -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jami Rankinen – Web Developer Portfolio</title>
+<meta name="description" content="Welcome to the portfolio of Jami Rankinen. Discover my work in web development, frontend design, and more!" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://portfolio-jami-rankinen.netlify.app/" />
 
-    <!-- Roboto and Outfit with display swap to prevent layout shifts -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
-    <link
-      rel="preload"
-      as="image"
-      href="/Portfolio/assets/hero/heroImage.webp"
-      imagesrcset="/hero/heroImage-small.webp 480w, /hero/heroImage-medium.webp 768w, /hero/heroImage.webp 1280w"
-      imagesizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jami Rankinen</title>
+<!-- Favicon + Manifest -->
+<link rel="icon" href="/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/favicons/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="msapplication-TileColor" content="#2d89ef" />
+
+<!-- Fonts: Roboto & Outfit - swap prevents layout shift -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;700&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</noscript>
+
+<!-- Preload Hero Image -->
+<link
+  rel="preload"
+  as="image"
+  href="/Portfolio/assets/hero/heroImage.webp"
+  imagesrcset="/hero/heroImage-small.webp 480w, /hero/heroImage-medium.webp 768w, /hero/heroImage.webp 1280w"
+  imagesizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+/>
+
+<!-- Open Graph (og) for LinkedIn, Slack, Discord, Facebook, etc. -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://portfolio-jami-rankinen.netlify.app/" />
+<meta property="og:title" content="Jami Rankinen – Web Developer Portfolio" />
+<meta property="og:description" content="Welcome to the portfolio of Jami Rankinen. Discover my work in web development, frontend design, and more!" />
+<meta property="og:image" content="https://portfolio-jami-rankinen.netlify.app/og-image.jpg" />
+<meta property="og:image:alt" content="Portfolio preview of Jami Rankinen" />
+
+<!-- Twitter Card for preview (used by many platforms) -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Jami Rankinen – Web Developer Portfolio" />
+<meta name="twitter:description" content="Explore Jami's web development projects and skills." />
+<meta name="twitter:image" content="https://portfolio-jami-rankinen.netlify.app/og-image.jpg" />
+<meta name="twitter:image:alt" content="Portfolio preview of Jami Rankinen" />
+
   </head>
   <body>
     <div id="root"></div>

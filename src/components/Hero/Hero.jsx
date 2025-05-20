@@ -17,7 +17,7 @@ const Hero = () => {
       "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!";
     // 🟢 Plain non-animated version for mobile/tablet
     return (
-      <section className={styles.container} id="hero">
+      <header className={styles.container} id="hero">
         <div className={styles.content}>
           <h1 className={styles.title}>
             {splitLetters(heading).map((char, index) => (
@@ -37,20 +37,20 @@ const Hero = () => {
             ${getImageUrl("hero/heroImage.webp")} 1280w
           `}
           sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
-          alt="Hero image of me"
+          alt="Professional photo of Jami Rankinen"
           width={400}
           height={408}
           className={styles.heroImg}
         />
         <div className={styles.topBlur} />
         <div className={styles.bottomBlur} />
-      </section>
+      </header>
     );
   }
 
   // 💻 Motion-animated version for desktop
   return (
-    <motion.section
+    <motion.header
       className={styles.container}
       id="hero"
       initial={{ opacity: 0, y: 50 }}
@@ -111,7 +111,7 @@ const Hero = () => {
           ${getImageUrl("hero/heroImage.webp")} 1280w
         `}
         sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
-        alt="Hero image of me"
+        alt="Professional photo of Jami Rankinen"
         width={400}
         height={408}
         className={styles.heroImg}
@@ -122,7 +122,7 @@ const Hero = () => {
 
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />
-    </motion.section>
+    </motion.header>
   );
 };
 
