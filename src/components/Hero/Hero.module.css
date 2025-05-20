@@ -39,6 +39,7 @@
   font-family: var(--font-roboto);
   margin-bottom: 52px;
   min-height: 3.5em;
+  transition: none;
 }
 
 .contactBtn {
