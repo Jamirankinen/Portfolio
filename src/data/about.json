@@ -1,16 +1,15 @@
 [
     {
       "title": "Frontend Developer",
-      "description": "As a Frontend Developer, I specialize in building dynamic and visually appealing user interfaces using React, TypeScript,JavaScript, HTML, and CSS. I strive to create high-performance,responsive websites with reusable components that enhance the user experience, ensuring seamless interactions across all devices."
-
+      "description": "I'm passionate about every aspect of frontend development, especially web development. I love the entire process of building websites—from designing the interface and developing functionality to styling and ensuring everything is responsive and performs smoothly. I'm also committed to continuously improving my skills. I love to learn, grow, and push my boundaries every day."
     },
     {
-      "title": "Backend Developer",
-      "description": "With experience in backend development, I focus on building robust and scalable server-side applications using Node.js and various modern technologies. I prioritize performance, security, and maintainability to deliver solutions that support seamlessintegrations and optimized workflows."
+      "title": "Lifelong Learner & Adventure Seeker",
+      "description": "Outside of coding, I love to travel and explore different cultures whenever I have the time and opportunity. Just as I enjoy leveling up my development skills, I also believe in physical growth. That’s why I practice Muay Thai, calisthenics, climbing, and running. I strongly believe there's always room for growth—in both personal and professional life."
     },
     {
       "title": "UI Designer",
-      "description": "As a UI Designer, I craft intuitive, user-centered designs that bring digital experiences to life. My expertise lies in creating visually stunning, responsive layouts that adapt seamlessly to different screen sizes. I aim to design beautiful, functional interfaces that ensure a smooth user journey across all platforms."
+      "description": "As a UI designer, I create intuitive, user-centered designs that elevate digital experiences. My focus is on crafting visually appealing, responsive layouts that adapt seamlessly to any device. I aim to design beautiful yet functional interfaces that provide smooth and meaningful user journeys across all platforms."
 
     }
     

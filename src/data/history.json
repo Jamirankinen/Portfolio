@@ -12,7 +12,7 @@
       "organisation": "Outo ry",
       "startDate": "Jan, 2022",
       "endDate": "Aug, 2023",
-      "experiences": ["Organized events with other business partners", "Cooperation with other coompanies"],
+      "experiences": ["Organized events with other business partners", "Cooperation with other companies"],
       "imageSrc": "history/outory.jpg"
     },
     {
@@ -20,7 +20,7 @@
       "organisation": "Diilimurkku",
       "startDate": "Nov, 2024",
       "endDate": "Mar, 2025",
-      "experiences": ["Developing company's websites", "Jira for project management", "Slack for communication and GitHub for CD/CI."],
+      "experiences": ["Web development", "Jira for project management", "Slack for communication and GitHub for CD/CI."],
       "imageSrc": "history/diilimurkku.jpg"
     }
     

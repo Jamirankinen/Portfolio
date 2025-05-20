@@ -4,7 +4,7 @@
       "startDate": "04/2023",
       "endDate": "05/2023",
       "imageSrc": "projects/mobile_app",
-      "description": "This was my first app made with react-native, focusing on functionality with very simple CSS.",
+      "description": "This was my first mobile applicaton made with react-native, focusing on functionality with very simple CSS.",
       "skills": ["React Native", "Node", "Sass" ,"JavaScript"],
       "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
     },
