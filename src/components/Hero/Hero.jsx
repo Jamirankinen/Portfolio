@@ -47,6 +47,10 @@ const Hero = () => {
               <span key={index}>{char}</span>
             ))}
           </h1>
+          <p className={styles.srOnly}>
+            Hi, I’m Jami Rankinen, a frontend developer based in Finland. I
+            specialize in building fast, accessible websites with React.
+          </p>
           <p className={styles.description}>{description}</p>
           <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
             <span className={styles.marqueeText}>Contact me!</span>
@@ -105,6 +109,16 @@ const Hero = () => {
             </motion.span>
           ))}
         </motion.h1>
+
+        <motion.p
+          className={styles.srOnly}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          Hi, I'm Jami Rankinen A frontend developer based in Finland. I
+          specialize in building fast, accessible websites with React.
+        </motion.p>
 
         <motion.p
           className={styles.description}
