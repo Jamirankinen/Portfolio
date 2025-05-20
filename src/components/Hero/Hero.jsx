@@ -13,21 +13,25 @@ const Hero = () => {
   const isMobile = useIsMobile(); // ✅ detect screen
 
   <Helmet>
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jami Rankinen",
-      "url": "https://portfolio-jami-rankinen.netlify.app",
-      "jobTitle": "Web Developer",
-      "sameAs": [
-        "https://github.com/jamirankinen",
-        "https://linkedin.com/in/jami-rankinen"
-      ]
-    })}
-  </script>
-</Helmet>
-
+    <title>Jami Rankinen – Web Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Hi, I'm Jami Rankinen – a frontend web developer passionate about React, animation, and clean design. Explore my portfolio!"
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Jami Rankinen",
+        url: "https://portfolio-jami-rankinen.netlify.app",
+        jobTitle: "Web Developer",
+        sameAs: [
+          "https://github.com/jamirankinen",
+          "https://linkedin.com/in/jami-rankinen",
+        ],
+      })}
+    </script>
+  </Helmet>;
 
   if (isMobile) {
     const heading = "Hi, I'm Jami.";
