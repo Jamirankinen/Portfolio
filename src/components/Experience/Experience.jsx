@@ -84,7 +84,7 @@ const Experience = () => {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true }}
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: (i) => ({
