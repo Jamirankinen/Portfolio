@@ -190,7 +190,7 @@ const Experience = () => {
                           initial={{ opacity: 0}}
                           whileInView={{ opacity: 1}}
                           transition={{
-                            delay: 1.8 + index * 1.5 + id * 0.15,
+                            delay: 1.8 + index * 1.5,
                             duration: 0.5,
                             ease: "easeOut",
                           }}
