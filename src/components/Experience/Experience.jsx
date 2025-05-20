@@ -102,9 +102,13 @@ const Experience = () => {
                 <img
                   src={getImageUrl(skill.imageSrc.src)}
                   srcSet={`
-    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-45.webp")} 1x,
-    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-90.webp")} 2x
-  `}
+                    ${getImageUrl(
+                      "skills/" + skill.title.toLowerCase() + "-45.webp"
+                    )} 1x,
+                    ${getImageUrl(
+                      "skills/" + skill.title.toLowerCase() + "-90.webp"
+                    )} 2x
+                    `}
                   alt={skill.title}
                   width="45"
                   height="45"
@@ -136,69 +140,37 @@ const Experience = () => {
                 />
 
                 <div className={styles.timelineDetails}>
-                  {/* Combined Role and Organisation with animated comma */}
+                  {/* Role & Organisation */}
                   <motion.h3
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    variants={{
-                      hidden: {},
-                      visible: {
-                        transition: {
-                          delayChildren: 0.8 + index * 1.4,
-                          staggerChildren: 0.06,
-                        },
-                      },
+                    className={styles.roleTitle}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1}}
+                    transition={{
+                      delay: 0.8 + index * 1.4,
+                      duration: 0.5,
+                      ease: "easeOut",
                     }}
+                    viewport={{ once: true }}
                   >
-                    {`${item.role}, ${item.organisation}`
-                      .split("")
-                      .map((char, i) => (
-                        <motion.span
-                          key={`role-org-${i}`}
-                          style={{ display: "inline-block" }}
-                          variants={{
-                            hidden: { opacity: 0, x: -10 },
-                            visible: { opacity: 1, x: 0 },
-                          }}
-                        >
-                          {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                      ))}
+                    {item.role}, {item.organisation}
                   </motion.h3>
 
                   {/* Dates */}
                   <motion.p
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.7 }}
-                    variants={{
-                      hidden: {},
-                      visible: {
-                        transition: {
-                          delayChildren: 1.2 + index * 1.5,
-                          staggerChildren: 0.05,
-                        },
-                      },
+                    className={styles.date}
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{
+                      delay: 1.2 + index * 1.5,
+                      duration: 0.4,
+                      ease: "easeOut",
                     }}
+                    viewport={{ once: true}}
                   >
-                    {`${item.startDate} - ${item.endDate}`
-                      .split("")
-                      .map((char, i) => (
-                        <motion.span
-                          key={`date-char-${i}`}
-                          style={{ display: "inline-block" }}
-                          variants={{
-                            hidden: { opacity: 0, x: -10 },
-                            visible: { opacity: 1, x: 0 },
-                          }}
-                        >
-                          {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                      ))}
+                    {item.startDate} - {item.endDate}
                   </motion.p>
 
-                  {/* Bullet points */}
+                  {/* Bullet Points */}
                   <ul>
                     {item.experiences.map((exp, id) => (
                       <div key={id} className={styles.bulletItem}>
@@ -211,35 +183,20 @@ const Experience = () => {
                             duration: 0.5,
                             ease: "easeOut",
                           }}
-                          viewport={{ once: true, amount: 0.5 }}
+                          viewport={{ once: true }}
                         />
                         <motion.p
                           className={styles.bulletText}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true, amount: 0.2 }}
-                          variants={{
-                            hidden: {},
-                            visible: {
-                              transition: {
-                                delayChildren: 1.8 + index * 1.5 + id * 0.15,
-                                staggerChildren: 0.05,
-                              },
-                            },
+                          initial={{ opacity: 0}}
+                          whileInView={{ opacity: 1}}
+                          transition={{
+                            delay: 1.8 + index * 1.5 + id * 0.15,
+                            duration: 0.5,
+                            ease: "easeOut",
                           }}
+                          viewport={{ once: true }}
                         >
-                          {exp.split("").map((char, i) => (
-                            <motion.span
-                              key={`exp-char-${index}-${id}-${i}`}
-                              style={{ display: "inline-block" }}
-                              variants={{
-                                hidden: { opacity: 0, x: -10 },
-                                visible: { opacity: 1, x: 0 },
-                              }}
-                            >
-                              {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                          ))}
+                          {exp}
                         </motion.p>
                       </div>
                     ))}
