@@ -19,27 +19,6 @@ const Hero = () => {
 
     // 🟢 Plain non-animated version for mobile/tablet
     return (
-      <>
-        <Helmet>
-          <title>Jami Rankinen – Web Developer Portfolio</title>
-          <meta
-            name="description"
-            content="Hi, I'm Jami Rankinen – a frontend web developer passionate about React, animation, and clean design. Explore my portfolio!"
-          />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Jami Rankinen",
-              url: "https://portfolio-jami-rankinen.netlify.app",
-              jobTitle: "Web Developer",
-              sameAs: [
-                "https://github.com/jamirankinen",
-                "https://linkedin.com/in/jami-rankinen",
-              ],
-            })}
-          </script>
-        </Helmet>
 
         <header className={styles.container} id="hero">
           <div className={styles.content}>
@@ -73,33 +52,12 @@ const Hero = () => {
           <div className={styles.topBlur} />
           <div className={styles.bottomBlur} />
         </header>
-      </>
+  
     );
   }
 
   // 💻 Motion-animated version for desktop
   return (
-    <>
-      <Helmet>
-        <title>Jami Rankinen – Web Developer Portfolio</title>
-        <meta
-          name="description"
-          content="Hi, I'm Jami Rankinen – a frontend web developer passionate about React, animation, and clean design. Explore my portfolio!"
-        />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Jami Rankinen",
-            url: "https://portfolio-jami-rankinen.netlify.app",
-            jobTitle: "Web Developer",
-            sameAs: [
-              "https://github.com/jamirankinen",
-              "https://linkedin.com/in/jami-rankinen",
-            ],
-          })}
-        </script>
-      </Helmet>
 
       <motion.header
         className={styles.container}
@@ -184,7 +142,7 @@ const Hero = () => {
         <div className={styles.topBlur} />
         <div className={styles.bottomBlur} />
       </motion.header>
-    </>
+   
   );
 };
 
