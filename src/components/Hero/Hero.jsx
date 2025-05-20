@@ -14,7 +14,7 @@ const Hero = () => {
   if (isMobile) {
     const heading = "Hi, I'm Jami.";
     const description =
-      "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!";
+      "Welcome to my portfolio!";
     // 🟢 Plain non-animated version for mobile/tablet
     return (
       <section className={styles.container} id="hero">
