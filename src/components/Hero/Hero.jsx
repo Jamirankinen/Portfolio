@@ -4,6 +4,7 @@ import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import heroData from "../../data/hero.json";
 import { useIsMobile } from "../../hooks/useMobile";
+import { Helmet } from "react-helmet-async";
 
 const splitLetters = (text) => text.split("");
 
@@ -11,10 +12,28 @@ const Hero = () => {
   const { heading, description } = heroData[0];
   const isMobile = useIsMobile(); // ✅ detect screen
 
+  <Helmet>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jami Rankinen",
+      "url": "https://portfolio-jami-rankinen.netlify.app",
+      "jobTitle": "Web Developer",
+      "sameAs": [
+        "https://github.com/jamirankinen",
+        "https://linkedin.com/in/jami-rankinen"
+      ]
+    })}
+  </script>
+</Helmet>
+
+
   if (isMobile) {
     const heading = "Hi, I'm Jami.";
     const description =
       "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!";
+
     // 🟢 Plain non-animated version for mobile/tablet
     return (
       <header className={styles.container} id="hero">

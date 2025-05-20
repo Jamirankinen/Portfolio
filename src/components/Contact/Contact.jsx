@@ -44,7 +44,7 @@ const Contact = () => {
         transition={{ delay: 0.8, duration: 0.8 }}
       >
         <a
-          href="https://github.com/Jamiiiiii"
+          href="https://github.com/jamirankinen"
           target="_blank"
           rel="GitHub Jami Rankinen"
           className={styles.iconWrapper}
@@ -52,7 +52,7 @@ const Contact = () => {
           <img src={githubIcon} alt="GitHub" className={styles.icon} loading="lazy" />
         </a>
         <a
-          href="https://www.linkedin.com/in/jami-rankinen-6322612b9/"
+          href="https://www.linkedin.com/in/jami-rankinen/"
           target="_blank"
           rel="LinkedIn Jami Rankinen"
           className={styles.iconWrapper}
