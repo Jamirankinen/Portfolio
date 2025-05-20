@@ -3,10 +3,49 @@ import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import heroData from "../../data/hero.json";
+import { useIsMobile } from "../../hooks/useMobile";
+
+const splitLetters = (text) => text.split("");
 
 const Hero = () => {
   const { heading, description } = heroData[0];
+  const isMobile = useIsMobile(); // ✅ detect screen
 
+    if (isMobile) {
+    // 🟢 Plain non-animated version for mobile/tablet
+    return (
+      <section className={styles.container} id="hero">
+        <div className={styles.content}>
+          <h1 className={styles.title}>
+            {splitLetters(heading).map((char, index) => (
+              <span key={index}>{char}</span>
+            ))}
+          </h1>
+          <p className={styles.description}>{description}</p>
+          <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
+            <span className={styles.marqueeText}>Contact me!</span>
+          </a>
+        </div>
+        <img
+          src={getImageUrl("hero/heroImage.webp")}
+          srcSet={`
+            ${getImageUrl("hero/heroImage-small.webp")} 480w,
+            ${getImageUrl("hero/heroImage-medium.webp")} 768w,
+            ${getImageUrl("hero/heroImage.webp")} 1280w
+          `}
+          sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+          alt="Hero image of me"
+          width={400}
+          height={408}
+          className={styles.heroImg}
+        />
+        <div className={styles.topBlur} />
+        <div className={styles.bottomBlur} />
+      </section>
+    );
+  }
+
+  // 💻 Motion-animated version for desktop
   return (
     <motion.section
       className={styles.container}
@@ -17,7 +56,6 @@ const Hero = () => {
       viewport={{ once: true }}
     >
       <div className={styles.content}>
-        {/* Animated heading */}
         <motion.h1
           className={styles.title}
           initial="hidden"
@@ -25,9 +63,7 @@ const Hero = () => {
           variants={{
             hidden: {},
             visible: {
-              transition: {
-                staggerChildren: 0.05,
-              },
+              transition: { staggerChildren: 0.05 },
             },
           }}
         >
@@ -44,7 +80,6 @@ const Hero = () => {
           ))}
         </motion.h1>
 
-        {/* Animated description */}
         <motion.p
           className={styles.description}
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +89,6 @@ const Hero = () => {
           {description}
         </motion.p>
 
-        {/* Contact button */}
         <motion.a
           href="mailto:jamuxi34@gmail.com"
           className={styles.contactBtn}
@@ -66,18 +100,17 @@ const Hero = () => {
         </motion.a>
       </div>
 
-      {/* Hero image */}
       <motion.img
         src={getImageUrl("hero/heroImage.webp")}
         srcSet={`
           ${getImageUrl("hero/heroImage-small.webp")} 480w,
           ${getImageUrl("hero/heroImage-medium.webp")} 768w,
           ${getImageUrl("hero/heroImage.webp")} 1280w
-          `}
+        `}
         sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
         alt="Hero image of me"
-        width={400} // <-- add intrinsic width here
-        height={408} // <-- add intrinsic height here
+        width={400}
+        height={408}
         className={styles.heroImg}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -89,4 +122,5 @@ const Hero = () => {
     </motion.section>
   );
 };
+
 export default Hero;
