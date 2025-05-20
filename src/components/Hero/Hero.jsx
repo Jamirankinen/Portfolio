@@ -26,6 +26,19 @@ const Hero = () => {
             <span className={styles.marqueeText}>Contact me!</span>
           </a>
         </div>
+        <img
+          src={getImageUrl("hero/heroImage.webp")}
+          srcSet={`
+            ${getImageUrl("hero/heroImage-small.webp")} 480w,
+            ${getImageUrl("hero/heroImage-medium.webp")} 768w,
+            ${getImageUrl("hero/heroImage.webp")} 1280w
+          `}
+          sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+          alt="Hero image of me"
+          width={400}
+          height={408}
+          className={styles.heroImg}
+        />
         <div className={styles.topBlur} />
         <div className={styles.bottomBlur} />
       </section>
