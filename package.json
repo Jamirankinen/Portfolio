@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build",
+    "build": "vite build && react-snap",
+    "postbuild": "react-snap",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -16,8 +17,7 @@
     "matter-js": "^0.20.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
-    "react-helmet-async": "^2.0.5"
+    "react-snap": "^1.23.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -28,5 +28,14 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "vite": "^5.3.4"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "inlineCss": true,
+    "minifyHtml": {
+    "collapseWhitespace": true
+  },
+  "puppeteerArgs": ["--no-sandbox"],
+  "include": ["/"]
   }
 }

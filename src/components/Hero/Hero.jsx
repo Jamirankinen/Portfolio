@@ -1,10 +1,8 @@
-import React from "react";
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import heroData from "../../data/hero.json";
 import { useIsMobile } from "../../hooks/useMobile";
-import { Helmet } from "react-helmet-async";
 
 const splitLetters = (text) => text.split("");
 
@@ -12,31 +10,6 @@ const Hero = () => {
   const { heading, description } = heroData[0];
   const isMobile = useIsMobile(); // ✅ detect screen
 
-  const helmet = (
-    <Helmet>
-      <title>Jami Rankinen – Web Developer Portfolio</title>
-      <meta
-        name="description"
-        content="Hi, I'm Jami Rankinen – a frontend web developer passionate about React, animation and clean design. Explore my portfolio!"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Jami Rankinen",
-            url: "https://portfolio-jami-rankinen.netlify.app",
-            jobTitle: "Web Developer",
-            sameAs: [
-              "https://github.com/jamirankinen",
-              "https://linkedin.com/in/jami-rankinen"
-            ]
-          })
-        }}
-      />
-    </Helmet>
-  );
 
   if (isMobile) {
     const heading = "Hi, I'm Jami.";
@@ -46,7 +19,6 @@ const Hero = () => {
     // 🟢 Plain non-animated version for mobile/tablet
     return (
       <>
-      {helmet}
         <header className={styles.container} id="hero">
           <div className={styles.content}>
             <h1 className={styles.title}>
@@ -82,7 +54,6 @@ const Hero = () => {
   // 💻 Motion-animated version for desktop
   return (
     <>
-    {helmet}
       <motion.header
         className={styles.container}
         id="hero"

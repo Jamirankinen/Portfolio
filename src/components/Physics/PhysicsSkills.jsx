@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Engine, Runner, World, Bodies, Body, Events, Vector } from "matter-js";
 import skills from "../../data/skills.json";
 import { getImageUrl } from "../../utils";

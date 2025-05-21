@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { getImageUrl } from "../../utils";
 import styles from "./CertificateCard.module.css";

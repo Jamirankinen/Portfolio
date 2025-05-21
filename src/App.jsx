@@ -2,9 +2,9 @@ import { Suspense, lazy } from "react";
 import styles from "./App.module.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
+import Hero from "./components/Hero/Hero"; // Eager load Hero for SEO
 
-// Lazily load components
-const Hero = lazy(() => import("./components/Hero/Hero"));
+// Lazy-load only sections further down
 const About = lazy(() => import("./components/About/About"));
 const Experience = lazy(() => import("./components/Experience/Experience"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
@@ -17,10 +17,8 @@ function App() {
   return (
     <div className={styles.App}>
       <Navbar />
-      <Suspense
-        fallback={<div className={styles.loading}>Loading pixels...</div>}
-      >
-        <Hero />
+      <Hero /> {/* Don't lazy load Hero */}
+      <Suspense fallback={<div className={styles.loading}>Loading...</div>}>
         <About />
         <Experience />
         <Projects />

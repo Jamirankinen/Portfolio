@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProjectSlide.module.css";
 import { getImageUrl } from "../../utils";
 import { motion } from "framer-motion";

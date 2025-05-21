@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import aboutItems from "../../data/about.json";
 import styles from "./About.module.css";

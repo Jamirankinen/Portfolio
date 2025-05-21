@@ -1,8 +1,8 @@
 import styles from "./Contact.module.css";
 import { motion } from "framer-motion";
-import githubIcon from "../../../assets/contact/githubIcon.png";
-import linkedinIcon from "../../../assets/contact/linkedinIcon.png";
-import emailIcon from "../../../assets/contact/emailIcon.png";
+import githubIcon from "/assets/contact/githubIcon.png";
+import linkedinIcon from "/assets/contact/linkedinIcon.png";
+import emailIcon from "/assets/contact/emailIcon.png";
 import { useState } from "react";
 
 const Contact = () => {
@@ -53,7 +53,7 @@ const Contact = () => {
         </a>
         <a
           href="https://www.linkedin.com/in/jami-rankinen/"
-          target="_blank"
+          target="_blank" 
           rel="LinkedIn Jami Rankinen"
           className={styles.iconWrapper}
         >
