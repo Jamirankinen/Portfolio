@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ViteSSG } from 'vite-ssg';
 
 export default defineConfig({
   base: '/',
   plugins: [
-    react(),
-    ViteSSG() // Enables SSG
+    react()
   ],
   css: {
     modules: {
