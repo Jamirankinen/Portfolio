@@ -1,0 +1,12 @@
+# netlify.toml
+[build]
+  command = "vite-ssg build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
