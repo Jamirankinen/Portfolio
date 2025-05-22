@@ -7,9 +7,10 @@
 [functions]
   directory = "netlify/functions"
 
-# SPA redirect: Redirect all unmatched routes to index.html for client-side routing
+# SPA redirect: Redirect all unmatched routes (except existing files/folders) to index.html for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = true
+  conditions = { "IsFile" = false, "IsDirectory" = false }
