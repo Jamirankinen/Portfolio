@@ -40,6 +40,19 @@
       />
     </noscript>
 
+    <!-- Preload Hero Image -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/hero/heroImage.webp"
+      imagesrcset="
+        /assets/hero/heroImage-small.webp 480w,
+        /assets/hero/heroImage-medium.webp 768w,
+        /assets/hero/heroImage.webp 1280w
+      "
+      imagesizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+    />
+
     <!-- Open Graph (og) for LinkedIn, Slack, Discord, Facebook, etc. -->
     <meta property="og:type" content="website" />
     <meta
