@@ -1,7 +1,15 @@
 // components/AnimatedHeading.jsx
 import { motion } from "framer-motion";
+import { useHasHydrated } from "../../hooks/useHasHydrated";
 
-export const AnimatedHeading = ({ text, className }) => (
+export const AnimatedHeading = ({ text, className }) => {
+
+  const hasHydrated = useHasHydrated();
+
+ if (!hasHydrated) {
+    return <h2 className={className}>{text}</h2>;
+  }
+
   <motion.h2
     className={className}
     initial="hidden"
@@ -34,4 +42,4 @@ export const AnimatedHeading = ({ text, className }) => (
       </motion.span>
     ))}
   </motion.h2>
-);
+};

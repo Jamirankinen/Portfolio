@@ -3,12 +3,48 @@ import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import heroData from "../../data/hero.json";
 import { useIsMobile } from "../../hooks/useMobile";
+import { useHasHydrated } from "../../hooks/useHasHydrated";
 
 const splitLetters = (text) => text.split("");
 
 const Hero = () => {
   const { heading, description } = heroData[0];
   const isMobile = useIsMobile(); // ✅ detect screen
+  const hasHydrated = useHasHydrated(); // Check if is hydrated
+
+  // Show plain fallback if hydration not ready
+  if (!hasHydrated) {
+    return (
+      <header className={styles.container} id="hero">
+        <div className={styles.content}>
+          <h1 className={styles.title}>
+            {splitLetters(heading).map((char, index) => (
+              <span key={index}>{char}</span>
+            ))}
+          </h1>
+          <p className={styles.description}>{description}</p>
+          <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
+            <span className={styles.marqueeText}>Contact me!</span>
+          </a>
+        </div>
+        <img
+          src={getImageUrl("hero/heroImage.webp")}
+          srcSet={`
+            ${getImageUrl("hero/heroImage-small.webp")} 480w,
+            ${getImageUrl("hero/heroImage-medium.webp")} 768w,
+            ${getImageUrl("hero/heroImage.webp")} 1280w
+          `}
+          sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
+          alt="Professional photo of Jami Rankinen"
+          width={400}
+          height={408}
+          className={styles.heroImg}
+        />
+        <div className={styles.topBlur} />
+        <div className={styles.bottomBlur} />
+      </header>
+    );
+  }
 
 
   if (isMobile) {

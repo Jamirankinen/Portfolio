@@ -1,0 +1,42 @@
+/* SkeletonSection.module.css */
+
+.wrapper {
+  width: 100%;
+  max-width: 600px; /* Optional max width for bigger screens */
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-dark),
+    var(--color-between),
+    var(--color-dark)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0.5rem;
+  }
+  .skeleton {
+    border-radius: 3px;
+  }
+}
