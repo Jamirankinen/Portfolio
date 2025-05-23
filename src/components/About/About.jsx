@@ -3,7 +3,6 @@ import aboutItems from "../../data/about.json";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
 
-
 const icons = [
   "about/cursorIcon.webp",
   "about/smileIcon.webp",
@@ -21,18 +20,16 @@ const About = () => {
       viewport={{ once: true }}
     >
       <h2 className={styles.title}>About me</h2>
-         <ul className={styles.aboutItems}>
+      <ul className={styles.aboutItems}>
         {aboutItems.map((item, index) => {
-          const baseDelay = 0.3 + index * 0.4;
-
           return (
             <motion.li
               className={styles.aboutItem}
               key={index}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: baseDelay }}
-              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
             >
               <motion.img
                 src={getImageUrl(icons[index])}
@@ -40,16 +37,16 @@ const About = () => {
                 className={styles.aboutIcon}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: baseDelay + 0.1 }}
+                transition={{ duration: 1 }}
                 viewport={{ once: true }}
               />
 
               <div className={styles.aboutItemText}>
                 <motion.h3
                   className={styles.aboutItemtitle}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
-                  transition={{ duration: 0.5, delay: baseDelay + 0.2 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
                   viewport={{ once: true }}
                 >
                   {item.title}
@@ -57,9 +54,9 @@ const About = () => {
 
                 <motion.p
                   className={styles.description}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
-                  transition={{ duration: 0.5, delay: baseDelay + 0.3 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
                   viewport={{ once: true }}
                 >
                   {item.description}
