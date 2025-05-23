@@ -87,12 +87,12 @@ const Experience = () => {
               viewport={{ once: true }}
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: (i) => ({
+                visible: () => ({
                   opacity: 1,
                   y: 0,
                   transition: {
-                    delay: 0.6 + i * 0.1, // 🔧 Adjust delay per item
-                    duration: 0.4, // 🔧 Adjust animation speed
+
+                    duration: 1, // 🔧 Adjust animation speed
                     ease: "easeOut", // 🔧 Adjust easing
                   },
                 }),
