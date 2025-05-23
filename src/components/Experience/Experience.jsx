@@ -91,7 +91,6 @@ const Experience = () => {
                   opacity: 1,
                   y: 0,
                   transition: {
-
                     duration: 1, // 🔧 Adjust animation speed
                     ease: "easeOut", // 🔧 Adjust easing
                   },
@@ -143,9 +142,8 @@ const Experience = () => {
                   <motion.h3
                     className={styles.roleTitle}
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1}}
+                    whileInView={{ opacity: 1 }}
                     transition={{
-                    
                       duration: 3,
                       ease: "easeOut",
                     }}
@@ -157,14 +155,13 @@ const Experience = () => {
                   {/* Dates */}
                   <motion.p
                     className={styles.date}
-                    initial={{ opacity: 0}}
-                    whileInView={{ opacity: 1}}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{
-                  
                       duration: 3,
                       ease: "easeOut",
                     }}
-                    viewport={{ once: true}}
+                    viewport={{ once: true }}
                   >
                     {item.startDate} - {item.endDate}
                   </motion.p>
@@ -178,7 +175,6 @@ const Experience = () => {
                           initial={{ scale: 0, opacity: 0 }}
                           whileInView={{ scale: 1, opacity: 1 }}
                           transition={{
-                      
                             duration: 3,
                             ease: "easeOut",
                           }}
@@ -186,10 +182,9 @@ const Experience = () => {
                         />
                         <motion.p
                           className={styles.bulletText}
-                          initial={{ opacity: 0}}
-                          whileInView={{ opacity: 1}}
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
                           transition={{
-                          
                             duration: 3,
                             ease: "easeOut",
                           }}
