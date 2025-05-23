@@ -11,27 +11,22 @@ export const CertificateCard = ({
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Animation timings using index
-  const baseDelay = 0.4 + index * 0.4;
+
 
   const cardAnimation = {
-    delay: baseDelay,
-    duration: 0.6,
+    duration: 1,
   };
 
   const imageAnimation = {
-    delay: baseDelay + 0.5,
-    duration: 0.5,
+    duration: 1,
   };
 
   const titleAnimation = {
-    delay: baseDelay + 0.8,
-    duration: 0.5,
+    duration: 1,
   };
 
   const dateAnimation = {
-    delay: baseDelay + 1,
-    duration: 0.5,
+    duration: 1,
   };
 
   return (
@@ -40,7 +35,6 @@ export const CertificateCard = ({
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
       transition={{
-        delay: cardAnimation.delay,
         duration: cardAnimation.duration,
         ease: "easeOut",
       }}

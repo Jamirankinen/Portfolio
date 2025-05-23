@@ -14,16 +14,6 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
     endDate,
   } = project;
 
-  const {
-    image = 1.0,
-    content = 1.3,
-    title: titleDelay = 1.5,
-    date: dateDelay = 1.1,
-    description: descDelay = 1.7,
-    skills: skillsDelay = 1.9,
-    links: linksDelay = 2.1,
-  } = delays;
-
   return (
     <motion.div
       className={`${styles.projectSlide} ${isReversed ? styles.reversed : ""}`}
