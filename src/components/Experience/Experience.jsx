@@ -25,7 +25,7 @@ const Experience = () => {
       height: lineHeight,
       transition: {
         delay: 0.5,
-        duration: 3,
+        duration: 3.8,
         ease: "easeInOut",
       },
     },
@@ -42,8 +42,8 @@ const Experience = () => {
         "0 0 8px var(--color-primary)",
       ],
       transition: {
-        delay: 0.3 + index * 1.5,
-        duration: 0.5,
+        delay: 0.3 + index * 1.2,
+        duration: 0.6,
         ease: "easeOut",
       },
     }),
@@ -145,8 +145,8 @@ const Experience = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1}}
                     transition={{
-                      delay: 0.8 + index * 1.4,
-                      duration: 0.5,
+                    
+                      duration: 3,
                       ease: "easeOut",
                     }}
                     viewport={{ once: true }}
@@ -160,8 +160,8 @@ const Experience = () => {
                     initial={{ opacity: 0}}
                     whileInView={{ opacity: 1}}
                     transition={{
-                      delay: 1.2 + index * 1.5,
-                      duration: 0.4,
+                  
+                      duration: 3,
                       ease: "easeOut",
                     }}
                     viewport={{ once: true}}
@@ -178,8 +178,8 @@ const Experience = () => {
                           initial={{ scale: 0, opacity: 0 }}
                           whileInView={{ scale: 1, opacity: 1 }}
                           transition={{
-                            delay: 1.7 + index * 1.5,
-                            duration: 0.5,
+                      
+                            duration: 3,
                             ease: "easeOut",
                           }}
                           viewport={{ once: true }}
@@ -189,8 +189,8 @@ const Experience = () => {
                           initial={{ opacity: 0}}
                           whileInView={{ opacity: 1}}
                           transition={{
-                            delay: 1.8 + index * 1.5,
-                            duration: 0.5,
+                          
+                            duration: 3,
                             ease: "easeOut",
                           }}
                           viewport={{ once: true }}
