@@ -138,7 +138,6 @@ const Experience = () => {
                   custom={index}
                   variants={dotVariants}
                 />
-
                 <div className={styles.timelineDetails}>
                   {/* Role & Organisation */}
                   <motion.h3
