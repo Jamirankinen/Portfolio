@@ -11,6 +11,17 @@
   transition: transform 0.3s ease;
 }
 
+[data-theme="light"] .projectSlide {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 40px;
+  border-radius: 18px;
+  background: var(--color-pj);
+  box-shadow: 0 0 20px #576cbc;
+  transition: transform 0.3s ease;
+}
+
 .reversed {
   flex-direction: row-reverse;
 }
@@ -24,6 +35,11 @@
   transform: scale(1.03);
   box-shadow: 0 0 20px rgba(0, 140, 255, 0.5), 0 0 40px rgba(0, 140, 255, 0.3),
     0 0 60px rgba(0, 140, 255, 0.2);
+}
+
+[data-theme="light"] .imageContainer:hover .image {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px black
 }
 
 .image {
@@ -71,6 +87,14 @@
 
 .skill {
   background: var(--color-secondary);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+[data-theme="light"] .skill {
+  background: #7da4ff;
   padding: 6px 18px;
   border-radius: 100px;
   font-size: 16px;

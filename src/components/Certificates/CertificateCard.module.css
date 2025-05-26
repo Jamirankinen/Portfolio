@@ -15,6 +15,19 @@
     0 -12px 24px rgba(87, 108, 188, 0.3);
 }
 
+[data-theme="light"] .card {
+  width: 320px;
+  height: 420px;
+  perspective: 1500px;
+  cursor: pointer;
+  position: relative;
+  margin: 30px 8px;
+  border-radius: 10px;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px #576cbc;
+}
+
 .card:hover {
   transform: scale(1.05);
 
@@ -125,6 +138,16 @@
   border-radius: 100px;
   font-weight: 400;
 }
+
+[data-theme="light"] .skill {
+  background: #7da4ff;
+  padding: 6px 18px;
+  font-size: 16px;
+  border-radius: 100px;
+  font-weight: 400;
+}
+
+
 
 .links {
   display: flex;
