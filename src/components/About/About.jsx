@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutItems from "../../data/about.json";
+import { useTranslation } from "react-i18next";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -10,6 +10,9 @@ const icons = [
 ];
 
 const About = () => {
+  const { t } = useTranslation();
+  const items = t("about.items", { returnObjects: true });
+
   return (
     <motion.section
       className={styles.container}
@@ -19,9 +22,9 @@ const About = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className={styles.title}>About me</h2>
+      <h2 className={styles.title}>{t("about.sectionTitle")}</h2>
       <ul className={styles.aboutItems}>
-        {aboutItems.map((item, index) => {
+        {items.map((item, index) => {
           return (
             <motion.li
               className={styles.aboutItem}

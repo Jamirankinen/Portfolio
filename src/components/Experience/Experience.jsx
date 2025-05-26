@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
@@ -7,6 +8,9 @@ import styles from "./Experience.module.css";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
 
 const Experience = () => {
+  const { t } = useTranslation();
+  const experienceItems = t("experience.items", { returnObjects: true });
+
   const lineRef = useRef(null);
   const lastDotRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
@@ -57,7 +61,7 @@ const Experience = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      {/* Add particles behind content */}
+      {/* Particles background */}
       <div className={styles.particles}>
         {[...Array(12)].map((_, i) => (
           <span
@@ -74,8 +78,11 @@ const Experience = () => {
           />
         ))}
       </div>
-      <AnimatedHeading text="Experience" className={styles.title} />
+
+      <AnimatedHeading text={t("experience.title")} className={styles.title} />
+
       <div className={styles.content}>
+        {/* Skills section */}
         <div className={styles.skills}>
           {skills.map((skill, index) => (
             <motion.div
@@ -91,8 +98,8 @@ const Experience = () => {
                   opacity: 1,
                   y: 0,
                   transition: {
-                    duration: 1, // 🔧 Adjust animation speed
-                    ease: "easeOut", // 🔧 Adjust easing
+                    duration: 1,
+                    ease: "easeOut",
                   },
                 }),
               }}
@@ -101,13 +108,9 @@ const Experience = () => {
                 <img
                   src={getImageUrl(skill.imageSrc.src)}
                   srcSet={`
-                    ${getImageUrl(
-                      "skills/" + skill.title.toLowerCase() + "-45.webp"
-                    )} 1x,
-                    ${getImageUrl(
-                      "skills/" + skill.title.toLowerCase() + "-90.webp"
-                    )} 2x
-                    `}
+                    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-45.webp")} 1x,
+                    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-90.webp")} 2x
+                  `}
                   alt={skill.title}
                   width="45"
                   height="45"
@@ -119,6 +122,7 @@ const Experience = () => {
           ))}
         </div>
 
+        {/* Timeline section */}
         <div className={styles.timeline}>
           <motion.div
             className={styles.timelineLine}
@@ -126,82 +130,72 @@ const Experience = () => {
             ref={lineRef}
           />
 
-          {history.map((item, index) => (
-            <div key={index} className={styles.timelineItem}>
-              <div className={styles.timelineContent}>
-                <motion.div
-                  ref={index === history.length - 1 ? lastDotRef : null}
-                  className={`${styles.timelineDot} ${
-                    styles[`timelineDot${index + 1}`]
-                  }`}
-                  custom={index}
-                  variants={dotVariants}
-                />
-                <div className={styles.timelineDetails}>
-                  {/* Role & Organisation */}
-                  <motion.h3
-                    className={styles.roleTitle}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{
-                      duration: 3,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    {item.role}, {item.organisation}
-                  </motion.h3>
+          {history.map((item, index) => {
+            const translated = experienceItems[index];
+            return (
+              <div key={index} className={styles.timelineItem}>
+                <div className={styles.timelineContent}>
+                  <motion.div
+                    ref={index === history.length - 1 ? lastDotRef : null}
+                    className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}
+                    custom={index}
+                    variants={dotVariants}
+                  />
+                  <div className={styles.timelineDetails}>
+                    {/* Role & Organisation */}
+                    <motion.h3
+                      className={styles.roleTitle}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 3, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    >
+                      {translated.role}, {translated.organisation}
+                    </motion.h3>
 
-                  {/* Dates */}
-                  <motion.p
-                    className={styles.date}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{
-                      duration: 3,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    {item.startDate} - {item.endDate}
-                  </motion.p>
+                    {/* Dates */}
+                    <motion.p
+                      className={styles.date}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 3, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    >
+                      {translated.start} - {translated.end}
+                    </motion.p>
 
-                  {/* Bullet Points */}
-                  <ul>
-                    {item.experiences.map((exp, id) => (
-                      <div key={id} className={styles.bulletItem}>
-                        <motion.div
-                          className={styles.bulletDot}
-                          initial={{ scale: 0, opacity: 0 }}
-                          whileInView={{ scale: 1, opacity: 1 }}
-                          transition={{
-                            duration: 3,
-                            ease: "easeOut",
-                          }}
-                          viewport={{ once: true }}
-                        />
-                        <motion.p
-                          className={styles.bulletText}
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{
-                            duration: 3,
-                            ease: "easeOut",
-                          }}
-                          viewport={{ once: true }}
-                        >
-                          {exp}
-                        </motion.p>
-                      </div>
-                    ))}
-                  </ul>
+                    {/* Bullet Points */}
+                    <ul>
+                      {translated.bullets.map((exp, id) => (
+                        <div key={id} className={styles.bulletItem}>
+                          <motion.div
+                            className={styles.bulletDot}
+                            initial={{ scale: 0, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 3, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                          />
+                          <motion.p
+                            className={styles.bulletText}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 3, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                          >
+                            {exp}
+                          </motion.p>
+                        </div>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </motion.section>
   );
 };
+
 export default Experience;

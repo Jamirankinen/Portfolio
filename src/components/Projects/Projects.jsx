@@ -1,9 +1,12 @@
 import styles from "./Projects.module.css";
-import projects from "../../data/projects.json";
 import { ProjectSlide } from "./ProjectSlide";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
+import { useTranslation } from "react-i18next";
+
 
 const Projects = () => {
+  const { t } = useTranslation();
+  const projects = t("projects.items", { returnObjects: true });
   // Customize individual delays for each part of each project
   const animationDelays = [
     {
@@ -38,7 +41,7 @@ const Projects = () => {
       id="projects"
     >
       <AnimatedHeading
-              text="Projects"
+              text={t("projects.title")}
               className={styles.title}
             />
       <div className={styles.slides}>
