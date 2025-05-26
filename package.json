@@ -13,6 +13,7 @@
     "@fontsource/outfit": "^5.0.13",
     "@fontsource/roboto": "^5.0.13",
     "framer-motion": "^12.11.3",
+    "lucide-react": "^0.511.0",
     "matter-js": "^0.20.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -32,9 +33,13 @@
     "source": "dist",
     "inlineCss": true,
     "minifyHtml": {
-    "collapseWhitespace": true
-  },
-  "puppeteerArgs": ["--no-sandbox"],
-  "include": ["/"]
+      "collapseWhitespace": true
+    },
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ],
+    "include": [
+      "/"
+    ]
   }
 }

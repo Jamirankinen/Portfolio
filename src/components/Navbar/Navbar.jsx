@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 import { useScrollSpy } from "../../utils/useScrollSpy";
+import ThemeToggleButton from "../Theme/ThemeToggleButton";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,6 +34,10 @@ export const Navbar = () => {
       <a className={styles.title} href="/">
         Portfolio
       </a>
+       <div className={styles.rightControls}>
+        <div className={styles.themeToggleWrapper}>
+          <ThemeToggleButton />
+          </div>
       <div className={styles.menu} ref={menuRef}>
         <button
           className={styles.menuBtn}
@@ -63,6 +68,7 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </nav>
   );

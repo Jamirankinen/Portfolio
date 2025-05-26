@@ -1,14 +1,22 @@
-import { hydrateRoot, createRoot  } from 'react-dom/client';
-import App from './App';
-import './index.css';
-import '@fontsource/outfit';
-import '@fontsource/roboto';
+import { hydrateRoot, createRoot } from "react-dom/client";
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
+import "./index.css";
+import "@fontsource/outfit";
+import "@fontsource/roboto";
 
-if (typeof document !== 'undefined') {
-  const rootElement = document.getElementById('root');
+if (typeof document !== "undefined") {
+  const rootElement = document.getElementById("root");
+
+  const WrappedApp = (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+
   if (rootElement.hasChildNodes()) {
-    hydrateRoot(rootElement, <App />);
+    hydrateRoot(rootElement, WrappedApp);
   } else {
-    createRoot(rootElement).render(<App />);
+    createRoot(rootElement).render(WrappedApp);
   }
 }

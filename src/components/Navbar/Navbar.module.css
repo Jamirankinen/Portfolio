@@ -65,6 +65,18 @@
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }
 
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.themeToggleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+
 /* Responsive */
 @media screen and (max-width: 830px) {
   .navbar {

@@ -12,6 +12,17 @@
   /* Navbar Scrolling */
   --scroll-offset: 100px;
 }
+
+[data-theme="light"] {
+  --color-text: #1e1e1e;
+  --color-primary: #4e6cff;
+  --color-between: #94b4ff;
+  --color-secondary: #e0e7ff;
+  --color-dark: #dee4f4;
+  --color-bg: linear-gradient(145deg, #f8faff, #e4ecf8);
+}
+
+
 @media screen and (max-width: 830px) {
   :root {
     --scroll-offset: 80px;
