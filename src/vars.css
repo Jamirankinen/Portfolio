@@ -6,6 +6,10 @@
   --color-secondary: #19376d;
   --color-dark: #0b2447;
   --color-bg: #04152d;
+  --color-exp: linear-gradient(135deg, #19376d, #04152d 70%);
+  --color-pj: linear-gradient(145deg, #0f1a3b, #1c2b50);
+  --color-cer: linear-gradient(145deg, #0f1a3b, #1c2b50);
+  --color-ab: rgba(12, 12, 12, 0.6);
 
   /* Fonts */
   --font-roboto: "Roboto";
@@ -14,12 +18,17 @@
 }
 
 [data-theme="light"] {
-  --color-text: #1e1e1e;
-  --color-primary: #4e6cff;
-  --color-between: #94b4ff;
-  --color-secondary: #e0e7ff;
-  --color-dark: #dee4f4;
-  --color-bg: linear-gradient(145deg, #f8faff, #e4ecf8);
+   --color-text: #1a1a1a; /* Dark gray for readable text */
+  --color-primary: #4a6dd8; /* Soft but vibrant blue */
+  --color-between: #6281cc; /* Bridge between primary and secondary */
+  --color-secondary: #b3c7f7; /* Softened light blue for backgrounds/cards */
+  --color-dark: #e0e6f1; /* Slightly bluish light gray for containers */
+  --color-bg: #b3c7f7; /* Clean light background */
+  
+  --color-exp: linear-gradient(135deg, #b3c7f7, #4a6dd8 70%);
+  --color-pj: linear-gradient(145deg, #b3c7f7, #4a6dd8);
+  --color-cer: linear-gradient(145deg, #b3c7f7, #4a6dd8);
+  --color-ab: linear-gradient(145deg, #b3c7f7, #6281cc); /* Soft white glassmorphism card bg */
 }
 
 

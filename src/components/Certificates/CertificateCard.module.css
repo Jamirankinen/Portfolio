@@ -37,7 +37,7 @@
   height: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
-  background: linear-gradient(145deg, #0f1a3b, #1c2b50);
+  background: var(--color-cer);
   padding: 18px 24px;
   display: flex;
   flex-direction: column;

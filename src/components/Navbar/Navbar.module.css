@@ -36,6 +36,11 @@
 .menuBtn img {
   width: 30px;
   height: 30px;
+  filter: invert(0);
+}
+
+[data-theme="light"] .menuBtn img {
+  filter: invert(1); /* inverts white to black */
 }
 
 .menuItems {
