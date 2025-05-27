@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "heading": "Hi, I'm Jami",
+    "description": "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!",
+    "contact": "Contact me!"
+  },
+  
+  "about": {
+    "sectionTitle": "About me",
+    "items": [
+      {
+        "title": "Frontend Developer",
+        "description": "I'm passionate about every aspect of frontend development, especially web development. I love the entire process of building websites—from designing the interface and developing functionality to styling and ensuring everything is responsive and performs smoothly. I'm also committed to continuously improving my skills. I love to learn, grow, and push my boundaries every day."
+      },
+      {
+        "title": "Lifelong Learner & Adventure Seeker",
+        "description": "Outside of coding, I love to travel and explore different cultures whenever I have the time and opportunity. Just as I enjoy leveling up my development skills, I also believe in physical growth. That’s why I practice Muay Thai, calisthenics, climbing, and running. I strongly believe there's always room for growth—in both personal and professional life."
+      },
+      {
+        "title": "UI Designer",
+        "description": "As a UI designer, I create intuitive, user-centered designs that elevate digital experiences. My focus is on crafting visually appealing, responsive layouts that adapt seamlessly to any device. I aim to design beautiful yet functional interfaces that provide smooth and meaningful user journeys across all platforms."
+      }
+    ]
+  },
+
+    "experience": {
+      "title": "Experience",
+    "items": [
+      {
+        "role": "Salesman",
+        "organisation": "Gigantti",
+        "start": "Sep, 2021",
+        "end": "Dec, 2022",
+        "bullets": ["One of the top salesman", "Customer service specialist"]
+      },
+      {
+        "role": "Event Coordinator",
+        "organisation": "Outo ry",
+        "start": "Jan, 2022",
+        "end": "Aug, 2023",
+        "bullets": ["Organized events with other business partners", "Cooperation with other companies"]
+      },
+      {
+        "role": "React.js Developer intern",
+        "organisation": "Diilimurkku",
+        "start": "Nov, 2024",
+        "end": "Mar, 2025",
+        "bullets": ["Web development", "Jira for project management", "Slack for communication and GitHub for CD/CI."]
+      },
+      {
+        "role": "Bachelor's degree in Business and Information Systems",
+        "organisation": "Oamk",
+        "start": "Aug, 2021",
+        "end": "May, 2025",
+        "bullets": [
+          "Graduated from Oulu University of Applied Science",
+          "Bachelor's degree in Business and Information Systems"
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+  "title": "Projects",
+  "items": [
+    {
+      "title": "First Mobile app",
+      "startDate": "04/2023",
+      "endDate": "05/2023",
+      "imageSrc": "projects/mobile_app",
+      "description": "This was my first mobile application made with React Native, focusing on functionality with very simple CSS.",
+      "skills": ["React Native", "Node", "Sass", "JavaScript"],
+      "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
+    },
+    {
+      "title": "Chat app",
+      "startDate": "08/2024",
+      "endDate": "09/2024",
+      "imageSrc": "projects/chat-app",
+      "description": "This was a web application with chatting, ChatGPT and DALL-E features. Made it with very simple styling close to WhatsApp's styles.",
+      "skills": ["TypeScript", "Node", "Clerk", "Convex"],
+      "demo": "https://chat-app-project-tau.vercel.app",
+      "source": "https://github.com/Jamiiiiii/chat-app-project"
+    },
+    {
+      "title": "Portfolio",
+      "startDate": "04/2025",
+      "endDate": "For now",
+      "imageSrc": "projects/portfolio",
+      "description": "This is my latest online resume which is still in development. Hope you enjoy it!",
+      "skills": ["React", "HTML", "CSS", "Vite.js"],
+      "demo": "https://portfolio-jami-rankinen.netlify.app",
+      "source": ""
+    }
+  ]
+},
+
+ "certificates": {
+    "title": "Certificates",
+     "items": [
+   {
+      "title": "IBM Front-End Developer",
+      "description": "This course was completed online on Coursera to improve my skills. Part of my university studies.",
+      "skills": ["React", "JavaScript", "HTML", "CSS"]
+    },
+   {
+      "title": "Google Digital Marketing & E-Commerce",
+      "description": "This course was completed online on Coursera to improve my skills.",
+      "skills": ["E-commerce", "Social Media", "SEO"]
+    },
+    {
+      "title": "AWS Cloud Technology Consultant",
+      "description": "This course was completed online on Coursera to improve my skills.",
+      "skills": ["DevOps", "Python", "Cloud"]
+    }
+  ]
+  },
+  "contact": {
+  "tagline": "Would thou check my socials...?",
+  "copied": "Copied!",
+  "footer": "© {{year}} Jami Rankinen"
+},
+"navbar": {
+  "about": "About",
+  "experience": "Experience",
+  "projects": "Projects",
+  "certificates": "Certificates",
+  "contacts": "Contact"
+}
+}

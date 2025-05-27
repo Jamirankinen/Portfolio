@@ -84,6 +84,24 @@
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }
 
+.langSwitcher {
+  font-size: 16px;
+  font-weight: bold;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-left: 24px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.langSwitcher:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
 /* ✅ Responsive Fix */
 @media screen and (max-width: 1024px) {
   .menuBtn {
@@ -114,5 +132,10 @@
     color: var(--color-primary);
     filter: drop-shadow(0 0 6px var(--color-primary));
     transform: scale(1.05);
+  }
+  /* Optional: make it stack vertically on small screens */
+  .langSwitcher {
+    margin-top: 12px;
+    align-self: flex-end;
   }
 }

@@ -1,14 +1,17 @@
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
-import heroData from "../../data/hero.json";
 import { useIsMobile } from "../../hooks/useMobile";
 import { useHasHydrated } from "../../hooks/useHasHydrated";
+import { useTranslation } from "react-i18next";
 
 const splitLetters = (text) => text.split("");
 
 const Hero = () => {
-  const { heading, description } = heroData[0];
+  const { t } = useTranslation();
+  const heading = t("hero.heading");
+  const description = t("hero.description");
+
   const isMobile = useIsMobile(); // ✅ detect screen
   const hasHydrated = useHasHydrated(); // Check if is hydrated
 
@@ -24,7 +27,7 @@ const Hero = () => {
           </h1>
           <p className={styles.description}>{description}</p>
           <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-            <span className={styles.marqueeText}>Contact me!</span>
+            <span className={styles.marqueeText}>{t("hero.contact")}</span>
           </a>
         </div>
         <img
@@ -46,13 +49,9 @@ const Hero = () => {
     );
   }
 
-
   if (isMobile) {
-    const heading = "Hi, I'm Jami.";
-    const description =
-      "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!";
-
-    // 🟢 Plain non-animated version for mobile/tablet
+   
+ 
     return (
       <>
         <header className={styles.container} id="hero">
@@ -64,7 +63,7 @@ const Hero = () => {
             </h1>
             <p className={styles.description}>{description}</p>
             <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-              <span className={styles.marqueeText}>Contact me!</span>
+              <span className={styles.marqueeText}>{t("hero.contact")}</span>
             </a>
           </div>
           <img
@@ -83,7 +82,7 @@ const Hero = () => {
           <div className={styles.topBlur} />
           <div className={styles.bottomBlur} />
         </header>
-        </>
+      </>
     );
   }
 
@@ -163,7 +162,7 @@ const Hero = () => {
         <div className={styles.topBlur} />
         <div className={styles.bottomBlur} />
       </motion.header>
-</>
+    </>
   );
 };
 

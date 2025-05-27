@@ -4,8 +4,10 @@ import githubIcon from "/assets/contact/githubIcon.png";
 import linkedinIcon from "/assets/contact/linkedinIcon.png";
 import emailIcon from "/assets/contact/emailIcon.png";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
   const [copied, setCopied] = useState(false);
 
@@ -33,7 +35,7 @@ const Contact = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        Would thou check my socials...?
+        {t("contact.tagline")}
       </motion.h2>
 
       {/* Glass Card with Custom Icons */}
@@ -70,13 +72,13 @@ const Contact = () => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            Copied!
+            {t("contact.copied")}
           </motion.div>
         )}
       </motion.div>
 
       {/* Footer */}
-      <p className={styles.footer}>© {year} Jami Rankinen</p>
+      <p className={styles.footer}>{t("contact.footer", { year })}</p>
     </section>
   );
 };
