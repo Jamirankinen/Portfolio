@@ -3,7 +3,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  background-color: var(--color-bg); 
+  background-color: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,10 +20,43 @@
   color: var(--color-text);
 }
 
-.menu {
+/* Right section container */
+.rightControls {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+/* Wraps language, theme, and menu buttons */
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   position: relative;
+}
+
+.langSwitcher {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.langSwitcher:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+
+.themeToggleWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .menuBtn {
@@ -36,6 +69,11 @@
 .menuBtn img {
   width: 30px;
   height: 30px;
+  filter: invert(0);
+}
+
+[data-theme="light"] .menuBtn img {
+  filter: invert(1);
 }
 
 .menuItems {
@@ -65,55 +103,25 @@
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }
 
-.langSwitcher {
-  font-size: 16px;
-  font-weight: bold;
-  background: var(--color-bg);
-  color: var(--color-text);
-  border: 2px solid var(--color-primary);
-  border-radius: 8px;
-  padding: 6px 12px;
-  cursor: pointer;
-  margin-left: 24px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.langSwitcher:hover {
-  background: var(--color-primary);
-  color: var(--color-bg);
-}
-
-/* Responsive */
-@media screen and (max-width: 830px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
-
+/* ✅ Responsive adjustments */
+@media screen and (max-width: 1024px) {
   .menuBtn {
     display: block;
   }
 
   .menuItems {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 13px;
+    background-color: var(--color-bg);
+    padding: 20px 30px;
     border-radius: 10px;
-    backdrop-filter: blur(8px);
-    background-color: linear-gradient(145deg, #0f1a3b, #1c2b50);
-    padding: 24px 33px;
     box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
+    z-index: 999;
     transition: all 0.3s ease-in-out;
   }
 
@@ -126,9 +134,16 @@
     filter: drop-shadow(0 0 6px var(--color-primary));
     transform: scale(1.05);
   }
-  /* Optional: make it stack vertically on small screens */
-  .langSwitcher {
-    margin-top: 12px;
-    align-self: flex-end;
+
+   .langSwitcher {
+    font-size: 13px;
+    padding: 5px 10px;
   }
+
+  @media screen and (max-width: 600px) {
+  .langSwitcher {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
 }

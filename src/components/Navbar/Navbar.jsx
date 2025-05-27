@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 import { useScrollSpy } from "../../utils/useScrollSpy";
+import ThemeToggleButton from "../Theme/ThemeToggleButton";
 import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
@@ -37,24 +38,43 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar} aria-label="Main Navigation">
+      {/* Logo / title */}
       <a className={styles.title} href="/">
         Portfolio
       </a>
-      <div className={styles.menu} ref={menuRef}>
-        <button
-          className={styles.menuBtn}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <img
-            src={
-              menuOpen
-                ? getImageUrl("nav/closeIcon.png")
-                : getImageUrl("nav/menuIcon.png")
-            }
-            alt="menu icon"
-          />
-        </button>
+
+      {/* Right controls: language switcher, theme toggle, menu button */}
+      <div className={styles.rightControls} ref={menuRef}>
+        <div className={styles.menuWrapper}>
+          <button
+            onClick={toggleLanguage}
+            className={styles.langSwitcher}
+            aria-label="Switch language"
+          >
+            {i18n.language === "en" ? "FI" : "EN"}
+          </button>
+
+          <div className={styles.themeToggleWrapper}>
+            <ThemeToggleButton />
+          </div>
+
+          <button
+            className={styles.menuBtn}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <img
+              src={
+                menuOpen
+                  ? getImageUrl("nav/closeIcon.png")
+                  : getImageUrl("nav/menuIcon.png")
+              }
+              alt="menu icon"
+            />
+          </button>
+        </div>
+
+        {/* Dropdown menu */}
         <ul
           className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
           onClick={() => setMenuOpen(false)}
@@ -69,13 +89,6 @@ export const Navbar = () => {
               </a>
             </li>
           ))}
-          <button
-            onClick={toggleLanguage}
-            className={styles.langSwitcher}
-            aria-label="Switch language"
-          >
-            {i18n.language === "en" ? "FI" : "EN"}
-          </button>
         </ul>
       </div>
     </nav>
