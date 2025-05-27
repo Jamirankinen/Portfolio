@@ -31,28 +31,37 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar} aria-label="Main Navigation">
+      {/* Logo / title */}
       <a className={styles.title} href="/">
         Portfolio
       </a>
-       <div className={styles.rightControls}>
-        <div className={styles.themeToggleWrapper}>
-          <ThemeToggleButton />
+
+      {/* Right side: theme toggle + menu button + dropdown menu */}
+      <div className={styles.rightControls} ref={menuRef}>
+        <div className={styles.menuWrapper}>
+          {/* Theme toggle */}
+          <div className={styles.themeToggleWrapper}>
+            <ThemeToggleButton />
           </div>
-      <div className={styles.menu} ref={menuRef}>
-        <button
-          className={styles.menuBtn}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <img
-            src={
-              menuOpen
-                ? getImageUrl("nav/closeIcon.png")
-                : getImageUrl("nav/menuIcon.png")
-            }
-            alt="menu icon"
-          />
-        </button>
+
+          {/* Hamburger / close menu button */}
+          <button
+            className={styles.menuBtn}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <img
+              src={
+                menuOpen
+                  ? getImageUrl("nav/closeIcon.png")
+                  : getImageUrl("nav/menuIcon.png")
+              }
+              alt="menu icon"
+            />
+          </button>
+        </div>
+
+        {/* Dropdown menu */}
         <ul
           className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
           onClick={() => setMenuOpen(false)}
@@ -68,7 +77,6 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        </div>
       </div>
     </nav>
   );

@@ -1,7 +1,4 @@
 .themeToggleBtn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   padding: 0.5rem;
   border-radius: 999px;
   background-color: var(--color-secondary);
@@ -9,6 +6,9 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .themeToggleBtn:hover {
@@ -24,9 +24,7 @@
 
 @media (max-width: 600px) {
   .themeToggleBtn {
-    top: 0.75rem;
-    right: 0.75rem;
-    padding: 0.4rem;
+    padding: 0.3rem;
   }
 
   .themeIcon {

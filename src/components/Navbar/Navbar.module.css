@@ -3,7 +3,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  background-color: var(--color-bg); 
+  background-color: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,10 +20,24 @@
   color: var(--color-text);
 }
 
-.menu {
+/* Wraps theme + menu button */
+.rightControls {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+/* Keeps buttons aligned in row */
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   position: relative;
+}
+
+.themeToggleWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .menuBtn {
@@ -40,7 +54,7 @@
 }
 
 [data-theme="light"] .menuBtn img {
-  filter: invert(1); /* inverts white to black */
+  filter: invert(1);
 }
 
 .menuItems {
@@ -70,49 +84,25 @@
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }
 
-.rightControls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.themeToggleWrapper {
-  display: flex;
-  align-items: center;
-}
-
-
-/* Responsive */
-@media screen and (max-width: 830px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
-
+/* ✅ Responsive Fix */
+@media screen and (max-width: 1024px) {
   .menuBtn {
     display: block;
   }
 
   .menuItems {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 13px;
+    background-color: var(--color-bg); /* original, not changed */
+    padding: 20px 30px;
     border-radius: 10px;
-    backdrop-filter: blur(8px);
-    background-color: linear-gradient(145deg, #0f1a3b, #1c2b50);
-    padding: 24px 33px;
     box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
+    z-index: 999;
     transition: all 0.3s ease-in-out;
   }
 
