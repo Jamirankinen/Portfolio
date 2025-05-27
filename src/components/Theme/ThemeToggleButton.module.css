@@ -1,10 +1,10 @@
 .themeToggleBtn {
-  padding: 0.5rem;
+  padding: 6px 12px;
   border-radius: 999px;
   background-color: var(--color-secondary);
   border: none;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
@@ -12,23 +12,35 @@
 }
 
 .themeToggleBtn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: var(--color-primary);
 }
 
 .themeIcon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   display: block;
 }
 
 @media (max-width: 600px) {
   .themeToggleBtn {
-    padding: 0.3rem;
+    padding: 5px 10px;
   }
 
   .themeIcon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+  }
+
+  @media screen and (max-width: 1024px) {
+      .themeToggleBtn {
+    padding: 5px 10px;
+  }
+
+  .themeIcon {
+    width: 16px;
+    height: 16px;
+  }
+    
   }
 }

@@ -43,15 +43,21 @@ export const Navbar = () => {
         Portfolio
       </a>
 
-      {/* Right side: theme toggle + menu button + dropdown menu */}
+      {/* Right controls: language switcher, theme toggle, menu button */}
       <div className={styles.rightControls} ref={menuRef}>
         <div className={styles.menuWrapper}>
-          {/* Theme toggle */}
+          <button
+            onClick={toggleLanguage}
+            className={styles.langSwitcher}
+            aria-label="Switch language"
+          >
+            {i18n.language === "en" ? "FI" : "EN"}
+          </button>
+
           <div className={styles.themeToggleWrapper}>
             <ThemeToggleButton />
           </div>
 
-          {/* Hamburger / close menu button */}
           <button
             className={styles.menuBtn}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -83,13 +89,6 @@ export const Navbar = () => {
               </a>
             </li>
           ))}
-          <button
-            onClick={toggleLanguage}
-            className={styles.langSwitcher}
-            aria-label="Switch language"
-          >
-            {i18n.language === "en" ? "FI" : "EN"}
-          </button>
         </ul>
       </div>
     </nav>

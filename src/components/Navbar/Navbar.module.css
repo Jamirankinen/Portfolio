@@ -20,20 +20,39 @@
   color: var(--color-text);
 }
 
-/* Wraps theme + menu button */
+/* Right section container */
 .rightControls {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Keeps buttons aligned in row */
+/* Wraps language, theme, and menu buttons */
 .menuWrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   position: relative;
 }
+
+.langSwitcher {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.langSwitcher:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
 
 .themeToggleWrapper {
   display: flex;
@@ -84,25 +103,7 @@
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }
 
-.langSwitcher {
-  font-size: 16px;
-  font-weight: bold;
-  background: var(--color-bg);
-  color: var(--color-text);
-  border: 2px solid var(--color-primary);
-  border-radius: 8px;
-  padding: 6px 12px;
-  cursor: pointer;
-  margin-left: 24px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.langSwitcher:hover {
-  background: var(--color-primary);
-  color: var(--color-bg);
-}
-
-/* ✅ Responsive Fix */
+/* ✅ Responsive adjustments */
 @media screen and (max-width: 1024px) {
   .menuBtn {
     display: block;
@@ -116,7 +117,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 13px;
-    background-color: var(--color-bg); /* original, not changed */
+    background-color: var(--color-bg);
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
@@ -133,9 +134,16 @@
     filter: drop-shadow(0 0 6px var(--color-primary));
     transform: scale(1.05);
   }
-  /* Optional: make it stack vertically on small screens */
-  .langSwitcher {
-    margin-top: 12px;
-    align-self: flex-end;
+
+   .langSwitcher {
+    font-size: 13px;
+    padding: 5px 10px;
   }
+
+  @media screen and (max-width: 600px) {
+  .langSwitcher {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
 }
