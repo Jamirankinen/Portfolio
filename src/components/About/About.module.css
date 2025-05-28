@@ -104,6 +104,14 @@
     text-align: center;
   }
 
+  [data-theme="light"] .container {
+       background-color: var(--color-ab); /* Keep background */
+    padding: 40px 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+
   .title {
     font-size: 28px;
     text-align: center;
