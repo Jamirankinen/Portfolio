@@ -299,6 +299,14 @@
     margin-top: 100px;
   }
 
+  [data-theme="light"] .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px 15px;
+    border-radius: 10px;
+    margin-top: 100px;
+  }
+
   .content {
     flex-direction: column;
     align-items: center;
