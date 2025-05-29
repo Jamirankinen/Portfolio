@@ -1,25 +1,26 @@
 {
   "hero": {
     "heading": "Olen Jami",
-    "description": "Tervetuloa minun portfoliooni! Tältä sivulta löydät minusta kaiken tarpeellisen tiedon. Tutustu vapaasti ja ota yhteyttä jos kiinnostuit!",
+    "description": "Etsin aktiivisesti Web- ja Frontend kehityksen rooleja. Tutustu portfoliooni ja jos tunnet tarpeidemme kohtaavan laitathan viestiä!",
     "contact": "Ota Yhteyttä!"
   },
 
   "about": {
   "sectionTitle": "Olen",
   "items": [
+        {
+      "title": "Jami Rankinen",
+      "description": "Olen 25-vuotias vastavalmistunut Tietojenkäsittelyn Tradenomi ja asustelen Helsingin Kalliossa. Äidinkielenä Suomi mutta puhun sujuvasti Englantia ja osaan Saksan, espanjan ja ruotsin perusteet. Oon just se tyyppi, joka menee juttelemaan ihmisille kun muut ei siihen pysty. Mulla ei ole ongelmaa olla parrasvaloissa mutta osaan kyllä olla myös taustatukena. Mulla on kokemusta projekteissa tiimin vetäjänä ja kontaktina asiakkaan ja dev tiimin välillä."
+    },
     {
       "title": "Frontend-kehittäjä",
       "description": "Olen intohimoinen frontend-kehityksestä, erityisesti verkkosivujen rakentamisesta. Rakastan koko prosessia: suunnittelua, toiminnallisuuden kehittämistä, tyyliien hiomista ja suorituskyvyn optimointia. Haluan myös jatkuvasti kehittää itseäni ja olen aina valmis oppimaan uutta."
     },
     {
       "title": "Elinikäinen oppija & seikkailija",
-      "description": "Koodauksen ulkopuolella tykkään matkustella ja tutustua uusiin kulttuureihin. Samalla tavalla kuin kehitän ohjelmointitaitojani, kehitän itseäni myös fyysisesti. Harrastan muun muassa thainyrkkeilyä, kehonpainoharjoittelua, kiipeilyä ja juoksua."
-    },
-    {
-      "title": "UI-suunnittelija",
-      "description": "UI-suunnittelijana luon intuitiivisia ja käyttäjäkeskeisiä käyttöliittymiä. Tavoitteeni on suunnitella kauniita ja toimivia käyttöliittymiä, jotka mukautuvat sulavasti eri laitteisiin ja tarjoavat sujuvan käyttökokemuksen."
+      "description": "Koodauksen ulkopuolella tykkään matkustella ja tutustua uusiin kulttuureihin. Samalla tavalla kuin kehitän ohjelmointitaitojani, kehitän itseäni myös fyysisesti. Harrastan muun muassa thainyrkkeilyä, kehonpainoharjoittelua, kiipeilyä ja juoksua. PS: salainen taitoni on verkostoitua ihmisten kanssa missä vaan millon vaan."
     }
+
   ]
 },
 
