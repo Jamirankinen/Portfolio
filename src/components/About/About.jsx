@@ -5,8 +5,8 @@ import { getImageUrl } from "../../utils";
 
 const icons = [
   "about/cursorIcon.webp",
-  "about/smileIcon.webp",
   "about/uiIcon.webp",
+  "about/smileIcon.webp",
 ];
 
 const About = () => {

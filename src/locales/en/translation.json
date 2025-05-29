@@ -1,13 +1,17 @@
 {
   "hero": {
     "heading": "Hi, I'm Jami",
-    "description": "Welcome to my portfolio! On this page you will find everything you need to know about me. Feel free to explore my portfolio and contact me if you're interested!",
+    "description": "I'm actively looking for positions in Frontend Development and related fields. Explore my portfolio and feel free to contact me if you're interested!",
     "contact": "Contact me!"
   },
   
   "about": {
     "sectionTitle": "About me",
     "items": [
+            {
+        "title": "Jami Rankinen",
+        "description": "I'm 25 years old recent Business and Information Systems graduate based in Helsinki, Finland (for now). Native in Finnish but fluent in English, also now basics of German, Spanish and Swedish. I'm the person who goes to talk to other people when no-one else is up to the task. I'm not afraid of being the center of attention but I also now when to be in the sidelines. I have experience in projects as the leader and the contact between the client and the dev team. "
+      },
       {
         "title": "Frontend Developer",
         "description": "I'm passionate about every aspect of frontend development, especially web development. I love the entire process of building websites—from designing the interface and developing functionality to styling and ensuring everything is responsive and performs smoothly. I'm also committed to continuously improving my skills. I love to learn, grow, and push my boundaries every day."
@@ -15,10 +19,6 @@
       {
         "title": "Lifelong Learner & Adventure Seeker",
         "description": "Outside of coding, I love to travel and explore different cultures whenever I have the time and opportunity. Just as I enjoy leveling up my development skills, I also believe in physical growth. That’s why I practice Muay Thai, calisthenics, climbing, and running. I strongly believe there's always room for growth—in both personal and professional life."
-      },
-      {
-        "title": "UI Designer",
-        "description": "As a UI designer, I create intuitive, user-centered designs that elevate digital experiences. My focus is on crafting visually appealing, responsive layouts that adapt seamlessly to any device. I aim to design beautiful yet functional interfaces that provide smooth and meaningful user journeys across all platforms."
       }
     ]
   },
