@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
-import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
 import { AnimatedHeading } from "../Animations/AnimatedHeading";
+import Skill from "../Skills/Skills";
 
 const Experience = () => {
   const { t } = useTranslation();
@@ -86,8 +86,8 @@ const Experience = () => {
         <div className={styles.skills}>
           {skills.map((skill, index) => (
             <motion.div
-              className={styles.skill}
               key={index}
+              className={styles.skillWrapper}
               custom={index}
               initial="hidden"
               whileInView="visible"
@@ -104,20 +104,11 @@ const Experience = () => {
                 }),
               }}
             >
-              <div className={styles.skillImageContainer}>
-                <img
-                  src={getImageUrl(skill.imageSrc.src)}
-                  srcSet={`
-                    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-45.webp")} 1x,
-                    ${getImageUrl("skills/" + skill.title.toLowerCase() + "-90.webp")} 2x
-                  `}
-                  alt={skill.title}
-                  width="45"
-                  height="45"
-                  loading="lazy"
-                />
-              </div>
-              <p>{skill.title}</p>
+              <Skill
+  imageSrc={skill.imageSrc}  // pass the whole imageSrc object with src and srcSet
+  name={skill.title}
+  level={skill.level || Math.floor(Math.random() * 40 + 50)} // keep your existing fallback
+/>
             </motion.div>
           ))}
         </div>
@@ -137,7 +128,9 @@ const Experience = () => {
                 <div className={styles.timelineContent}>
                   <motion.div
                     ref={index === history.length - 1 ? lastDotRef : null}
-                    className={`${styles.timelineDot} ${styles[`timelineDot${index + 1}`]}`}
+                    className={`${styles.timelineDot} ${
+                      styles[`timelineDot${index + 1}`]
+                    }`}
                     custom={index}
                     variants={dotVariants}
                   />

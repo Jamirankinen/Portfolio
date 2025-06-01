@@ -4,48 +4,55 @@
     "imageSrc": {
       "src": "skills/html-45.webp",
       "srcSet": "skills/html-45.webp 1x, skills/html-90.webp 2x"
-    }
+    },
+    "level": 90
   },
   {
     "title": "CSS",
     "imageSrc": {
       "src": "skills/css-45.webp",
       "srcSet": "skills/css-45.webp 1x, skills/css-90.webp 2x"
-    }
+    },
+    "level": 90
   },
   {
     "title": "JavaScript",
     "imageSrc": {
       "src": "skills/javascript-45.webp",
       "srcSet": "skills/javascript-45.webp 1x, skills/javascript-90.webp 2x"
-    }
+    },
+    "level": 80
   },
   {
     "title": "Node",
    "imageSrc": {
       "src": "skills/node-45.webp",
       "srcSet": "skills/node-45.webp 1x, skills/node-90.webp 2x"
-    }
+    },
+    "level": 70
   },
   {
     "title": "React",
    "imageSrc": {
       "src": "skills/react-45.webp",
       "srcSet": "skills/react-45.webp 1x, skills/react-90.webp 2x"
-    }
+    },
+    "level": 90
   },
   {
     "title": "TypeScript",
     "imageSrc": {
       "src": "skills/typescript-45.webp",
       "srcSet": "skills/typescript-45.webp 1x, skills/typescript-90.webp 2x"
-    }
+    },
+    "level": 70
   },
   {
     "title": "Firebase",
     "imageSrc": {
       "src": "skills/firebase-45.webp",
       "srcSet": "skills/firebase-45.webp 1x, skills/firebase-90.webp 2x"
-    }
+    },
+    "level": 60
   }
 ]
