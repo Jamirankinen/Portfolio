@@ -1,0 +1,198 @@
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+
+
+.skillInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  position: relative;
+}
+
+.skillImageContainer {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .skillImageContainer {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-between);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.skillImageContainer:hover {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(87, 108, 188, 0.6);
+}
+
+[data-theme="light"] .skillImageContainer:hover {
+  background-color: #162844;;
+  box-shadow: 0 0 12px rgba(10, 22, 69, 0.6);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+}
+
+.tooltip {
+  position: absolute;
+  top: -32px;
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.skillImageContainer:hover .tooltip {
+  opacity: 1;
+}
+
+.barWrapper {
+  flex-grow: 1;
+  margin-left: 30px;
+  height: 14px;
+  background-color: var(--color-dark);
+  border-radius: 7px;
+  position: relative;
+}
+
+.barFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 7px;
+  transition: width 1.2s ease-in-out;
+  position: relative;
+}
+
+/* Striped overlay (seamless and animated on hover) */
+.barFill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.08) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.08) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px; /* Matches movement for smooth loop */
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 7px;
+  animation: stripeSlide 2s linear infinite;
+}
+
+
+@keyframes stripeSlide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+
+.percentageLabel {
+  position: absolute;
+  top: -22px;
+  right: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-dark);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .skill {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .skillInfo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .skillImageContainer {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .barWrapper {
+    width: 100%;
+    margin-left: 0;
+    height: 14px;
+    position: relative;
+  }
+
+  .percentageLabel {
+    position: absolute;
+    top: -22px;
+    right: 6px;
+    font-size: 12px;
+    padding: 2px 6px;
+    white-space: nowrap;
+    background-color: var(--color-dark);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+

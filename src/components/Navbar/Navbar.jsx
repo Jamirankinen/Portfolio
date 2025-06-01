@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
+
   const menuRef = useRef(null);
   const sectionIds = [
     "about",
@@ -24,6 +27,21 @@ export const Navbar = () => {
     i18n.changeLanguage(newLang);
   };
 
+    useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY.current && currentY > 100) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -37,7 +55,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={styles.navbar} aria-label="Main Navigation">
+    <nav className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden}`} aria-label="Main Navigation">
       {/* Logo / title */}
       <a className={styles.title} href="/">
         Portfolio
