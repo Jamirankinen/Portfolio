@@ -3,7 +3,7 @@
 .contactSection {
   padding: 4rem 2rem;
   text-align: center;
-  background: var(--color-bg);
+  background: transparent;
   color: var(--color-text);
   scroll-margin-top: var(--scroll-offset);
   margin-top: 250px;

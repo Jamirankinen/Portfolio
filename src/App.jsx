@@ -5,6 +5,7 @@ import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
 import LayoutWithHydration from "./components/LayoutWithHydration/LayoutWithHydration";
 import SkeletonSection from "./components/Skeletons/SkeletonSection";
 import Hero from "./components/Hero/Hero"; // Eager load Hero for SEO
+import AnimatedBackground from "./components/AnimatedBackground/AnimatedBackground";
 
 // Lazy-load only sections further down
 const About = lazy(() => import("./components/About/About"));
@@ -16,6 +17,7 @@ const Contact = lazy(() => import("./components/Contact/Contact"));
 function App() {
   return (
     <div className={styles.App}>
+      <AnimatedBackground />
       <Navbar />
       <Hero /> 
        <LayoutWithHydration fallback={<div className={styles.loading}>Extinguishing thrist...</div>}>
