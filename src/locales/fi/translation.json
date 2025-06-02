@@ -118,7 +118,10 @@
   ]
   },
   "contact": {
-  "tagline": "Katsoisitko myös someni...?",
+    "staticText": "Moikka ",
+      "tagline1": "laitahhan koodia!",
+    "tagline2": "kurkkaa mun somet!",
+    "tagline3": "jätä viesti vastaajaan ✨",
   "copied": "Kopioitu!",
   "footer": "© {{year}} Jami Rankinen"
 },
@@ -127,7 +130,7 @@
   "experience": "Työkokemus",
   "projects": "Projektit",
   "certificates": "Certifikaatit",
-  "contacts": "Yhteystiedot"
+  "contact": "Yhteystiedot"
 }
 
 }

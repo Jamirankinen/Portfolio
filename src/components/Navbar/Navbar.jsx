@@ -16,7 +16,7 @@ export const Navbar = () => {
     "experience",
     "projects",
     "certificates",
-    "contacts",
+    "contact",
   ];
   const activeId = useScrollSpy(sectionIds, 100);
 

@@ -17,7 +17,7 @@ const Projects = lazy(() => import("./components/Projects/Projects"));
 const Certificates = lazy(() =>
   import("./components/Certificates/Certificates")
 );
-const Contact = lazy(() => import("./components/Contact/Contact"));
+const FloatingContact = lazy(() => import("./components/FloatingContact/FloatingContact"));
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
           <Experience />
           <Projects />
           <Certificates />
-          <Contact />
+          <FloatingContact />
         </Suspense>
         <ScrollToTopButton />
       </LayoutWithHydration>

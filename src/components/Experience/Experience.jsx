@@ -61,7 +61,6 @@ const Experience = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-
       <AnimatedHeading text={t("experience.title")} className={styles.title} />
 
       <div className={styles.content}>
@@ -88,10 +87,10 @@ const Experience = () => {
               }}
             >
               <Skill
-  imageSrc={skill.imageSrc}  // pass the whole imageSrc object with src and srcSet
-  name={skill.title}
-  level={skill.level || Math.floor(Math.random() * 40 + 50)} // keep your existing fallback
-/>
+                imageSrc={skill.imageSrc} // pass the whole imageSrc object with src and srcSet
+                name={skill.title}
+                level={skill.level || Math.floor(Math.random() * 40 + 50)} // keep your existing fallback
+              />
             </motion.div>
           ))}
         </div>

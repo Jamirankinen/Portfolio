@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useIsMobile } from "../../hooks/useMobile";
 import { useHasHydrated } from "../../hooks/useHasHydrated";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import AnimatedTypewriter from "../../hooks/AnimatedTypewriter";
 
 const splitLetters = (text) => text.split("");
 
@@ -17,53 +17,7 @@ const Hero = () => {
   const hasHydrated = useHasHydrated(); // Check if is hydrated
 
   const titles = t("hero.animatedTitles", { returnObjects: true });
-  const [displayText, setDisplayText] = useState("");
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingStarted, setTypingStarted] = useState(false);
 
-  // Start typing 1 second after heading animation
-  useEffect(() => {
-    const delay = setTimeout(() => setTypingStarted(true), 1000);
-    return () => clearTimeout(delay);
-  }, []);
-
-  useEffect(() => {
-  if (!typingStarted) return;
-
-  const currentTitle = titles[titleIndex];
-  const isComplete = !isDeleting && charIndex === currentTitle.length;
-  const isCleared = isDeleting && charIndex === 0;
-
-  const typingSpeed = 80;
-  const deletingSpeed = 60;
-  const pauseBeforeDelete = 1200;
-  const pauseBeforeNext = 300;
-
-  let timeout;
-
-  if (isComplete) {
-    // Pause before starting to delete
-    timeout = setTimeout(() => {
-      setIsDeleting(true);
-    }, pauseBeforeDelete);
-  } else if (isCleared) {
-    // Move to next title after deleting
-    timeout = setTimeout(() => {
-      setIsDeleting(false);
-      setTitleIndex((prev) => (prev + 1) % titles.length);
-    }, pauseBeforeNext);
-  } else {
-    // Typing or deleting
-    timeout = setTimeout(() => {
-      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, isDeleting ? deletingSpeed : typingSpeed);
-  }
-
-  setDisplayText(currentTitle.substring(0, charIndex));
-  return () => clearTimeout(timeout);
-}, [charIndex, isDeleting, titleIndex, typingStarted]);
   // Show plain fallback if hydration not ready
   if (!hasHydrated) {
     return (
@@ -145,39 +99,36 @@ const Hero = () => {
         viewport={{ once: true }}
       >
         <div className={styles.content}>
-           <motion.h1
-          className={styles.title}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.05 },
-            },
-          }}
-        >
-          {/* Static part (e.g., "Hi, I'm") */}
-          <motion.span
-            className={styles.staticText}
+          <motion.h1
+            className={styles.title}
+            initial="hidden"
+            animate="visible"
             variants={{
-              hidden: { opacity: 0, x: -10 },
-              visible: { opacity: 1, x: 0 },
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.05 },
+              },
             }}
           >
-            {t("hero.heading")}
-          </motion.span>{" "}
-
-          {/* Animated typewriter text */}
-          <motion.span
-            className={styles.animatedText}
-            variants={{
-              hidden: { opacity: 0, x: -10 },
-              visible: { opacity: 1, x: 0 },
-            }}
-          >
-            {displayText}
-          </motion.span>
-        </motion.h1>
+            <motion.span
+              className={styles.staticText}
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              {t("hero.heading")}
+            </motion.span>{" "}
+            <motion.span
+              className={styles.animatedText}
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <AnimatedTypewriter texts={titles} />
+            </motion.span>
+          </motion.h1>
 
           <motion.p
             className={styles.description}

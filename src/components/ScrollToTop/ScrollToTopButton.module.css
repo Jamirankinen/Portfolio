@@ -15,11 +15,13 @@
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #921187;
 }
 
 .scrollButton:hover {
   transform: scale(1.1);
   background-color: var(--color-secondary);
+  box-shadow: 0 0 20px var(--color-secondary);
 }
 
 .scrollButton img {
