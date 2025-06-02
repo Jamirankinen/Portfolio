@@ -1,6 +1,7 @@
 {
   "hero": {
-    "heading": "Olen Jami",
+    "heading": "Olen",
+    "animatedTitles": ["Jami", "Frontend-kehittäjä", "Web-kehittäjä"],
     "description": "Etsin aktiivisesti Web- ja Frontend kehityksen rooleja. Tutustu portfoliooni ja jos tunnet tarpeidemme kohtaavan laitathan viestiä!",
     "contact": "Ota Yhteyttä!"
   },

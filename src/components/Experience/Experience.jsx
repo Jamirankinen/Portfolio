@@ -61,23 +61,6 @@ const Experience = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      {/* Particles background */}
-      <div className={styles.particles}>
-        {[...Array(12)].map((_, i) => (
-          <span
-            key={i}
-            className={styles.particle}
-            style={{
-              width: `${8 + Math.random() * 12}px`,
-              height: `${8 + Math.random() * 12}px`,
-              left: `${Math.random() * 100}%`,
-              bottom: `${Math.random() * 10}%`,
-              animationDuration: `${6 + Math.random() * 8}s`,
-              animationDelay: `${Math.random() * 10}s`,
-            }}
-          />
-        ))}
-      </div>
 
       <AnimatedHeading text={t("experience.title")} className={styles.title} />
 

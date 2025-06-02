@@ -31,8 +31,7 @@
 }
 
 .glassCard {
-  backdrop-filter: blur(10px);
-  background: var(--color-bg);
+  background: transparent;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: center;
