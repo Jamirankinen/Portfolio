@@ -119,9 +119,7 @@
   },
   "contact": {
     "title": "Morjesta",
-    "tagline1": "Olemmako yhteyksissä?✨",
-    "tagline2": "Pullopostia?",
-    "tagline3": "Savumerkkejä? ",
+    "animatedTitles": ["Olemmako yhteyksissä...?", "Pullopostia...?", "Savumerkkejä...?"],
     "description": "Kiva kun kävit! ✨ Voit halutessasi olla yhteydessä säpön kautta!",
     "button": "Laita viestiä!"
   },
