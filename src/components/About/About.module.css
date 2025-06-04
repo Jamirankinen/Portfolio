@@ -92,7 +92,7 @@
 
 @media screen and (max-width: 830px) {
   .container {
-    background-color: var(--color-bg); /* Keep background */
+    background-color: var(--color-ab); /* Keep background */
     padding: 40px 20px;
     margin-left: 5%;
     margin-right: 5%;
@@ -100,7 +100,7 @@
   }
 
   [data-theme="light"] .container {
-       background-color: var(--color-bg); /* Keep background */
+       background-color: var(--color-ab); /* Keep background */
     padding: 40px 20px;
     margin-left: 5%;
     margin-right: 5%;

@@ -89,6 +89,10 @@
   filter: invert(1);
 }
 
+.menuItems li {
+  overflow: visible; /* ensure scaling isn't clipped */
+}
+
 .menuItems {
   display: flex;
   gap: 47px;
@@ -100,18 +104,18 @@
   font-size: 20px;
   color: var(--color-text);
   text-decoration: none;
-  transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .menuItems a:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
   filter: drop-shadow(0 0 6px var(--color-primary));
   color: var(--color-primary);
 }
 
 .menuItems a.active {
   color: var(--color-primary);
-  transform: scale(1.1);
+  transform: scale(1.5);
   filter: drop-shadow(0 0 6px var(--color-primary));
   transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
 }

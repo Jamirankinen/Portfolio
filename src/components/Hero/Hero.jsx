@@ -1,7 +1,6 @@
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
-import { useIsMobile } from "../../hooks/useMobile";
 import { useHasHydrated } from "../../hooks/useHasHydrated";
 import { useTranslation } from "react-i18next";
 import AnimatedTypewriter from "../../hooks/AnimatedTypewriter";
@@ -14,9 +13,8 @@ const Hero = () => {
   const description = t("hero.description");
   const titles = t("hero.animatedTitles", { returnObjects: true });
 
-  const isMobile = useIsMobile(); // ✅ detect screen
-  const hasHydrated = useHasHydrated(); // Check if is zhydrated
 
+  const hasHydrated = useHasHydrated(); // Check if is zhydrated
   const language = i18n.language;
   const cvLink = language === "fi" ? "/cv-fi.pdf" : "/cv-en.pdf";
 
@@ -58,37 +56,6 @@ const Hero = () => {
           className={styles.heroImg}
         />
       </header>
-    );
-  }
-
-  if (isMobile) {
-    return (
-      <>
-        <header className={styles.container} id="hero">
-          <div className={styles.content}>
-            <h1 className={styles.title}>
-              {splitLetters(heading).map((char, index) => (
-                <span key={index}>{char}</span>
-              ))}
-            </h1>
-            <p className={styles.description}>{description}</p>
-            {CVButton}
-          </div>
-          <img
-            src={getImageUrl("hero/heroImage.webp")}
-            srcSet={`
-            ${getImageUrl("hero/heroImage-small.webp")} 480w,
-            ${getImageUrl("hero/heroImage-medium.webp")} 768w,
-            ${getImageUrl("hero/heroImage.webp")} 1280w
-          `}
-            sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
-            alt="Professional photo of Jami Rankinen"
-            width={400}
-            height={408}
-            className={styles.heroImg}
-          />
-        </header>
-      </>
     );
   }
 
