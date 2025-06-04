@@ -10,9 +10,7 @@
   border-radius: 10px;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
-  box-shadow:
-    0 12px 24px rgba(4, 21, 45, 0.6),
-    0 -12px 24px rgba(87, 108, 188, 0.3);
+  box-shadow: 0 0 10px #921187;
 }
 
 [data-theme="light"] .card {
@@ -31,9 +29,7 @@
 .card:hover {
   transform: scale(1.05);
 
-       box-shadow:
-    0 8px 20px rgba(4, 21, 45, 0.4),
-    0 -8px 20px rgba(87, 108, 188, 0.25);
+box-shadow: 0 0 20px #921187;
 }
 
 /* The whole card flips 180deg on Y axis */
@@ -50,7 +46,7 @@
   height: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
-  background: var(--color-cer);
+  background: var(--color-ab);
   padding: 18px 24px;
   display: flex;
   flex-direction: column;
@@ -58,7 +54,7 @@
   justify-content: flex-start;
   color: var(--color-text);
   /* Remove shadows from front/back themselves */
-  box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
+  box-shadow: 0 0 20px #921187;
   
 
 }
@@ -132,11 +128,17 @@
 }
 
 .skill {
-  background: var(--color-secondary);
+  background: var(--color-primary);
   padding: 6px 18px;
   font-size: 16px;
   border-radius: 100px;
   font-weight: 400;
+  box-shadow: 0 0 10px #921187;
+}
+
+.skill:hover {
+      transform: translateY(-3px);
+  box-shadow: 0 0 20px #921187;
 }
 
 [data-theme="light"] .skill {
@@ -164,14 +166,12 @@
   border-radius: 100px;
   text-decoration: none;
   transition: background-color 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(100, 150, 255, 0.2),
-    inset 0 0 8px rgba(100, 150, 255, 0.2), 0 0 4px rgba(176, 104, 104, 0.05);
+  box-shadow: 0 0 10px #921187;
 }
 
 .link:hover {
-    transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(100, 150, 255, 0.4),
-    inset 0 0 12px rgba(100, 150, 255, 0.25);
+    transform: translateY(-3px);
+  box-shadow: 0 0 20px #921187;
 }
 
 /* Hide shadows during flipping animation */

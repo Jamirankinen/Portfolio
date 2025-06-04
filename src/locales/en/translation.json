@@ -1,14 +1,15 @@
 {
   "hero": {
-    "heading": "Hi, I'm Jami",
+    "heading": "Hi, I'm",
+    "animatedTitles": ["Jami", "a Frontend Developer", "Web Developer"],
     "description": "I'm actively looking for positions in Frontend Development and related fields. Explore my portfolio and feel free to contact me if you're interested!",
-    "contact": "Contact me!"
+    "cvLink": "Curriculum vitae | CV"
   },
-  
+
   "about": {
     "sectionTitle": "About me",
     "items": [
-            {
+      {
         "title": "Jami Rankinen",
         "description": "I'm 25 years old recent Business and Information Systems graduate based in Helsinki, Finland (for now). Native in Finnish but fluent in English, also now basics of German, Spanish and Swedish. I'm the person who goes to talk to other people when no-one else is up to the task. I'm not afraid of being the center of attention but I also now when to be in the sidelines. I have experience in projects as the leader and the contact between the client and the dev team. "
       },
@@ -23,8 +24,8 @@
     ]
   },
 
-    "experience": {
-      "title": "Experience",
+  "experience": {
+    "title": "Experience",
     "items": [
       {
         "role": "Salesman",
@@ -38,14 +39,21 @@
         "organisation": "Outo ry",
         "start": "Jan, 2022",
         "end": "Aug, 2023",
-        "bullets": ["Organized events with other business partners", "Cooperation with other companies"]
+        "bullets": [
+          "Organized events with other business partners",
+          "Cooperation with other companies"
+        ]
       },
       {
         "role": "React.js Developer intern",
         "organisation": "Diilimurkku",
         "start": "Nov, 2024",
         "end": "Mar, 2025",
-        "bullets": ["Web development", "Jira for project management", "Slack for communication and GitHub for CD/CI."]
+        "bullets": [
+          "Web development",
+          "Jira for project management",
+          "Slack for communication and GitHub for CD/CI."
+        ]
       },
       {
         "role": "Bachelor's degree in Business and Information Systems",
@@ -61,70 +69,71 @@
   },
 
   "projects": {
-  "title": "Projects",
-  "items": [
-    {
-      "title": "First Mobile app",
-      "startDate": "04/2023",
-      "endDate": "05/2023",
-      "imageSrc": "projects/mobile_app",
-      "description": "This was my first mobile application made with React Native, focusing on functionality with very simple CSS.",
-      "skills": ["React Native", "Node", "Sass", "JavaScript"],
-      "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
-    },
-    {
-      "title": "Chat app",
-      "startDate": "08/2024",
-      "endDate": "09/2024",
-      "imageSrc": "projects/chat-app",
-      "description": "This was a web application with chatting, ChatGPT and DALL-E features. Made it with very simple styling close to WhatsApp's styles.",
-      "skills": ["TypeScript", "Node", "Clerk", "Convex"],
-      "demo": "https://chat-app-project-tau.vercel.app",
-      "source": "https://github.com/Jamiiiiii/chat-app-project"
-    },
-    {
-      "title": "Portfolio",
-      "startDate": "04/2025",
-      "endDate": "For now",
-      "imageSrc": "projects/portfolio",
-      "description": "This is my latest online resume which is still in development. Hope you enjoy it!",
-      "skills": ["React", "HTML", "CSS", "Vite.js"],
-      "demo": "https://portfolio-jami-rankinen.netlify.app",
-      "source": ""
-    }
-  ]
-},
+    "title": "Projects",
+    "items": [
+      {
+        "title": "First Mobile app",
+        "startDate": "03/2023",
+        "endDate": "05/2023",
+        "imageSrc": "projects/mobile_app",
+        "description": "This was my first mobile application made with React Native, focusing on functionality with very simple CSS.",
+        "skills": ["React Native", "Node", "Sass", "JavaScript"],
+        "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
+      },
+      {
+        "title": "Chat app",
+        "startDate": "06/2024",
+        "endDate": "09/2024",
+        "imageSrc": "projects/chat-app",
+        "description": "This was a web application with chatting, ChatGPT and DALL-E features. Made it with very simple styling close to WhatsApp's styles.",
+        "skills": ["TypeScript", "Node", "Clerk", "Convex"],
+        "demo": "https://chat-app-project-tau.vercel.app",
+        "source": "https://github.com/Jamiiiiii/chat-app-project"
+      },
+      {
+        "title": "Portfolio",
+        "startDate": "04/2025",
+        "endDate": "In development",
+        "imageSrc": "projects/portfolio",
+        "description": "This is my latest online resume which is still in development. Hope you enjoy it!",
+        "skills": ["React", "HTML", "CSS", "Vite.js"],
+        "demo": "https://portfolio-jami-rankinen.netlify.app",
+        "source": ""
+      }
+    ]
+  },
 
- "certificates": {
+  "certificates": {
     "title": "Certificates",
-     "items": [
-   {
-      "title": "IBM Front-End Developer",
-      "description": "This course was completed online on Coursera to improve my skills. Part of my university studies.",
-      "skills": ["React", "JavaScript", "HTML", "CSS"]
-    },
-   {
-      "title": "Google Digital Marketing & E-Commerce",
-      "description": "This course was completed online on Coursera to improve my skills.",
-      "skills": ["E-commerce", "Social Media", "SEO"]
-    },
-    {
-      "title": "AWS Cloud Technology Consultant",
-      "description": "This course was completed online on Coursera to improve my skills.",
-      "skills": ["DevOps", "Python", "Cloud"]
-    }
-  ]
+    "items": [
+      {
+        "title": "IBM Front-End Developer",
+        "description": "This course was completed online on Coursera to improve my skills. Part of my university studies.",
+        "skills": ["React", "JavaScript", "HTML", "CSS"]
+      },
+      {
+        "title": "Google Digital Marketing & E-Commerce",
+        "description": "This course was completed online on Coursera to improve my skills.",
+        "skills": ["E-commerce", "Social Media", "SEO"]
+      },
+      {
+        "title": "AWS Cloud Technology Consultant",
+        "description": "This course was completed online on Coursera to improve my skills.",
+        "skills": ["DevOps", "Python", "Cloud"]
+      }
+    ]
   },
   "contact": {
-  "tagline": "Would thou check my socials...?",
-  "copied": "Copied!",
-  "footer": "© {{year}} Jami Rankinen"
-},
-"navbar": {
-  "about": "About",
-  "experience": "Experience",
-  "projects": "Projects",
-  "certificates": "Certificates",
-  "contacts": "Contact"
-}
+    "title": "Hello",
+    "animatedTitles": ["Let’s connect...?", "Find me in the stars...✨", "Drop a message!"],
+    "description": "Thank you for scrolling ✨ You can contact me my by e-mail below",
+    "button": "Send an Email"
+  },
+  "navbar": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  }
 }

@@ -1,0 +1,85 @@
+.floatingSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 8rem;
+}
+
+/* Sun behind mountains */
+.sunWrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: radial-gradient(circle at center, #f9d423 0%, #b91372 70%, #6b0f9c 100%);
+  border-radius: 50%;
+  width: 18rem;
+  height: 18rem;
+  box-shadow:
+    0 0 60px rgba(255, 200, 120, 0.4),
+    0 0 120px rgba(185, 19, 114, 0.4),
+    0 0 200px rgba(107, 15, 156, 0.4);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.contactContent {
+  display: flex;
+  z-index: 1;
+  text-align: center;
+   margin-bottom: 17rem;
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.staticText {
+  position:fixed
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.emailButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-bg);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(185, 19, 114, 0.4);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.emailButton:hover {
+  transform: translateY(-2px);
+  background: #f9d423;
+  color: black;
+  box-shadow: 0 0 20px var(--color-accent);
+}
+
+.animated {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #f9d423;
+}

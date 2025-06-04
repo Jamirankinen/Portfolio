@@ -1,19 +1,33 @@
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
-import { useIsMobile } from "../../hooks/useMobile";
 import { useHasHydrated } from "../../hooks/useHasHydrated";
 import { useTranslation } from "react-i18next";
+import AnimatedTypewriter from "../../hooks/AnimatedTypewriter";
 
 const splitLetters = (text) => text.split("");
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const heading = t("hero.heading");
   const description = t("hero.description");
+  const titles = t("hero.animatedTitles", { returnObjects: true });
 
-  const isMobile = useIsMobile(); // ✅ detect screen
-  const hasHydrated = useHasHydrated(); // Check if is hydrated
+
+  const hasHydrated = useHasHydrated(); // Check if is zhydrated
+  const language = i18n.language;
+  const cvLink = language === "fi" ? "/cv-fi.pdf" : "/cv-en.pdf";
+
+  const CVButton = (
+    <a
+      href={cvLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.contactBtn}
+    >
+      <span >{t("hero.cvLink")}</span>
+    </a>
+  );
 
   // Show plain fallback if hydration not ready
   if (!hasHydrated) {
@@ -26,9 +40,7 @@ const Hero = () => {
             ))}
           </h1>
           <p className={styles.description}>{description}</p>
-          <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-            <span className={styles.marqueeText}>{t("hero.contact")}</span>
-          </a>
+          {CVButton}
         </div>
         <img
           src={getImageUrl("hero/heroImage.webp")}
@@ -43,46 +55,7 @@ const Hero = () => {
           height={408}
           className={styles.heroImg}
         />
-        <div className={styles.topBlur} />
-        <div className={styles.bottomBlur} />
       </header>
-    );
-  }
-
-  if (isMobile) {
-   
- 
-    return (
-      <>
-        <header className={styles.container} id="hero">
-          <div className={styles.content}>
-            <h1 className={styles.title}>
-              {splitLetters(heading).map((char, index) => (
-                <span key={index}>{char}</span>
-              ))}
-            </h1>
-            <p className={styles.description}>{description}</p>
-            <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-              <span className={styles.marqueeText}>{t("hero.contact")}</span>
-            </a>
-          </div>
-          <img
-            src={getImageUrl("hero/heroImage.webp")}
-            srcSet={`
-            ${getImageUrl("hero/heroImage-small.webp")} 480w,
-            ${getImageUrl("hero/heroImage-medium.webp")} 768w,
-            ${getImageUrl("hero/heroImage.webp")} 1280w
-          `}
-            sizes="(max-width: 600px) 80vw, (max-width: 1024px) 50vw, 30vw"
-            alt="Professional photo of Jami Rankinen"
-            width={400}
-            height={408}
-            className={styles.heroImg}
-          />
-          <div className={styles.topBlur} />
-          <div className={styles.bottomBlur} />
-        </header>
-      </>
     );
   }
 
@@ -109,17 +82,24 @@ const Hero = () => {
               },
             }}
           >
-            {splitLetters(heading).map((char, index) => (
-              <motion.span
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, x: -10 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
+            <motion.span
+              className={styles.staticText}
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              {t("hero.heading")}
+            </motion.span>{" "}
+            <motion.span
+              className={styles.animatedText}
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <AnimatedTypewriter texts={titles} />
+            </motion.span>
           </motion.h1>
 
           <motion.p
@@ -131,15 +111,13 @@ const Hero = () => {
             {description}
           </motion.p>
 
-          <motion.a
-            href="mailto:jamuxi34@gmail.com"
-            className={styles.contactBtn}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 1, ease: "easeOut" }}
           >
-            <span className={styles.marqueeText}>Contact me!</span>
-          </motion.a>
+            {CVButton}
+          </motion.div>
         </div>
 
         <motion.img

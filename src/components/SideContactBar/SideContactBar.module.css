@@ -1,0 +1,62 @@
+.leftBar {
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 999;
+}
+
+.rightBar {
+  position: fixed;
+  bottom: 0;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 999;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow:  var(--color-accent)
+}
+
+.email {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 20px;
+  color: var(--color-accent, #ccc);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease;
+}
+
+.email:hover {
+  transform: translateY(-4px);
+  color: #fff;
+}
+
+.line {
+  width: 1px;
+  height: 20vh;
+  background: var(--color-accent, #ccc);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .leftBar,
+  .rightBar {
+    display: none;
+  }
+}
