@@ -73,7 +73,7 @@ export const Navbar = () => {
           </button>
 
           <div className={styles.themeToggleWrapper}>
-            <ThemeToggleButton />
+            
           </div>
 
           <button
