@@ -6,7 +6,7 @@
   gap: 60px;
   padding: 40px;
   border-radius: 18px;
-  background: var(--color-bg);
+  background: var(--color-ab);
   box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
   transition: transform 0.3s ease;
   z-index: 1;

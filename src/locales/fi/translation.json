@@ -67,7 +67,7 @@
   "items": [
     {
       "title": "Ensimmäinen mobiilisovellus",
-      "startDate": "04/2023",
+      "startDate": "03/2023",
       "endDate": "05/2023",
       "imageSrc": "projects/mobile_app",
       "description": "Tämä oli ensimmäinen mobiilisovellukseni React Nativella. Keskityin toiminnallisuuteen yksinkertaisella CSS:llä.",
@@ -76,7 +76,7 @@
     },
     {
       "title": "Chat-sovellus",
-      "startDate": "08/2024",
+      "startDate": "06/2024",
       "endDate": "09/2024",
       "imageSrc": "projects/chat-app",
       "description": "Tässä web-sovelluksessa on chat, ChatGPT ja DALL-E -toiminnot. Ulkoasu muistuttaa WhatsAppia.",
@@ -87,7 +87,7 @@
     {
       "title": "Portfolio",
       "startDate": "04/2025",
-      "endDate": "Tällä hetkellä",
+      "endDate": "Kehityksessä",
       "imageSrc": "projects/portfolio",
       "description": "Tämä on uusin online-ansioluetteloni, joka on vielä kehityksessä. Toivottavasti pidät siitä!",
       "skills": ["React", "HTML", "CSS", "Vite.js"],

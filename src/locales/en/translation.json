@@ -73,7 +73,7 @@
     "items": [
       {
         "title": "First Mobile app",
-        "startDate": "04/2023",
+        "startDate": "03/2023",
         "endDate": "05/2023",
         "imageSrc": "projects/mobile_app",
         "description": "This was my first mobile application made with React Native, focusing on functionality with very simple CSS.",
@@ -82,7 +82,7 @@
       },
       {
         "title": "Chat app",
-        "startDate": "08/2024",
+        "startDate": "06/2024",
         "endDate": "09/2024",
         "imageSrc": "projects/chat-app",
         "description": "This was a web application with chatting, ChatGPT and DALL-E features. Made it with very simple styling close to WhatsApp's styles.",
@@ -93,7 +93,7 @@
       {
         "title": "Portfolio",
         "startDate": "04/2025",
-        "endDate": "For now",
+        "endDate": "In development",
         "imageSrc": "projects/portfolio",
         "description": "This is my latest online resume which is still in development. Hope you enjoy it!",
         "skills": ["React", "HTML", "CSS", "Vite.js"],

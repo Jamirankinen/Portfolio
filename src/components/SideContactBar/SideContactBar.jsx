@@ -11,6 +11,13 @@ const socialLinks = [
     icon: '/assets/contact/linkedinIcon.png',
     alt: 'LinkedIn',
   },
+    {
+    href: "mailto:jamuxi34@gmail.com",
+    alt: "Email",
+    icon: "/assets/contact/emailIcon.png",
+    label: "Email",
+    isButton: true,
+  },
 ];
 
 export default function SideContactBar() {
