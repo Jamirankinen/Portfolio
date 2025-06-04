@@ -27,7 +27,7 @@ export const Navbar = () => {
     i18n.changeLanguage(newLang);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
       if (currentY > lastScrollY.current && currentY > 100) {
@@ -55,7 +55,12 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden}`} aria-label="Main Navigation">
+    <nav
+      className={`${styles.navbar} ${
+        showNavbar ? styles.visible : styles.hidden
+      }`}
+      aria-label="Main Navigation"
+    >
       {/* Logo / title */}
       <a className={styles.title} href="/">
         Portfolio
@@ -69,12 +74,24 @@ export const Navbar = () => {
             className={styles.langSwitcher}
             aria-label="Switch language"
           >
-            {i18n.language === "en" ? "FI" : "EN"}
+            <img
+              src={
+                i18n.language === "en"
+                  ? "/assets/icons/fi.webp"
+                  : "/assets/icons/en.webp"
+              }
+              alt={
+                i18n.language === "en"
+                  ? "Switch to Finnish"
+                  : "Switch to English"
+              }
+              className={styles.langIcon}
+              width={24}
+              height={24}
+            />
           </button>
 
-          <div className={styles.themeToggleWrapper}>
-            
-          </div>
+          <div className={styles.themeToggleWrapper}></div>
 
           <button
             className={styles.menuBtn}
