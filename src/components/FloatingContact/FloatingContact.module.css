@@ -62,7 +62,7 @@
 .emailButton {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: #b91372;
+  background: var(--color-bg);
   color: white;
   border-radius: 999px;
   text-decoration: none;
@@ -75,6 +75,7 @@
   transform: translateY(-2px);
   background: #f9d423;
   color: black;
+  box-shadow: 0 0 20px var(--color-accent);
 }
 
 .animated {

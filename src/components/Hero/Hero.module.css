@@ -98,37 +98,9 @@
 
 .contactBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px #6b0f9c, 0 0 25px #6b0f9c,
-    inset 0 0 12px #6b0f9c;
-}
-
-.marqueeText {
-  display: inline-block;
-  position: relative;
-  animation: none;
-  
-}
-
-.contactBtn:hover .marqueeText {
-  animation: scrollLoop 7s linear infinite;
-}
-
-/* This creates the illusion of continuous scrolling by showing the second text below */
-.marqueeText::after {
-  content: "Click me!";
-  position: absolute;
-  left: 100%;
-  padding-left: 2rem;
-  white-space: nowrap;
-}
-
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  background: #f9d423;
+  color: black;
+  box-shadow: 0 0 20px var(--color-accent);
 }
 
 .heroImg {
@@ -185,13 +157,6 @@
     animation: none !important;
   }
 
-  .contactBtn .marqueeText::after {
-    display: none;
-  }
-
-  .contactBtn:hover .marqueeText {
-    animation: none;
-  }
 
 
 }

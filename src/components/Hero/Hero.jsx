@@ -9,14 +9,27 @@ import AnimatedTypewriter from "../../hooks/AnimatedTypewriter";
 const splitLetters = (text) => text.split("");
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const heading = t("hero.heading");
   const description = t("hero.description");
+  const titles = t("hero.animatedTitles", { returnObjects: true });
 
   const isMobile = useIsMobile(); // ✅ detect screen
   const hasHydrated = useHasHydrated(); // Check if is zhydrated
 
-  const titles = t("hero.animatedTitles", { returnObjects: true });
+  const language = i18n.language;
+  const cvLink = language === "fi" ? "/cv-fi.pdf" : "/cv-en.pdf";
+
+  const CVButton = (
+    <a
+      href={cvLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.contactBtn}
+    >
+      <span >{t("hero.cvLink")}</span>
+    </a>
+  );
 
   // Show plain fallback if hydration not ready
   if (!hasHydrated) {
@@ -29,9 +42,7 @@ const Hero = () => {
             ))}
           </h1>
           <p className={styles.description}>{description}</p>
-          <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-            <span className={styles.marqueeText}>{t("hero.contact")}</span>
-          </a>
+          {CVButton}
         </div>
         <img
           src={getImageUrl("hero/heroImage.webp")}
@@ -46,8 +57,6 @@ const Hero = () => {
           height={408}
           className={styles.heroImg}
         />
-        <div className={styles.topBlur} />
-        <div className={styles.bottomBlur} />
       </header>
     );
   }
@@ -63,9 +72,7 @@ const Hero = () => {
               ))}
             </h1>
             <p className={styles.description}>{description}</p>
-            <a href="mailto:jamuxi34@gmail.com" className={styles.contactBtn}>
-              <span className={styles.marqueeText}>{t("hero.contact")}</span>
-            </a>
+            {CVButton}
           </div>
           <img
             src={getImageUrl("hero/heroImage.webp")}
@@ -80,8 +87,6 @@ const Hero = () => {
             height={408}
             className={styles.heroImg}
           />
-          <div className={styles.topBlur} />
-          <div className={styles.bottomBlur} />
         </header>
       </>
     );
@@ -139,15 +144,13 @@ const Hero = () => {
             {description}
           </motion.p>
 
-          <motion.a
-            href="mailto:jamuxi34@gmail.com"
-            className={styles.contactBtn}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 1, ease: "easeOut" }}
           >
-            <span className={styles.marqueeText}>Contact me!</span>
-          </motion.a>
+            {CVButton}
+          </motion.div>
         </div>
 
         <motion.img
