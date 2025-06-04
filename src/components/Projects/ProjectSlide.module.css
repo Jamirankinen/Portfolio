@@ -9,6 +9,7 @@
   background: var(--color-bg);
   box-shadow: 0 0 20px rgba(87, 108, 188, 0.4);
   transition: transform 0.3s ease;
+  z-index: 1;
 }
 
 [data-theme="light"] .projectSlide {

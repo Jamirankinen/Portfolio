@@ -1,10 +1,10 @@
 import { Suspense, lazy } from "react";
 import styles from "./App.module.css";
 import { Navbar } from "./components/Navbar/Navbar";
-import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
 import LayoutWithHydration from "./components/LayoutWithHydration/LayoutWithHydration";
 import SkeletonSection from "./components/Skeletons/SkeletonSection";
 import Hero from "./components/Hero/Hero"; // Eager load Hero for SEO
+import SideContactBar from "./components/SideContactBar/SideContactBar";
 
 
 const AnimatedBackground = lazy(() =>
@@ -29,6 +29,7 @@ function App() {
       </LayoutWithHydration>
       <Navbar />
       <Hero />
+      <SideContactBar />
       <LayoutWithHydration
         fallback={<div className={styles.loading}>Extinguishing thrist...</div>}
       >
@@ -39,7 +40,6 @@ function App() {
           <Certificates />
           <FloatingContact />
         </Suspense>
-        <ScrollToTopButton />
       </LayoutWithHydration>
     </div>
   );

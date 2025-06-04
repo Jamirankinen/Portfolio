@@ -18,6 +18,7 @@ export default function AnimatedBackground() {
   }, []);
 
   return (
+    <>
     <div className={styles.sky}>
       <div className={styles.gradient}></div>
 
@@ -35,8 +36,8 @@ export default function AnimatedBackground() {
           }}
         />
       ))}
-
-      <div className={styles.mountains}></div>
     </div>
+    <div className={styles.mountains}></div>
+    </>
   );
 }
