@@ -118,13 +118,13 @@
   ]
   },
   "contact": {
-    "staticText": "Moikka ",
-      "tagline1": "laitahhan koodia!",
-    "tagline2": "kurkkaa mun somet!",
-    "tagline3": "jätä viesti vastaajaan ✨",
-  "copied": "Kopioitu!",
-  "footer": "© {{year}} Jami Rankinen"
-},
+    "title": "Morjesta",
+    "tagline1": "Olemmako yhteyksissä?✨",
+    "tagline2": "Pullopostia?",
+    "tagline3": "Savumerkkejä? ",
+    "description": "Kiva kun kävit! ✨ Voit halutessasi olla yhteydessä säpön kautta!",
+    "button": "Laita viestiä!"
+  },
 "navbar": {
   "about": "Minä",
   "experience": "Työkokemus",

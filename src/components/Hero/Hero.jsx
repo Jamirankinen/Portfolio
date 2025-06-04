@@ -14,7 +14,7 @@ const Hero = () => {
   const description = t("hero.description");
 
   const isMobile = useIsMobile(); // ✅ detect screen
-  const hasHydrated = useHasHydrated(); // Check if is hydrated
+  const hasHydrated = useHasHydrated(); // Check if is zhydrated
 
   const titles = t("hero.animatedTitles", { returnObjects: true });
 

@@ -124,12 +124,10 @@
     ]
   },
   "contact": {
-    "staticText": "Hello",
-    "tagline1": "let’s connect...?",
-    "tagline2": "find me in the stars...?",
-    "tagline3": "drop a message ✨",
-    "copied": "Copied!",
-    "footer": "© {{year}} Jami Rankinen"
+    "title": "Hello",
+    "animatedTitles": ["Let’s connect...?", "Find me in the stars...?", "Drop a message ✨"],
+    "description": "Thank you for scrolling ✨ You can contact me my by e-mail below",
+    "button": "Send an Email"
   },
   "navbar": {
     "about": "About",
