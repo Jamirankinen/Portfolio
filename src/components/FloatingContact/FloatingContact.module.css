@@ -31,6 +31,21 @@
   overflow: visible;
 }
 
+[data-theme="light"] .card {
+  background: radial-gradient(circle at center, #ffe066 0%, #ffb347 70%, #ff9a00 100%);
+  border-radius: 50%;
+  width: 18rem;
+  height: 18rem;
+  box-shadow:
+    0 0 60px rgba(255, 215, 100, 0.5),
+    0 0 120px rgba(255, 180, 80, 0.4),
+    0 0 200px rgba(255, 140, 50, 0.3);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+
 .contactContent {
   display: flex;
   z-index: 1;

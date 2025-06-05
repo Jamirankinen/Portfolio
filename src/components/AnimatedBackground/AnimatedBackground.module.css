@@ -9,6 +9,46 @@
   z-index: -10;
 }
 
+[data-theme="light"] .sky {
+  position: fixed;
+  top: 0;
+    left: 0;
+    width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    to top,
+    #fff0c2 0%,        /* lighter warm sunlight at bottom */
+    #cceeff 25%,       /* light sky blue */
+    #a0dcff 50%,       /* brighter mid blue */
+    #87cefa 75%,       /* strong sky blue */
+    #60c0ff 100%       /* very bright upper sky */
+  );
+  z-index: -10;
+}
+
+[data-theme="light"] .gradient {
+  position: absolute;
+  bottom: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200vw;
+  height: 120vh;
+  border-radius: 50% / 100%;
+   background: radial-gradient(
+    ellipse at center bottom,
+    rgba(255, 245, 140, 1) 0%,       /* brighter sun yellow */
+    rgba(255, 210, 100, 0.7) 20%,    /* sunny orange */
+    rgba(255, 190, 120, 0.4) 35%,    /* soft peach */
+    rgba(255, 255, 255, 0.2) 50%,    /* airy light transition */
+    rgba(173, 216, 230, 0.3) 70%,    /* pale sky blue blend */
+    rgba(160, 220, 255, 0.2) 100%    /* subtle touch of blue to merge with sky */
+  );
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
 .gradient {
   position: absolute;
   bottom: -20vh;
@@ -26,7 +66,7 @@
   );
   z-index: 0;
   pointer-events: none;
-  filter: blur(30px);
+  filter: blur(60px);
 }
 
 .star {
@@ -50,12 +90,42 @@
   }
 }
 
+.cloudLayer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible; /* allow clouds to move outside */
+}
+
+.cloud {
+  position: absolute; /* absolute for direct positioning via left/top */
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(10px);
+  will-change: left;
+}
+
 .mountains {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 35vh;
   background: linear-gradient(to top, #1b1b1b 0%, transparent 100%), url('/landscape.svg');
+  background-size: cover;
+  background-position: bottom center;
+  z-index: 0;
+}
+
+[data-theme="light"] .mountains {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 35vh;
+  background: linear-gradient(to top, #1b1b1b 0%, transparent 100%), url('/landscape-day.svg');
   background-size: cover;
   background-position: bottom center;
   z-index: 0;
