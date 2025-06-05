@@ -90,8 +90,8 @@
   height: 55px;
 
   /* NEW shadow for depth + glow */
-  box-shadow: 0 4px 12px #6b0f9c, 0 0 15px #6b0f9c,
-    inset 0 0 8px #6b0f9c, 0 0 4px #6b0f9c;
+  box-shadow: 0 4px 12px var(--color-secondary), 0 0 15px var(--color-secondary),
+    inset 0 0 8px var(--color-secondary), 0 0 4px var(--color-secondary);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   
 }
@@ -115,8 +115,8 @@
   animation-timing-function: ease-in-out;
 
   /* Enhance shadow on hover */
-  box-shadow: 0 6px 25px #6b0f9c, 0 0 30px #6b0f9c,
-    inset 0 0 12px #6b0f9c;
+  box-shadow: 0 6px 25px var(--color-secondary), 0 0 30px var(--color-secondary),
+    inset 0 0 12px var(--color-secondary);
 }
 
 
