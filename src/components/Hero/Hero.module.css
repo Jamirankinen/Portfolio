@@ -168,10 +168,6 @@
   min-height: 3.5em;
   transition: none;
 }
-   .contactBtn {
-    box-shadow: none;
-    background-color: var(--color-secondary);
-  }
 
   .heroImg {
     box-shadow: none;
