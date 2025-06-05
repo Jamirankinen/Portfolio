@@ -92,7 +92,7 @@ export const Navbar = () => {
           </button>
 
           <div className={styles.themeToggleWrapper}></div>
-
+          <ThemeToggleButton/>
           <button
             className={styles.menuBtn}
             onClick={() => setMenuOpen(!menuOpen)}
