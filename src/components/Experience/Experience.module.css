@@ -26,10 +26,10 @@
 
   /* New background styles */
   position: relative;
-  background: var(--color-cer);
+  background: var(--color-bg);
   border-radius: 15px;
   padding: 40px 30px;
-  box-shadow: 0 0 40px #576cbc;
+  box-shadow: 0 0 40px var(--color-secondary);
 }
 
 .title {
@@ -69,6 +69,12 @@
   background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 0 10px #921187;
+}
+
+[data-theme="light"] .skillWrapper {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--color-secondary);
 }
 
 [data-theme="light"] .skillImageContainer {

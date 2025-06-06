@@ -37,22 +37,23 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--color-between);
+  background-color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px var(--color-secondary);
 }
 
 .skillImageContainer:hover {
   background-color: var(--color-primary);
-  box-shadow: 0 0 12px rgba(87, 108, 188, 0.6);
+  box-shadow: 0 0 20px rgba(87, 108, 188, 0.6);
 }
 
 [data-theme="light"] .skillImageContainer:hover {
   background-color: #162844;;
-  box-shadow: 0 0 12px rgba(10, 22, 69, 0.6);
+  box-shadow: 0 0 20px var(--color-secondary);
 }
 
 .icon {
@@ -76,6 +77,22 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+[data-theme="light"] .tooltip {
+    position: absolute;
+  top: -32px;
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
 .skillImageContainer:hover .tooltip {
   opacity: 1;
 }
@@ -90,9 +107,27 @@
   box-shadow: 0 0 10px #921187;
 }
 
+[data-theme="light"] .barWrapper {
+    flex-grow: 1;
+  margin-left: 30px;
+  height: 14px;
+  background-color: var(--color-dark);
+  border-radius: 7px;
+  position: relative;
+  box-shadow: 0 0 10px var(--color-secondary);
+}
+
 .barFill {
   height: 100%;
   background-color: var(--color-primary);
+  border-radius: 7px;
+  transition: width 1.2s ease-in-out;
+  position: relative;
+}
+
+[data-theme="light"] .barFill {
+    height: 100%;
+  background-color: var(--color-secondary);
   border-radius: 7px;
   transition: width 1.2s ease-in-out;
   position: relative;
@@ -144,6 +179,20 @@
   border-radius: 4px;
   white-space: nowrap;
   box-shadow: 0 0 10px #921187;
+}
+
+[data-theme="light"] .percentageLabel {
+  position: absolute;
+  top: -22px;
+  right: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px black;
 }
 
 @media screen and (max-width: 768px) {
