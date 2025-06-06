@@ -32,6 +32,18 @@
   display: flex;
   justify-content: center;
 }
+
+.image {
+max-width: 500px;
+  max-height: 300px; /* limits height */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* keeps full image visible */
+  border-radius: 14px;
+  box-shadow: 0 0 12px #921187, 0 4px 20px #921187;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .imageContainer:hover .image {
   transform: scale(1.03);
   box-shadow: 0 0 20px #921187, 0 0 40px #921187,
@@ -41,14 +53,6 @@
 [data-theme="light"] .imageContainer:hover .image {
   transform: scale(1.03);
   box-shadow: 0 0 20px black
-}
-
-.image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 14px;
-  box-shadow: 0 0 12px #921187, 0 4px 20px #921187;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content {
