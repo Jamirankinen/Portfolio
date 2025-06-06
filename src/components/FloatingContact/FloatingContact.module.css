@@ -83,3 +83,12 @@
   margin-left: 0.5rem;
   color: #f9d423;
 }
+
+@media screen and (max-width: 830px) {
+
+  .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+}
