@@ -25,7 +25,7 @@
   },
 
   "experience": {
-    "title": "Experience",
+    "title": "Tech Stack & Experience",
     "items": [
       {
         "role": "Salesman",
@@ -72,30 +72,30 @@
     "title": "Projects",
     "items": [
       {
-        "title": "Mini Yathzee",
+        "title": "🎲 Mini Yathzee ",
         "startDate": "03/2023",
         "endDate": "05/2023",
         "imageSrc": "projects/mobile_app",
-        "description": "This was my first mobile application made with React Native, focusing on functionality with very simple CSS.",
+        "description": "A mobile version of the classic Yahtzee game, built with React Native and local state management. The app features intuitive UI, responsive touch controls, and consistent design across devices. Focused on clean user experience and clear game logic. Highlights your ability to build polished, interactive mobile UIs.",
         "skills": ["React Native", "Node", "Sass", "JavaScript"],
         "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
       },
       {
-        "title": "Chat app",
+        "title": "💬 Chat app",
         "startDate": "06/2024",
         "endDate": "09/2024",
         "imageSrc": "projects/chat-app",
-        "description": "This was a web application with chatting, ChatGPT and DALL-E features. Made it with very simple styling close to WhatsApp's styles.",
+        "description": "A real-time chat application with live messaging, user presence indicators, and smooth UI interactions. Built with WebSockets for instant communication and structured using modular React components. Designed to be fully responsive with clean, modern styling. Demonstrates strong frontend skills in real-time data handling and UX design.",
         "skills": ["TypeScript", "Node", "Clerk", "Convex"],
         "demo": "https://chat-app-project-tau.vercel.app",
         "source": "https://github.com/Jamiiiiii/chat-app-project"
       },
       {
-        "title": "Portfolio",
+        "title": "🌐 Portfolio",
         "startDate": "04/2025",
         "endDate": "In development",
         "imageSrc": "projects/portfolio",
-        "description": "This is my latest online resume which is still in development. Hope you enjoy it!",
+        "description": "A custom portfolio site showcasing projects, built for speed, responsiveness, and accessibility. Uses CSS Modules for scoped styling and Framer Motion for smooth UI animations. Supports multiple languages with i18n and delivers a dynamic, animated frontend experience. Reflects modern frontend best practices and attention to design details.",
         "skills": ["React", "HTML", "CSS", "Vite.js"],
         "demo": "https://portfolio-jami-rankinen.netlify.app",
         "source": ""
