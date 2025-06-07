@@ -66,31 +66,31 @@
   "title": "Projektit",
   "items": [
     {
-      "title": "Mini Yatzy",
+      "title": "🎲 Mini-Yahtzee",
       "startDate": "03/2023",
       "endDate": "05/2023",
       "imageSrc": "projects/mobile_app",
-      "description": "Tämä oli ensimmäinen mobiilisovellukseni React Nativella. Keskityin toiminnallisuuteen yksinkertaisella CSS:llä.",
+      "description": "Klassisen Yahtzee-pelin mobiiliversio, toteutettu React Nativella ja paikallisella tilanhallinnalla. Sovelluksessa on selkeä ja reagoiva käyttöliittymä sekä yhtenäinen ulkoasu eri laitteilla. Keskittyy sujuvaan pelikokemukseen ja loogiseen pelimekaniikkaan.",
       "skills": ["React Native", "Node", "Sass", "JavaScript"],
       "source": "https://www.github.com/Jamiiiiii/Mini-Yahtzee"
     },
     {
-      "title": "Chat-sovellus",
+      "title": "💬 Chat-sovellus",
       "startDate": "06/2024",
       "endDate": "09/2024",
       "imageSrc": "projects/chat-app",
-      "description": "Tässä web-sovelluksessa on chat, ChatGPT ja DALL-E -toiminnot. Ulkoasu muistuttaa WhatsAppia.",
+      "description": "Reaaliaikainen chat-sovellus, jossa on viestien liveseuranta, käyttäjän tilailmaisimet ja sulava käyttöliittymä. Rakennettu WebSocket-teknologialla nopeaan viestintään ja modulaarisella React-rakenteella. Täysin responsiivinen ja modernisti tyylitelty.",
       "skills": ["TypeScript", "Node", "Clerk", "Convex"],
       "demo": "https://chat-app-project-tau.vercel.app",
       "source": "https://github.com/Jamiiiiii/chat-app-project"
     },
     {
-      "title": "Portfolio",
+      "title": "🌐 Portfolio-sivusto",
       "startDate": "04/2025",
       "endDate": "Kehityksessä",
       "imageSrc": "projects/portfolio",
-      "description": "Tämä on uusin online-ansioluetteloni, joka on vielä kehityksessä. Toivottavasti pidät siitä!",
-      "skills": ["React", "HTML", "CSS", "Vite.js"],
+      "description": "Räätälöity portfolio-sivusto, joka esittelee projekteja suorituskykyisesti ja tyylikkäästi. Käyttää CSS Moduleja hallittuun tyylittelyyn ja Framer Motionia sulaviin animaatioihin. Tukee monikielisyyttä (i18n) ja tarjoaa responsiivisen sekä visuaalisesti erottuvan käyttökokemuksen",
+      "skills": ["React", "Framer Motion", "CSS", "Vite.js"],
       "demo": "https://portfolio-jami-rankinen.netlify.app",
       "source": ""
     }
