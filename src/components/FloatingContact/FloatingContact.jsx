@@ -25,7 +25,7 @@ const FloatingContact = () => {
           </span>
         </h2>
         <p className={styles.subtitle}>{t("contact.description")}</p>
-        <a href="mailto:your.email@example.com" className={styles.emailButton}>
+        <a href="mailto:jamuxi34@gmail.com" className={styles.emailButton}>
           {t("contact.button")}
         </a>
       </motion.div>
