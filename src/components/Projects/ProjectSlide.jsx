@@ -1,6 +1,7 @@
 import styles from "./ProjectSlide.module.css";
 import { getImageUrl } from "../../utils";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
   const {
@@ -13,6 +14,8 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
     startDate,
     endDate,
   } = project;
+
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -122,7 +125,7 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Demo
+              {t("projects.demo")}
             </a>
           )}
           {source && (
@@ -132,7 +135,7 @@ export const ProjectSlide = ({ project, isReversed, delays = {} }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Source
+              {t("projects.source")}
             </a>
           )}
         </motion.div>

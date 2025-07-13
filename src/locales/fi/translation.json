@@ -64,6 +64,8 @@
 
   "projects": {
   "title": "Projektit",
+  "demo": "Demo",
+  "source": "Lähde",
   "items": [
     {
       "title": "🎲 Mini-Yahtzee",
@@ -92,7 +94,7 @@
       "description": "Räätälöity portfolio-sivusto, joka esittelee projekteja suorituskykyisesti ja tyylikkäästi. Käyttää CSS Moduleja hallittuun tyylittelyyn ja Framer Motionia sulaviin animaatioihin. Tukee monikielisyyttä (i18n) ja tarjoaa responsiivisen sekä visuaalisesti erottuvan käyttökokemuksen",
       "skills": ["React", "Framer Motion", "CSS", "Vite.js"],
       "demo": "https://portfolio-jami-rankinen.netlify.app",
-      "source": ""
+      "source": "https://github.com/Jamirankinen/Portfolio"
     }
   ]
 },

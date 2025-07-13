@@ -70,6 +70,8 @@
 
   "projects": {
     "title": "Projects",
+    "demo": "Demo",
+    "source": "Source",
     "items": [
       {
         "title": "🎲 Mini Yathzee ",
@@ -98,7 +100,7 @@
         "description": "A custom portfolio site showcasing projects, built for speed, responsiveness, and accessibility. Uses CSS Modules for scoped styling and Framer Motion for smooth UI animations. Supports multiple languages with i18n and delivers a dynamic, animated frontend experience. Reflects modern frontend best practices and attention to design details.",
         "skills": ["React", "HTML", "CSS", "Vite.js"],
         "demo": "https://portfolio-jami-rankinen.netlify.app",
-        "source": ""
+        "source": "https://github.com/Jamirankinen/Portfolio"
       }
     ]
   },
