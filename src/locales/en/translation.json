@@ -128,7 +128,7 @@
   "contact": {
     "title": "Hello",
     "animatedTitles": ["Let’s connect...?", "Find me in the stars...?", "Drop a message!"],
-    "description": "Thank you for scrolling ✨ You can contact me by e-mail below",
+    "description": "Thank you for scrolling ✨ You can contact me by email below",
     "button": "Send an Email"
   },
   "navbar": {
