@@ -40,7 +40,6 @@ This site demonstrates my ability to:
 - Build responsive, polished UIs that scale across devices
 - Structure a frontend codebase with modern tools and best practices
 - Integrate linting, formatting, and production deployment workflows
-- Communicate content clearly—a key skill for distributed and remote-first teams :contentReference[oaicite:0]{index=0}
 
 ## ⏱️ Future Improvements
 - Add theme switcher (dark/light)
